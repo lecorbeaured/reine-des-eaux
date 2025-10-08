@@ -5,114 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms & Conditions | Mami Wata: A Journey to Self-Initiation</title>
   <style>
-    body {
-      font-family: 'Georgia', serif;
-      line-height: 1.6;
-      color: #2c3e3f;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
+    :root{
+      --ink:#2c3e3f; --deep:#0f4c3a; --teal-1:#1e6b5c; --teal-2:#2d8a7e; --teal-3:#3ca9a0;
     }
-    .water-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0);
-      background-size: 400% 400%;
-      animation: waterFlow 8s ease-in-out infinite;
-      z-index: -1;
+    *{box-sizing:border-box}
+    body{
+      font-family: Georgia, serif; line-height:1.6; color:var(--ink);
+      margin:0; min-height:100vh; overflow-x:hidden; position:relative; background:#f6faf9;
     }
-    @keyframes waterFlow {
-      0%, 100% { background-position: 0% 50%; }
-      25% { background-position: 100% 50%; }
-      50% { background-position: 100% 100%; }
-      75% { background-position: 0% 100%; }
+    .water-bg{
+      position:fixed; inset:0; width:100vw; height:100vh;
+      background:linear-gradient(45deg, var(--deep), var(--teal-1), var(--teal-2), var(--teal-3));
+      background-size:400% 400%; animation:waterFlow 8s ease-in-out infinite; z-index:-1;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+    @keyframes waterFlow{
+      0%,100%{background-position:0% 50%}
+      25%{background-position:100% 50%}
+      50%{background-position:100% 100%}
+      75%{background-position:0% 100%}
     }
-    h1 {
-      color: #0f4c3a;
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
+    .floating-element{
+      position:absolute; font-size:2rem; pointer-events:none; animation:float 6s ease-in-out infinite; opacity:.6; z-index:0;
     }
-    h2 {
-      color: #2d8a7e;
-      margin-top: 1.5rem;
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-20px) rotate(10deg)}}
+    .container{
+      max-width:820px; margin:2rem auto; padding:2rem; background:rgba(255,255,255,.96);
+      border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.08);
     }
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: #3ca9a0;
-      text-decoration: none;
+    h1{color:var(--deep); font-size:2.4rem; margin:0 0 1rem; text-align:center}
+    .updated{color:#446b66; text-align:center; margin-bottom:1.5rem; font-size:.95rem}
+    .policy-section{
+      margin-bottom:1.5rem; padding:1.25rem; background:rgba(255,255,255,.88);
+      border-radius:12px; border:1px solid rgba(0,0,0,.05);
     }
-    .back-link:hover {
-      text-decoration: underline;
-    }
+    h2{color:var(--teal-2); margin:0 0 .75rem}
+    .back-link{display:inline-block; margin-top:1.25rem; color:var(--teal-3); text-decoration:none; font-weight:600}
+    .back-link:hover{text-decoration:underline}
+    a{color:var(--teal-2)}
   </style>
 </head>
 <body>
-  <div class="water-bg"></div>
-  <div class="container">
+  <div class="water-bg" aria-hidden="true"></div>
+
+  <main class="container">
     <h1>Terms & Conditions</h1>
+    <p class="updated">Last updated: October 7, 2025</p>
 
-    <p>Welcome to <strong>Mami Wata: A Journey to Self-Initiation</strong>. By accessing or purchasing from this website, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our website or purchasing our products.</p>
+    <section class="policy-section">
+      <p>Welcome to <strong>Mami Wata: A Journey to Self-Initiation</strong>. By accessing or purchasing from this website, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our website or purchasing our products.</p>
+    </section>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing our site, you confirm that you have read, understood, and agree to these Terms & Conditions. If you do not agree, please do not use our website.</p>
+    <section class="policy-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing our site, you confirm that you have read, understood, and agree to these Terms & Conditions. If you do not agree, please do not use our website.</p>
+    </section>
 
-    <h2>2. Intellectual Property</h2>
-    <p>All materials, content, images, and designs on this site are owned by Mami Wata and protected by copyright law. You may not reproduce, distribute, or modify any content without written permission.</p>
+    <section class="policy-section">
+      <h2>2. Intellectual Property</h2>
+      <p>All materials, content, images, and designs on this site are owned by Mami Wata and protected by copyright law. You may not reproduce, distribute, or modify any content without written permission.</p>
+    </section>
 
-    <h2>3. Digital Product Policy</h2>
-    <p>All digital products, including eBooks, guides, and downloads, are non-refundable once delivered. Please review all descriptions carefully before purchase.</p>
+    <section class="policy-section">
+      <h2>3. Digital Product Policy</h2>
+      <p>All digital products, including eBooks, guides, and downloads, are non-refundable once delivered. Please review all descriptions carefully before purchase.</p>
+    </section>
 
-    <h2>4. Use of Website</h2>
-    <p>You agree not to misuse the website, including attempts to hack, reverse engineer, or interfere with site functionality. Any misuse will result in immediate restriction of access.</p>
+    <section class="policy-section">
+      <h2>4. Use of Website</h2>
+      <p>You agree not to misuse the website, including attempts to hack, reverse engineer, or interfere with site functionality. Any misuse will result in immediate restriction of access.</p>
+    </section>
 
-    <h2>5. Disclaimer</h2>
-    <p>The content provided is for informational and educational purposes only. We do not make guarantees regarding outcomes, spiritual results, or interpretations of the information presented in the book or related materials.</p>
+    <section class="policy-section">
+      <h2>5. Disclaimer</h2>
+      <p>The content provided is for informational and educational purposes only. We do not make guarantees regarding outcomes, spiritual results, or interpretations of the information presented in the book or related materials.</p>
+    </section>
 
-    <h2>6. Limitation of Liability</h2>
-    <p>We are not liable for any indirect, incidental, or consequential damages resulting from your use or inability to use our website or products.</p>
+    <section class="policy-section">
+      <h2>6. Limitation of Liability</h2>
+      <p>We are not liable for any indirect, incidental, or consequential damages resulting from your use or inability to use our website or products.</p>
+    </section>
 
-    <h2>7. Privacy</h2>
-    <p>Your use of our website is also governed by our <a href="privacy-policy.html" style="color:#2d8a7e;">Privacy Policy</a>.</p>
+    <section class="policy-section">
+      <h2>7. Privacy</h2>
+      <p>Your use of our website is also governed by our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </section>
 
-    <h2>8. Modifications</h2>
-    <p>We reserve the right to update or change these Terms at any time. Updates will be reflected on this page with the latest revision date.</p>
+    <section class="policy-section">
+      <h2>8. Modifications</h2>
+      <p>We reserve the right to update or change these Terms at any time. Updates will be reflected on this page with the latest revision date.</p>
+    </section>
 
-    <h2>9. Contact Us</h2>
-    <p>For any questions regarding these Terms, please contact us at <a href="mailto:support@mamiwata.com" style="color:#2d8a7e;">support@mamiwata.com</a>.</p>
+    <section class="policy-section">
+      <h2>9. Contact Us</h2>
+      <p>For any questions regarding these Terms, please contact us at <a href="mailto:support@mamiwata.com">support@mamiwata.com</a>.</p>
+    </section>
 
     <a href="index.html" class="back-link">← Back to Home</a>
-  </div>
+  </main>
 
   <script>
-    // Floating decorative elements
-    const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
-    for (let i = 0; i < 5; i++) {
-      const el = document.createElement('div');
-      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-      el.style.position = 'absolute';
-      el.style.left = Math.random() * 100 + '%';
-      el.style.top = Math.random() * 100 + '%';
-      el.style.opacity = 0.6;
-      el.style.fontSize = '2rem';
-      el.style.pointerEvents = 'none';
-      el.style.animation = `float ${5 + Math.random() * 4}s ease-in-out infinite`;
-      document.body.appendChild(el);
+    // Add floating elements
+    function createFloatingElements() {
+      const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
+      const container = document.body;
+      
+      for (let i = 0; i < 5; i++) {
+        const element = document.createElement('div');
+        element.className = 'floating-element';
+        element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        element.style.left = Math.random() * 100 + '%';
+        element.style.top = Math.random() * 100 + '%';
+        element.style.animationDelay = Math.random() * 6 + 's';
+        container.appendChild(element);
+      }
     }
-  </scrip
+    document.addEventListener('DOMContentLoaded', createFloatingElements);
+  </script>
+</body>
+</html>
