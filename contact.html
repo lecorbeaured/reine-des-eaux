@@ -1,402 +1,138 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Mami Wata: A Journey to Self-Initiation</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #2c3e3f;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        .water-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0);
-            background-size: 400% 400%;
-            animation: waterFlow 8s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes waterFlow {
-            0%, 100% { background-position: 0% 50%; }
-            25% { background-position: 100% 50%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-        }
-
-        .floating-element {
-            position: absolute;
-            font-size: 2rem;
-            pointer-events: none;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.6;
-            z-index: 0;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        h1 {
-            color: #0f4c3a;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .contact-form {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2d8a7e;
-            font-weight: bold;
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-        textarea {
-            min-height: 150px;
-        }
-        button {
-            background: linear-gradient(45deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #3ca9a0;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        .contact-info {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(45, 138, 126, 0.1);
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Mami Wata: A Journey to Self-Initiation</title>
+  <style>
+    :root{
+      --ink:#2c3e3f; --deep:#0f4c3a; --teal-1:#1e6b5c; --teal-2:#2d8a7e; --teal-3:#3ca9a0;
+      --gold-1:#d4af37; --gold-2:#f1c40f;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Georgia, serif; line-height:1.6; color:var(--ink);
+      margin:0; min-height:100vh; overflow-x:hidden; position:relative; background:#f6faf9;
+    }
+    .water-bg{
+      position:fixed; inset:0; width:100vw; height:100vh;
+      background:linear-gradient(45deg, var(--deep), var(--teal-1), var(--teal-2), var(--teal-3));
+      background-size:400% 400%; animation:waterFlow 8s ease-in-out infinite; z-index:-1;
+    }
+    @keyframes waterFlow{
+      0%,100%{background-position:0% 50%}
+      25%{background-position:100% 50%}
+      50%{background-position:100% 100%}
+      75%{background-position:0% 100%}
+    }
+    .floating-element{
+      position:absolute; font-size:2rem; pointer-events:none; animation:float 6s ease-in-out infinite; opacity:.6; z-index:0;
+    }
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-20px) rotate(10deg)}}
+    .container{
+      max-width:820px; margin:2rem auto; padding:2rem; background:rgba(255,255,255,.96);
+      border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    h1{color:var(--deep); font-size:2.4rem; margin:0 0 1.25rem; text-align:center}
+    .contact-form{
+      margin-bottom:2rem; padding:1.5rem; background:rgba(255,255,255,.88);
+      border-radius:12px; border:1px solid rgba(0,0,0,.05);
+    }
+    .form-group{margin-bottom:1.1rem}
+    label{display:block; margin-bottom:.45rem; color:var(--teal-2); font-weight:700}
+    input, textarea, select{
+      width:100%; padding:.85rem .9rem; border:1px solid #ddd; border-radius:8px; font:inherit; background:#fff;
+    }
+    input:focus, textarea:focus, select:focus{outline:2px solid #bfe7e1; border-color:#bfe7e1}
+    textarea{min-height:160px; resize:vertical}
+    .btn{
+      background:linear-gradient(45deg, var(--gold-1), var(--gold-2));
+      color:var(--ink); padding:.95rem 1.4rem; border:none; border-radius:999px;
+      font-size:1.05rem; font-weight:700; cursor:pointer; transition:transform .2s, box-shadow .2s;
+    }
+    .btn:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(212,175,55,.35)}
+    .contact-info{
+      margin-top:1.25rem; padding:1.25rem 1.5rem; background:rgba(45,138,126,.10); border-radius:12px;
+    }
+    .back-link{display:inline-block; margin-top:1.5rem; color:var(--teal-3); text-decoration:none; font-weight:600}
+    .back-link:hover{text-decoration:underline}
+    .vh{position:absolute !important; left:-9999px !important; width:1px; height:1px; overflow:hidden;}
+    .grid{display:grid; gap:1rem}
+    @media (min-width:640px){ .grid-2{grid-template-columns:1fr 1fr} }
+  </style>
 </head>
 <body>
-    <div class="water-bg"></div>
-    <div class="container">
-        <h1>Contact Us</h1>
-        
-        <div class="contact-form">
-            <form id="contactForm" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject...</option>
-                        <option value="technical">Technical Support</option>
-                        <option value="access">Access Issues</option>
-                        <option value="content">Content Questions</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit">Send Message</button>
-            </form>
+  <div class="water-bg" aria-hidden="true"></div>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <!-- Netlify Forms: real submissions without JS -->
+    <div class="contact-form">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" aria-describedby="formHelp">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="vh">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <div id="formHelp" class="vh">All fields are required. We only use your email to reply.</div>
+
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" />
+          </div>
         </div>
 
-        <div class="contact-info">
-            <h2>Other Ways to Reach Us</h2>
-            <p>✨ For immediate assistance, try our Water Wisdom Guide chatbot</p>
-            <p>📧 Email: support@mamiwata.com</p>
-            <p>⏰ Response Time: Within 24-48 hours</p>
-            <p>Note: For questions about refunds, please review our <a href="/refund-policy.html">refund policy</a> first.</p>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a subject…</option>
+            <option value="technical">Technical Support</option>
+            <option value="access">Access Issues</option>
+            <option value="content">Content Questions</option>
+            <option value="other">Other</option>
+          </select>
         </div>
 
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" required placeholder="How can we help? Include order email if relevant."></textarea>
+        </div>
+
+        <button type="submit" class="btn" aria-label="Send message">Send Message</button>
+      </form>
     </div>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically handle the form submission
-            alert('Thank you for your message. We will respond within 24-48 hours.');
-        });
-    </script>
-
-    <script>
-        // Add floating elements
-        function createFloatingElements() {
-            const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
-            const container = document.body;
-            
-            for (let i = 0; i < 5; i++) {
-                const element = document.createElement('div');
-                element.className = 'floating-element';
-                element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-                element.style.left = Math.random() * 100 + '%';
-                element.style.top = Math.random() * 100 + '%';
-                element.style.animationDelay = Math.random() * 6 + 's';
-                container.appendChild(element);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', createFloatingElements);
-    </script>
-</body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Mami Wata: A Journey to Self-Initiation</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #2c3e3f;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        .water-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0);
-            background-size: 400% 400%;
-            animation: waterFlow 8s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes waterFlow {
-            0%, 100% { background-position: 0% 50%; }
-            25% { background-position: 100% 50%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-        }
-
-        .floating-element {
-            position: absolute;
-            font-size: 2rem;
-            pointer-events: none;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.6;
-            z-index: 0;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        h1 {
-            color: #0f4c3a;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .contact-form {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2d8a7e;
-            font-weight: bold;
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-        textarea {
-            min-height: 150px;
-        }
-        button {
-            background: linear-gradient(45deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #3ca9a0;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        .contact-info {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(45, 138, 126, 0.1);
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="water-bg"></div>
-    <div class="container">
-        <h1>Contact Us</h1>
-        
-        <div class="contact-form">
-            <form id="contactForm" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject...</option>
-                        <option value="technical">Technical Support</option>
-                        <option value="access">Access Issues</option>
-                        <option value="content">Content Questions</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-
-        <div class="contact-info">
-            <h2>Other Ways to Reach Us</h2>
-            <p>✨ For immediate assistance, try our Water Wisdom Guide chatbot</p>
-            <p>📧 Email: support@mamiwata.com</p>
-            <p>⏰ Response Time: Within 24-48 hours</p>
-            <p>Note: For questions about refunds, please review our <a href="/refund-policy.html">refund policy</a> first.</p>
-        </div>
-
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="contact-info" role="complementary">
+      <h2>Other Ways to Reach Us</h2>
+      <p>✨ For immediate assistance, try our Water Wisdom Guide chatbot.</p>
+      <p>📧 Email: <a href="mailto:support@mamiwata.com">support@mamiwata.com</a></p>
+      <p>⏰ Response Time: Within 24–48 hours</p>
+      <p>Note: For questions about refunds, please review our <a href="/refund-policy.html">refund policy</a> first.</p>
     </div>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically handle the form submission
-            alert('Thank you for your message. We will respond within 24-48 hours.');
-        });
-    </script>
+    <a href="index.html" class="back-link" aria-label="Back to Home">← Back to Home</a>
+  </div>
 
-    <script>
-        // Add floating elements
-        function createFloatingElements() {
-            const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
-            const container = document.body;
-            
-            for (let i = 0; i < 5; i++) {
-                const element = document.createElement('div');
-                element.className = 'floating-element';
-                element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-                element.style.left = Math.random() * 100 + '%';
-                element.style.top = Math.random() * 100 + '%';
-                element.style.animationDelay = Math.random() * 6 + 's';
-                container.appendChild(element);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', createFloatingElements);
-    </script>
+  <script>
+    // Decorative floating elements
+    function createFloatingElements() {
+      const symbols = ['🌊','✨','🔱','🌙','💎','🐚','🌺'];
+      for (let i = 0; i < 5; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-element';
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = Math.random()*100 + '%';
+        el.style.top  = Math.random()*100 + '%';
+        el.style.animationDelay = (Math.random()*6) + 's';
+        document.body.appendChild(el);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', createFloatingElements);
+  </script>
 </body>
->>>>>>> f407448661320e03e7f0120c66d44df333796caa
 </html>
