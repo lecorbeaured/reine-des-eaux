@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions | Mami Wata: A Journey to Self-Initiation</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #2c3e3f;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .water-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0);
+      background-size: 400% 400%;
+      animation: waterFlow 8s ease-in-out infinite;
+      z-index: -1;
+    }
+    @keyframes waterFlow {
+      0%, 100% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      color: #0f4c3a;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #2d8a7e;
+      margin-top: 1.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #3ca9a0;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="water-bg"></div>
+  <div class="container">
+    <h1>Terms & Conditions</h1>
+
+    <p>Welcome to <strong>Mami Wata: A Journey to Self-Initiation</strong>. By accessing or purchasing from this website, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our website or purchasing our products.</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing our site, you confirm that you have read, understood, and agree to these Terms & Conditions. If you do not agree, please do not use our website.</p>
+
+    <h2>2. Intellectual Property</h2>
+    <p>All materials, content, images, and designs on this site are owned by Mami Wata and protected by copyright law. You may not reproduce, distribute, or modify any content without written permission.</p>
+
+    <h2>3. Digital Product Policy</h2>
+    <p>All digital products, including eBooks, guides, and downloads, are non-refundable once delivered. Please review all descriptions carefully before purchase.</p>
+
+    <h2>4. Use of Website</h2>
+    <p>You agree not to misuse the website, including attempts to hack, reverse engineer, or interfere with site functionality. Any misuse will result in immediate restriction of access.</p>
+
+    <h2>5. Disclaimer</h2>
+    <p>The content provided is for informational and educational purposes only. We do not make guarantees regarding outcomes, spiritual results, or interpretations of the information presented in the book or related materials.</p>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>We are not liable for any indirect, incidental, or consequential damages resulting from your use or inability to use our website or products.</p>
+
+    <h2>7. Privacy</h2>
+    <p>Your use of our website is also governed by our <a href="privacy-policy.html" style="color:#2d8a7e;">Privacy Policy</a>.</p>
+
+    <h2>8. Modifications</h2>
+    <p>We reserve the right to update or change these Terms at any time. Updates will be reflected on this page with the latest revision date.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>For any questions regarding these Terms, please contact us at <a href="mailto:support@mamiwata.com" style="color:#2d8a7e;">support@mamiwata.com</a>.</p>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    // Floating decorative elements
+    const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
+    for (let i = 0; i < 5; i++) {
+      const el = document.createElement('div');
+      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      el.style.position = 'absolute';
+      el.style.left = Math.random() * 100 + '%';
+      el.style.top = Math.random() * 100 + '%';
+      el.style.opacity = 0.6;
+      el.style.fontSize = '2rem';
+      el.style.pointerEvents = 'none';
+      el.style.animation = `float ${5 + Math.random() * 4}s ease-in-out infinite`;
+      document.body.appendChild(el);
+    }
+  </scrip

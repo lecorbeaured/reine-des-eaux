@@ -1146,49 +1146,62 @@
     </section>
     
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Mami Wata</h3>
-                <ul>
-                    <li><a href="#about">The Book</a></li>
-                    <li><a href="#author">About Amari Zola</a></li>
-                    <li><a href="#practices">Daily Practices</a></li>
-                    <li><a href="#community">Join Community</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#chatbot">AI Wisdom Guide</a></li>
-                    <li><a href="#blog">Water Wisdom Blog</a></li>
-                    <li><a href="#workshops">Online Workshops</a></li>
-                    <li><a href="#retreat">Healing Retreats</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="faq.html">Frequently Asked Questions</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="refund-policy.html">Refund Policy</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" title="Instagram">📷</a>
-            <a href="#" title="TikTok">🎵</a>
-            <a href="#" title="YouTube">📺</a>
-            <a href="#" title="Pinterest">📌</a>
-            <a href="#" title="Facebook">👥</a>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; <span id="currentYear"></span> Mami Wata: A Journey to Self-Initiation. All rights reserved. | You are crowned by water. 🌊👑</p>
-        </div>
-    </footer>
+    <footer style="background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0); color: #fff; padding: 3rem 1rem; font-family: 'Georgia', serif;">
+  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem;">
+    
+    <!-- About Mami Wata -->
+    <div>
+      <h3 style="color:#f1c40f;">About Mami Wata</h3>
+      <ul style="list-style:none; padding:0; line-height:1.8;">
+        <li><a href="the-book.html" style="color:#fff; text-decoration:none;">📖 The Book</a></li>
+        <li><a href="about-amari-zola.html" style="color:#fff; text-decoration:none;">🌺 About Amari Zola</a></li>
+        <li><a href="join-community.html" style="color:#fff; text-decoration:none;">💫 Join Community</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div>
+      <h3 style="color:#f1c40f;">Resources</h3>
+      <ul style="list-style:none; padding:0; line-height:1.8;">
+        <li><a href="water-wisdom.html" style="color:#fff; text-decoration:none;">🌊 Water Wisdom Blog</a></li>
+        <li><a href="healing-retreats.html" style="color:#fff; text-decoration:none;">🏝️ Healing Retreats</a></li>
+        <li><a href="faq.html" style="color:#fff; text-decoration:none;">❓ FAQ</a></li>
+        <li><a href="contact.html" style="color:#fff; text-decoration:none;">📬 Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h3 style="color:#f1c40f;">Legal</h3>
+      <ul style="list-style:none; padding:0; line-height:1.8;">
+        <li><a href="privacy-policy.html" style="color:#fff; text-decoration:none;">🔒 Privacy Policy</a></li>
+        <li><a href="refund-policy.html" style="color:#fff; text-decoration:none;">💰 Refund Policy</a></li>
+        <li><a href="terms-and-conditions.html" style="color:#fff; text-decoration:none;">⚖️ Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+      <h3 style="color:#f1c40f;">Follow Us</h3>
+      <p style="margin:0; line-height:2;">
+        <a href="https://tiktok.com" target="_blank" style="text-decoration:none; color:#fff;">🎵 TikTok</a><br>
+        <a href="https://instagram.com" target="_blank" style="text-decoration:none; color:#fff;">📸 Instagram</a><br>
+        <a href="https://youtube.com" target="_blank" style="text-decoration:none; color:#fff;">🎥 YouTube</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem;">
+    <p style="margin:0;">© <span id="year"></span> Mami Wata: A Journey to Self-Initiation. All rights reserved.</p>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+
     
     <script>
         // Set current year in footer
