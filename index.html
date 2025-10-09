@@ -1042,7 +1042,7 @@
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#purchase">Get The Book</a></li>
             </ul>
-            <a href="#purchase" class="cta-button">Awaken Your Crown ✨</a>
+            <a href="#purchase" class="cta-button">Start Your Initiation ✨</a>
         </div>
     </nav>
     
@@ -1056,8 +1056,8 @@
                     Your deep emotions, vivid dreams, and intuitive gifts are not random occurrences—they are signs of an ancient spiritual calling. This book reveals the sacred path to claiming your birthright as a water-crowned soul and living from your deepest power.
                 </p>
                 <div class="hero-cta">
-                    <a href="#purchase" class="btn-primary">Begin Your Initiation - $99</a>
-                    <a href="#features" class="btn-secondary">Discover Your Path</a>
+                    <a href="#purchase" class="btn-primary">⭐ Join 200+ Readers — Get the Book</a>
+                    <a href="#features" class="btn-secondary">📘 Get Free Sample</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1170,13 +1170,21 @@
   🔔 Price Going Up Soon
 </div>
                 <div class="original-price">Regular Price: $149</div>
-                <div class="current-price">$99</div>
-                <div class="price-subtitle">Complete Initiation Guide + Sacred Bonuses</div>
-                
-                <a href="#" class="btn-primary" style="display: inline-block; font-size: 1.4rem; padding: 1.5rem 3rem; margin: 2rem 0;" onclick="handlePurchase()">
-                    🌊 Begin Your Awakening - $99 ✨
-                </a>
-                
+                <div class="current-price">$99</div>                
+                <a href="https://payhip.com/b/0oeMU?utm_source=site&utm_medium=hero_cta&utm_campaign=book_launch"
+   class="btn-primary"
+   style="display:inline-block; font-size:1.4rem; padding:1.5rem 3rem; margin:2rem 0;"
+   target="_blank"
+   rel="noopener"
+ onclick="trackPayhipClick(event)"
+   aria-label="Buy the book on Payhip in a new tab">
+  📖 Buy the Book — $99
+</a>
+
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-top: -1rem; opacity: 0.85; font-style: italic;">
+  🕊️ Please note: All sales are final. This work explores deep spiritual themes — ensure the message resonates with your journey before purchase.
+</p>
+
                 
     </section>
     
@@ -1928,5 +1936,18 @@
             currency: 'USD'
         });
     </script>
+<script>
+  // Optional: analytics event before leaving site
+  function trackPayhipClick(e){
+    // Fire events but don't block navigation
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'click_payhip_buy', {event_category: 'purchase', value: 99});
+    }
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'InitiateCheckout', {value: 99, currency: 'USD'});
+    }
+  }
+</script>
+
 </body>
 </html>
