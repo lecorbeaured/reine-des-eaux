@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mami Wata: A Journey to Self-Initiation | Awaken Your Water Crown</title>
+<!-- Favicon setup -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="shortcut icon" href="images/favicon.png">
+<meta name="theme-color" content="#0f4c3a">
+
     
     <!-- SEO & Social Media Meta Tags -->
     <meta name="description" content="Transform your water sensitivity from curse to crown. The definitive guide to claiming your spiritual gifts and living authentically as a water-connected soul.">
@@ -21,7 +28,64 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+        /* --- Lead Magnet Modal --- */
+.mw-modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  display: none; /* hidden default */
+  align-items: center; justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+}
+.mw-modal.show { display: flex; }
+
+.mw-modal__dialog {
+  width: 100%; max-width: 520px;
+  background: linear-gradient(135deg, rgba(15,76,58,0.98), rgba(30,107,92,0.95));
+  border: 1px solid rgba(60,169,160,0.35);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  padding: 1.25rem 1.25rem 1.5rem;
+  color: #f0f8f8;
+  position: relative;
+}
+
+.mw-modal__title {
+  margin: 0 0 .25rem;
+  font-size: 1.35rem; font-weight: 700;
+}
+.mw-modal__subtitle { margin: 0 0 1rem; opacity: .9; }
+
+.mw-modal__close {
+  position: absolute; top: .6rem; right: .6rem;
+  border: 0; background: transparent; color: #2c3e3f;
+  width: 34px; height: 34px; border-radius: 50%;
+  font-size: 1rem; cursor: pointer;
+}
+.mw-modal__close:hover { background: rgba(44,62,63,.12); }
+
+.mw-form__row { margin-bottom: .75rem; }
+.mw-form__row label { display:block; margin-bottom:.3rem; font-weight:600; }
+.mw-form__row input {
+  width: 100%; padding: .7rem .8rem;
+  border-radius: 10px; border: 1px solid rgba(60,169,160,.3);
+  background: rgba(240,248,248,.08); color: #f0f8f8;
+  outline: none;
+}
+.mw-form__row input:focus {
+  border-color: #d4af37; box-shadow: 0 0 0 2px rgba(212,175,55,.2);
+}
+
+.mw-consent { display: flex; gap: .5rem; align-items: flex-start; font-size: .9rem; margin:.25rem 0 .5rem; }
+.mw-consent a { color: #3ca9a0; }
+
+.mw-help { font-size: .9rem; margin-top: .75rem; min-height: 1.25rem; opacity: .9; }
+
+/* small screens */
+@media (max-width: 480px) {
+  .mw-modal__dialog { padding: 1rem; }
+}
+
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
@@ -75,6 +139,36 @@
             color: #f0f8f8;
             text-decoration: none;
         }
+.payhip-badge {
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.payhip-badge strong {
+  color: #d4af37; /* gold accent */
+}
+
+.payhip-badge small {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.2rem;
+}
+
+.payhip-lock {
+  font-size: 1.1rem;
+  margin-right: 0.3rem;
+  color: #3ca9a0; /* teal accent */
+}
+
         
         .nav-links {
             display: flex;
@@ -1016,6 +1110,15 @@
 @media (max-width: 768px) {
   .price-alert { font-size: .8rem; padding: .45rem .75rem; }
 }
+.purchase-note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+.purchase-note.emphasis {
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
 
     </style>
 </head>
@@ -1057,7 +1160,9 @@
                 </p>
                 <div class="hero-cta">
                     <a href="#purchase" class="btn-primary">⭐ Join 200+ Readers — Get the Book</a>
-                    <a href="#features" class="btn-secondary">📘 Get Free Sample</a>
+                    <a href="#" class="btn-secondary" onclick="handleSampleClick(event)">
+    📘 Download Free Sample
+  </a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1180,10 +1285,19 @@
    aria-label="Buy the book on Payhip in a new tab">
   📖 Buy the Book — $99
 </a>
-
-                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-top: -1rem; opacity: 0.85; font-style: italic;">
-  🕊️ Please note: All sales are final. This work explores deep spiritual themes — ensure the message resonates with your journey before purchase.
+<!-- Trust line (subtle) -->
+<p style="margin-top:-0.5rem; margin-bottom:0.5rem; font-size:0.9rem; opacity:0.85;">
+  🔒 <span style="opacity:0.95;">Secure checkout via Payhip</span>
 </p>
+<!-- Payhip Trust Badge -->
+<div class="payhip-badge">
+  <span class="payhip-lock">🔒</span>
+  <span>Payments securely processed by <strong>Payhip</strong></span>
+  <small>Instant download after purchase</small>
+</div>
+
+                <p class="purchase-note emphasis">🕊️ Please note: All sales are final. This work explores deep spiritual themes — ensure the message resonates with your journey before purchase.</p>
+
 
                 
     </section>
@@ -1238,6 +1352,46 @@
   <div style="text-align:center; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem;">
     <p style="margin:0;">© <span id="year"></span> Mami Wata: A Journey to Self-Initiation. All rights reserved.</p>
   </div>
+<!-- Sample Download Modal -->
+<div id="sampleModal" class="mw-modal" aria-hidden="true" role="dialog" aria-labelledby="sampleModalTitle" aria-modal="true">
+  <div class="mw-modal__dialog" role="document">
+    <button class="mw-modal__close" aria-label="Close" onclick="closeSampleModal()">✕</button>
+    <h3 id="sampleModalTitle" class="mw-modal__title">Get Your Free Sample</h3>
+    <p class="mw-modal__subtitle">Enter your email to receive your sample instantly. 🌊</p>
+
+    <!-- Netlify Forms (no backend needed) -->
+    <form name="lead-sample" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mw-form" id="leadSampleForm">
+      <!-- Required hidden input for Netlify -->
+      <input type="hidden" name="form-name" value="lead-sample" />
+      <!-- Honeypot -->
+      <p class="hidden" style="display:none;">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <div class="mw-form__row">
+        <label for="leadName">Name</label>
+        <input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" />
+      </div>
+
+      <div class="mw-form__row">
+        <label for="leadEmail">Email <span aria-hidden="true" style="opacity:.7">*</span></label>
+        <input type="email" id="leadEmail" name="email" required placeholder="you@example.com" autocomplete="email" />
+      </div>
+
+      <label class="mw-consent">
+        <input type="checkbox" id="leadConsent" required />
+        <span>I agree to receive updates & the free sample. See our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+      </label>
+
+      <button type="submit" class="btn-primary" style="width:100%; margin-top: .5rem;" id="leadSubmitBtn">
+        ✨ Send My Sample
+      </button>
+
+      <p class="mw-help" id="leadHelp" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -1948,6 +2102,116 @@
     }
   }
 </script>
+<script>
+  function trackPayhipClick(){
+    if (typeof gtag !== 'undefined') gtag('event','click_payhip_buy',{event_category:'purchase',value:99});
+    if (typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{value:99,currency:'USD'});
+  }
+</script>
+<script>
+  const SAMPLE_PDF_PATH = 'files/mami-wata-sample.pdf';
+  const SAMPLE_SEEN_KEY = 'mw_sample_unlocked_v1';
+
+  function handleSampleClick(e){
+    e.preventDefault();
+    // If already unlocked before, go straight to the PDF
+    if (localStorage.getItem(SAMPLE_SEEN_KEY) === 'yes') {
+      window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
+      return;
+    }
+    openSampleModal();
+  }
+
+  function openSampleModal(){
+    const m = document.getElementById('sampleModal');
+    if (!m) return;
+    m.classList.add('show');
+    m.setAttribute('aria-hidden','false');
+    // Focus the first field for accessibility
+    const email = document.getElementById('leadEmail');
+    if (email) setTimeout(()=>email.focus(), 50);
+  }
+
+  function closeSampleModal(){
+    const m = document.getElementById('sampleModal');
+    if (!m) return;
+    m.classList.remove('show');
+    m.setAttribute('aria-hidden','true');
+  }
+
+  // Close on backdrop click (optional nicety)
+  document.addEventListener('click', function(ev){
+    const modal = document.getElementById('sampleModal');
+    if (!modal || !modal.classList.contains('show')) return;
+    const dialog = modal.querySelector('.mw-modal__dialog');
+    if (!dialog) return;
+    if (ev.target === modal) closeSampleModal();
+  });
+
+  // Handle Netlify form submit
+  const leadForm = document.getElementById('leadSampleForm');
+  const helpEl = document.getElementById('leadHelp');
+  const submitBtn = document.getElementById('leadSubmitBtn');
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+      helpEl.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      // Basic validation
+      const email = document.getElementById('leadEmail').value.trim();
+      const consent = document.getElementById('leadConsent').checked;
+      if (!email || !consent) {
+        helpEl.textContent = 'Please enter a valid email and agree to receive the sample.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = '✨ Send My Sample';
+        return;
+      }
+
+      // Build Netlify form payload
+      const formData = new FormData(leadForm);
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams([...formData]).toString()
+        });
+
+        if (response.ok) {
+          // Fire analytics if available
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_sample_submitted', {event_category: 'lead', method: 'netlify'});
+          }
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', {content_name: 'Sample Download'});
+          }
+
+          // Thank you + unlock
+          helpEl.textContent = '✅ Thanks! Your sample will open in a new tab.';
+          localStorage.setItem(SAMPLE_SEEN_KEY, 'yes');
+          setTimeout(() => {
+            window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
+            closeSampleModal();
+            submitBtn.disabled = false;
+            submitBtn.textContent = '✨ Send My Sample';
+          }, 600);
+        } else {
+          throw new Error('Network response not OK');
+        }
+      } catch (err) {
+        console.error(err);
+        helpEl.textContent = 'Hmm, something went wrong. Please try again.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = '✨ Send My Sample';
+      }
+    });
+  }
+</script>
+
+
 
 </body>
 </html>
