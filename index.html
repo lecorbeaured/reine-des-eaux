@@ -2153,6 +2153,49 @@
   const helpEl = document.getElementById('leadHelp');
   const submitBtn = document.getElementById('leadSubmitBtn');
 
+  <script>
+  const SAMPLE_PDF_PATH = 'files/mami-wata-sample.pdf';
+  const SAMPLE_SEEN_KEY = 'mw_sample_unlocked_v1';
+
+  function handleSampleClick(e){
+    e.preventDefault();
+    if (localStorage.getItem(SAMPLE_SEEN_KEY) === 'yes') {
+      window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
+      return;
+    }
+    openSampleModal();
+  }
+
+  function openSampleModal(){
+    const m = document.getElementById('sampleModal');
+    if (!m) return;
+    m.classList.add('show');
+    m.setAttribute('aria-hidden','false');
+    const email = document.getElementById('leadEmail');
+    if (email) setTimeout(()=>email.focus(), 50);
+  }
+
+  function closeSampleModal(){
+    const m = document.getElementById('sampleModal');
+    if (!m) return;
+    m.classList.remove('show');
+    m.setAttribute('aria-hidden','true');
+  }
+
+  // Backdrop click to close
+  document.addEventListener('click', function(ev){
+    const modal = document.getElementById('sampleModal');
+    if (!modal || !modal.classList.contains('show')) return;
+    const dialog = modal.querySelector('.mw-modal__dialog');
+    if (!dialog) return;
+    if (ev.target === modal) closeSampleModal();
+  });
+
+  // --- Netlify submit handler (AJAX) ---
+  const leadForm   = document.getElementById('leadSampleForm');
+  const helpEl     = document.getElementById('leadHelp');
+  const submitBtn  = document.getElementById('leadSubmitBtn');
+
   if (leadForm) {
     leadForm.addEventListener('submit', async function(e){
       e.preventDefault();
@@ -2160,28 +2203,27 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
-      // Basic validation
-      const email = document.getElementById('leadEmail').value.trim();
-      const consent = document.getElementById('leadConsent').checked;
-      if (!email || !consent) {
+      const emailEl   = document.getElementById('leadEmail');
+      const consentEl = document.getElementById('leadConsent');
+
+      if (!emailEl.value.trim() || !consentEl.checked) {
         helpEl.textContent = 'Please enter a valid email and agree to receive the sample.';
         submitBtn.disabled = false;
         submitBtn.textContent = '✨ Send My Sample';
         return;
       }
 
-      // Build Netlify form payload
+      // Build multipart form payload. IMPORTANT: do NOT set Content-Type manually.
       const formData = new FormData(leadForm);
 
       try {
         const response = await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams([...formData]).toString()
+          body: formData
         });
 
+        // Netlify often responds with 200 and an HTML response.
         if (response.ok) {
-          // Fire analytics if available
           if (typeof gtag !== 'undefined') {
             gtag('event', 'lead_sample_submitted', {event_category: 'lead', method: 'netlify'});
           }
@@ -2189,26 +2231,33 @@
             fbq('track', 'Lead', {content_name: 'Sample Download'});
           }
 
-          // Thank you + unlock
           helpEl.textContent = '✅ Thanks! Your sample will open in a new tab.';
           localStorage.setItem(SAMPLE_SEEN_KEY, 'yes');
+
           setTimeout(() => {
             window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
             closeSampleModal();
             submitBtn.disabled = false;
             submitBtn.textContent = '✨ Send My Sample';
-          }, 600);
+          }, 500);
         } else {
-          throw new Error('Network response not OK');
+          // Even if not ok, try reading text for debugging
+          const txt = await response.text().catch(()=> '');
+          console.warn('Netlify response not ok:', response.status, txt);
+          helpEl.textContent = 'Hmm, submission didn’t complete. Please try again, or refresh.';
+          submitBtn.disabled = false;
+          submitBtn.textContent = '✨ Send My Sample';
         }
       } catch (err) {
         console.error(err);
-        helpEl.textContent = 'Hmm, something went wrong. Please try again.';
+        helpEl.textContent = 'Network issue—please check your connection and try again.';
         submitBtn.disabled = false;
         submitBtn.textContent = '✨ Send My Sample';
       }
     });
   }
+</script>
+
 </script>
 
 
