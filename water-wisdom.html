@@ -3,83 +3,169 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Water Wisdom Blog | Mami Wata</title>
+  <title>Water Wisdom Blog | Mami Wata: A Journey to Self-Initiation</title>
   <style>
-    :root{--ink:#2c3e3f;--deep:#0f4c3a;--teal-1:#1e6b5c;--teal-2:#2d8a7e;--teal-3:#3ca9a0}
-    *{box-sizing:border-box}
-    body{font-family:Georgia,serif;line-height:1.6;color:var(--ink);margin:0;min-height:100vh;overflow-x:hidden;position:relative;background:#f6faf9}
-    .water-bg{position:fixed;inset:0;background:linear-gradient(45deg,var(--deep),var(--teal-1),var(--teal-2),var(--teal-3));background-size:400% 400%;animation:waterFlow 8s ease-in-out infinite;z-index:-1}
-    @keyframes waterFlow{0%,100%{background-position:0% 50%}25%{background-position:100% 50%}50%{background-position:100% 100%}75%{background-position:0% 100%}}
-    .container{max-width:880px;margin:2rem auto;padding:2rem;background:rgba(255,255,255,.96);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-    h1{color:var(--deep);font-size:2.4rem;margin:0 0 1rem;text-align:center}
-    .lede{text-align:center;color:#285e57;margin:0 0 2rem}
-    .post{padding:1.25rem;border:1px solid rgba(0,0,0,.08);border-radius:12px;background:rgba(255,255,255,.9);margin-bottom:1rem}
-    .post h2{color:var(--teal-2);margin:.25rem 0 .5rem}
-    .meta{font-size:.9rem;opacity:.8;margin-bottom:.75rem}
-    blockquote{margin:0;padding:.75rem 1rem;border-left:4px solid var(--teal-2);background:#f1f8f7;border-radius:6px}
-    .back{display:inline-block;margin-top:1rem;color:var(--teal-3);text-decoration:none;font-weight:600}
-    .back:hover{text-decoration:underline}
-/* Floating emoji animation (missing before) */
-.floating-element{
-  position: absolute;          /* allow free placement on the page */
-  font-size: 2rem;             /* make them visible */
-  pointer-events: none;        /* clicks pass through */
-  animation: float 6s ease-in-out infinite;  /* animate! */
-  opacity: .6;
-  z-index: 0;                  /* sit behind the white card */
-}
-
-/* The motion path */
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50%      { transform: translateY(-20px) rotate(10deg); }
-}
-
+    body {
+      font-family: 'Georgia', serif;
+      color: #2c3e3f;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0);
+      background-size: 400% 400%;
+      animation: flow 8s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes flow {
+      0%,100% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+    }
+    .container {
+      background: rgba(255,255,255,0.96);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 800px;
+      padding: 3rem 2.5rem;
+      margin: 2rem;
+      text-align: left;
+      line-height: 1.8;
+    }
+    h1 { 
+      color: #0f4c3a; 
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #3ca9a0;
+      font-style: italic;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid rgba(60, 169, 160, 0.2);
+    }
+    p { 
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+    p:first-of-type {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #0f4c3a;
+    }
+    strong {
+      color: #0f4c3a;
+      font-weight: 600;
+    }
+    .coming-soon {
+      background: rgba(60, 169, 160, 0.1);
+      border-left: 4px solid #3ca9a0;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 10px;
+    }
+    .coming-soon h3 {
+      color: #3ca9a0;
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    .cta-section {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid rgba(60, 169, 160, 0.2);
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(45deg, #d4af37, #f1c40f);
+      color: #2c3e3f;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      margin: 1rem 0;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+      text-decoration: none;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #3ca9a0;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    .floating-element {
+      position: absolute;
+      font-size: 2rem;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.6;
+      z-index: 0;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="water-bg" aria-hidden="true"></div>
-  <main class="container">
+  <div class="container">
     <h1>Water Wisdom Blog</h1>
-    <p class="lede">Reflections, passages, and teachings flowing from <em>Mami Wata: A Journey to Self-Initiation</em>.</p>
+    <p class="subtitle">Ancient Principles for Modern Life</p>
+    
+    <p><strong>Water Wisdom</strong> was created to continue the conversation that began in <em>Mami Wata: A Journey to Self-Initiation</em>. Here, I share insights, reflections, and teachings drawn from years of initiation, study, and daily practice with the spirit of water.</p>
 
-    <!-- Post 1 -->
-    <article class="post">
-      <h2>On Listening to Water</h2>
-      <div class="meta">From the book · Curated excerpt</div>
-      <blockquote>
-        <!-- PASTE EXCERPT FROM THE BOOK HERE -->
-        <p><em>[Your excerpt about silence, tides, intuition, or cleansing rituals.]</em></p>
-      </blockquote>
-      <p>Editor’s note: This passage invites a gentle practice—sit near a bowl of water, breathe slowly, and ask: “What is this moment asking me to release?”</p>
-    </article>
+    <p>Every post offers something simple yet powerful: how to bring ancient principles into modern life. From emotional healing and intuition to ritual, symbolism, and ancestral connection, each lesson helps you understand how water shapes both your inner and outer world.</p>
 
-    <!-- Post 2 -->
-    <article class="post">
-      <h2>Initiation as Remembering</h2>
-      <div class="meta">From the book · Curated excerpt</div>
-      <blockquote>
-        <!-- PASTE EXCERPT FROM THE BOOK HERE -->
-        <p><em>[Your excerpt about self-initiation, lineage, and the call to begin again.]</em></p>
-      </blockquote>
-      <p>Try this: write a few lines naming the waters that shaped you—rivers, rainstorms, oceans—and thank them.</p>
-    </article>
+    <p>This space is for seekers, learners, and those who feel a deep pull toward meaning. It is for readers who sense that spirituality is not just something you believe in but something you live through.</p>
 
-    <!-- Post 3 -->
-    <article class="post">
-      <h2>Altars, Offerings, and Everyday Devotion</h2>
-      <div class="meta">From the book · Curated excerpt</div>
-      <blockquote>
-        <!-- PASTE EXCERPT FROM THE BOOK HERE -->
-        <p><em>[Your excerpt about home altars, simple offerings, or gratitude rituals.]</em></p>
-      </blockquote>
-      <p>Keep it simple: a glass of clear water, a white cloth, and your sincere words are enough.</p>
-    </article>
+    <p>The goal is to make what seems mysterious clear, and what feels overwhelming simple. I write to help you see the patterns that flow beneath your experiences and to remind you that water never hides from its own reflection.</p>
 
-    <a href="index.html" class="back">← Back to Home</a>
-  </main>
-<script>
-    // Add floating elements
+    <p><strong>Read, reflect, and return often. The current is always moving, and every visit can bring a new understanding.</strong></p>
+
+    <div class="coming-soon">
+      <h3>🌊 Coming Soon</h3>
+      <p style="margin: 0; font-size: 1rem;">The Water Wisdom blog is currently being prepared. New teachings, insights, and reflections will be published here soon. In the meantime, begin your journey with the book.</p>
+    </div>
+
+    <div class="cta-section">
+      <a href="https://payhip.com/b/0oeMU" class="cta-button" target="_blank" rel="noopener">Get the Ebook Now 📖</a>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
     function createFloatingElements() {
       const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
       const container = document.body;
@@ -96,6 +182,5 @@
     }
     document.addEventListener('DOMContentLoaded', createFloatingElements);
   </script>
-
 </body>
 </html>

@@ -3,2264 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mami Wata: A Journey to Self-Initiation | Awaken Your Water Crown</title>
-<!-- Favicon setup -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
-<link rel="shortcut icon" href="images/favicon.png">
-<meta name="theme-color" content="#0f4c3a">
-
-    
-    <!-- SEO & Social Media Meta Tags -->
-    <meta name="description" content="Transform your water sensitivity from curse to crown. The definitive guide to claiming your spiritual gifts and living authentically as a water-connected soul.">
-    <meta property="og:title" content="Mami Wata: A Journey to Self-Initiation">
-    <meta property="og:description" content="Awaken your water crown within. Ancient wisdom for modern spiritual transformation.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://your-domain.com/mami-wata-cover.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mami Wata: A Journey to Self-Initiation">
-    <meta name="twitter:description" content="Transform your sensitivity into your superpower. Ancient wisdom for modern awakening.">
-    
+    <title>Mami Wata: A Journey to Self-Initiation</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        /* --- Lead Magnet Modal --- */
-.mw-modal {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.45);
-  display: none; /* hidden default */
-  align-items: center; justify-content: center;
-  z-index: 10000;
-  padding: 1rem;
-}
-.mw-modal.show { display: flex; }
-
-.mw-modal__dialog {
-  width: 100%; max-width: 520px;
-  background: linear-gradient(135deg, rgba(15,76,58,0.98), rgba(30,107,92,0.95));
-  border: 1px solid rgba(60,169,160,0.35);
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.35);
-  padding: 1.25rem 1.25rem 1.5rem;
-  color: #f0f8f8;
-  position: relative;
-}
-
-.mw-modal__title {
-  margin: 0 0 .25rem;
-  font-size: 1.35rem; font-weight: 700;
-}
-.mw-modal__subtitle { margin: 0 0 1rem; opacity: .9; }
-
-.mw-modal__close {
-  position: absolute; top: .6rem; right: .6rem;
-  border: 0; background: transparent; color: #2c3e3f;
-  width: 34px; height: 34px; border-radius: 50%;
-  font-size: 1rem; cursor: pointer;
-}
-.mw-modal__close:hover { background: rgba(44,62,63,.12); }
-
-.mw-form__row { margin-bottom: .75rem; }
-.mw-form__row label { display:block; margin-bottom:.3rem; font-weight:600; }
-.mw-form__row input {
-  width: 100%; padding: .7rem .8rem;
-  border-radius: 10px; border: 1px solid rgba(60,169,160,.3);
-  background: rgba(240,248,248,.08); color: #f0f8f8;
-  outline: none;
-}
-.mw-form__row input:focus {
-  border-color: #d4af37; box-shadow: 0 0 0 2px rgba(212,175,55,.2);
-}
-
-.mw-consent { display: flex; gap: .5rem; align-items: flex-start; font-size: .9rem; margin:.25rem 0 .5rem; }
-.mw-consent a { color: #3ca9a0; }
-
-.mw-help { font-size: .9rem; margin-top: .75rem; min-height: 1.25rem; opacity: .9; }
-
-/* small screens */
-@media (max-width: 480px) {
-  .mw-modal__dialog { padding: 1rem; }
-}
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #2c3e3f;
-            overflow-x: hidden;
-        }
-        
-        /* Animated Water Background */
-        .water-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0);
-            background-size: 400% 400%;
-            animation: waterFlow 8s ease-in-out infinite;
-            z-index: -1;
-        }
-        
-        @keyframes waterFlow {
-            0%, 100% { background-position: 0% 50%; }
-            25% { background-position: 100% 50%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 76, 58, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f0f8f8;
-            text-decoration: none;
-        }
-.payhip-badge {
-  margin-top: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 0.8rem 1.2rem;
-  text-align: center;
-  color: rgba(255,255,255,0.9);
-  font-size: 0.9rem;
-  display: inline-block;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.payhip-badge strong {
-  color: #d4af37; /* gold accent */
-}
-
-.payhip-badge small {
-  display: block;
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-top: 0.2rem;
-}
-
-.payhip-lock {
-  font-size: 1.1rem;
-  margin-right: 0.3rem;
-  color: #3ca9a0; /* teal accent */
-}
-
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: #f0f8f8;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #3ca9a0;
-        }
-        
-        .cta-button {
-            background: linear-gradient(45deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem 2rem 2rem; /* Increased top padding to account for nav bar */
-            position: relative;
-            margin-top: 2rem; /* Added margin to push content below nav */
-        }
-        
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .hero-text {
-            text-align: left;
-            color: #f0f8f8;
-        }
-        
-        .hero-title {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.1;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: #d4af37;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        
-        .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            opacity: 0.95;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-            cursor: pointer;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: #f0f8f8;
-            padding: 1rem 2.5rem;
-            border: 2px solid #f0f8f8;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-secondary:hover {
-            background: #f0f8f8;
-            color: #2c3e3f;
-            transform: translateY(-3px);
-        }
-        
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
-        
-        .book-cover {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .floating-element {
-            position: absolute;
-            color: rgba(240, 248, 248, 0.3);
-            font-size: 2rem;
-            animation: drift 6s ease-in-out infinite;
-        }
-        
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .floating-element:nth-child(2) {
-            top: 70%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-        
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 5%;
-            animation-delay: 4s;
-        }
-        
-        @keyframes drift {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-30px) rotate(5deg); }
-            66% { transform: translateY(-10px) rotate(-3deg); }
-        }
-        
-        /* Social Proof Section */
-        .social-proof {
-            background: rgba(240, 248, 248, 0.95);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .testimonial-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #2c3e3f;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #3ca9a0;
-        }
-        
-        /* Features Section */
-        .features {
-            background: linear-gradient(135deg, #0f4c3a, #1e6b5c);
-            padding: 6rem 2rem;
-            color: #f0f8f8;
-        }
-        
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-        
-        .feature {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #d4af37;
-        }
-        
-        .feature-description {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Transformation Section */
-        .transformation {
-            background: rgba(240, 248, 248, 0.98);
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-        
-        .transformation-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .before-after {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 2rem;
-            margin: 4rem 0;
-            align-items: center;
-        }
-        
-        .before, .after {
-            padding: 2rem;
-            border-radius: 15px;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .before {
-            background: linear-gradient(135deg, #7f8c8d, #95a5a6);
-            color: white;
-        }
-        
-        .after {
-            background: linear-gradient(135deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-        }
-        
-        .arrow {
-            font-size: 3rem;
-            color: #3ca9a0;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
-        }
-        
-        /* Purchase Section */
-        .purchase {
-            background: linear-gradient(135deg, #2c3e3f, #34495e);
-            padding: 6rem 2rem;
-            color: #f0f8f8;
-            text-align: center;
-        }
-        
-        .purchase-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .price-box {
-            background: rgba(240, 248, 248, 0.1);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            border: 2px solid #3ca9a0;
-            margin: 3rem 0;
-        }
-        
-        .original-price {
-            text-decoration: line-through;
-            color: #95a5a6;
-            font-size: 1.5rem;
-        }
-        
-        .current-price {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #d4af37;
-            margin: 1rem 0;
-        }
-        
-        .price-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
-        }
-        
-        .guarantee {
-            background: rgba(212, 175, 55, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #d4af37;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        
-        .countdown {
-            background: rgba(212, 175, 55, 0.2);
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            font-weight: bold;
-        }
-        
-        /* Chatbot Styles */
-        .chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 10000;
-        }
-        
-        .chatbot-toggle {
-            width: auto;
-            min-width: 200px;
-            height: 60px;
-            background: linear-gradient(135deg, #3ca9a0, #2d8a7e);
-            border-radius: 30px;
-            border: none;
-            color: white;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(60, 169, 160, 0.4);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            animation: pulse-glow 3s infinite;
-            padding: 0 25px;
-            position: relative;
-        }
-        
-        .chatbot-toggle::before {
-            content: 'Ask Your Water Guide';
-            font-weight: bold;
-        }
-        
-        .chatbot-toggle::after {
-            content: '🌊';
-            font-size: 1.5rem;
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 8px 25px rgba(60, 169, 160, 0.4);
-                transform: scale(1) translateY(0);
-            }
-            50% { 
-                box-shadow: 0 12px 35px rgba(60, 169, 160, 0.8);
-                transform: scale(1.02) translateY(-3px);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .chatbot-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(60, 169, 160, 0.6);
-        }
-        
-        .chatbot-window {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 380px;
-            height: 500px;
-            background: linear-gradient(135deg, rgba(15, 76, 58, 0.98), rgba(30, 107, 92, 0.95));
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(60, 169, 160, 0.3);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            animation: slideUpFade 0.3s ease-out;
-        }
-        
-        @keyframes slideUpFade {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        .chatbot-window.show {
-            display: flex;
-        }
-        
-        .chatbot-header {
-            background: linear-gradient(135deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 18px 18px 0 0;
-        }
-        
-        .chatbot-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .chatbot-close {
-            background: none;
-            border: none;
-            color: #2c3e3f;
-            font-size: 1.5rem;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background 0.3s ease;
-        }
-        
-        .chatbot-close:hover {
-            background: rgba(44, 62, 63, 0.1);
-        }
-        
-        .chatbot-messages {
-            flex: 1;
-            padding: 1rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(60, 169, 160, 0.3) transparent;
-        }
-        
-        .chatbot-messages::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .chatbot-messages::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        .chatbot-messages::-webkit-scrollbar-thumb {
-            background: rgba(60, 169, 160, 0.3);
-            border-radius: 3px;
-        }
-        
-        .message {
-            max-width: 80%;
-            padding: 0.8rem 1rem;
-            border-radius: 15px;
-            word-wrap: break-word;
-            line-height: 1.5;
-            animation: messageSlide 0.3s ease-out;
-        }
-        
-        @keyframes messageSlide {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .message.bot {
-            background: rgba(240, 248, 248, 0.15);
-            color: #f0f8f8;
-            align-self: flex-start;
-            border: 1px solid rgba(60, 169, 160, 0.2);
-        }
-        
-        .message.user {
-            background: linear-gradient(135deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            align-self: flex-end;
-            font-weight: 500;
-        }
-        
-        .message.typing {
-            background: rgba(240, 248, 248, 0.1);
-            color: rgba(240, 248, 248, 0.8);
-            align-self: flex-start;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .typing-indicator {
-            display: flex;
-            gap: 3px;
-        }
-        
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #3ca9a0;
-            border-radius: 50%;
-            animation: typingBounce 1.4s infinite ease-in-out;
-        }
-        
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        .typing-dot:nth-child(3) { animation-delay: 0s; }
-        
-        @keyframes typingBounce {
-            0%, 80%, 100% {
-                transform: scale(0.8);
-                opacity: 0.5;
-            }
-            40% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-        }
-        
-        .chatbot-input-area {
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.1);
-            border-top: 1px solid rgba(60, 169, 160, 0.2);
-        }
-        
-        .chatbot-input-group {
-            display: flex;
-            gap: 0.5rem;
-            align-items: flex-end;
-        }
-        
-        .chatbot-input {
-            flex: 1;
-            background: rgba(240, 248, 248, 0.1);
-            border: 1px solid rgba(60, 169, 160, 0.3);
-            border-radius: 20px;
-            padding: 0.8rem 1rem;
-            color: #f0f8f8;
-            font-size: 0.9rem;
-            resize: none;
-            min-height: 20px;
-            max-height: 100px;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .chatbot-input:focus {
-            border-color: #d4af37;
-            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
-        }
-        
-        .chatbot-input::placeholder {
-            color: rgba(240, 248, 248, 0.5);
-        }
-        
-        .chatbot-send {
-            background: linear-gradient(135deg, #d4af37, #f1c40f);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            color: #2c3e3f;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .chatbot-send:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
-        
-        .chatbot-send:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .quick-questions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .quick-question {
-            background: rgba(60, 169, 160, 0.2);
-            color: #f0f8f8;
-            border: 1px solid rgba(60, 169, 160, 0.4);
-            border-radius: 15px;
-            padding: 0.6rem 1rem;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-        
-        .quick-question:hover {
-            background: rgba(60, 169, 160, 0.3);
-            transform: translateX(5px);
-        }
-        
-        .access-status {
-            background: rgba(212, 175, 55, 0.2);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 10px;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            color: #f0f8f8;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-        
-        .upgrade-prompt {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(241, 196, 15, 0.1));
-            border: 1px solid #d4af37;
-            border-radius: 12px;
-            padding: 1rem;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        .upgrade-button {
-            background: linear-gradient(135deg, #d4af37, #f1c40f);
-            color: #2c3e3f;
-            border: none;
-            border-radius: 20px;
-            padding: 0.6rem 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .upgrade-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
-        
-        /* Footer */
-        footer {
-            background: #0f4c3a;
-            color: #f0f8f8;
-            padding: 3rem 2rem 1rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: #d4af37;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section ul li a {
-            color: #f0f8f8;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-section ul li a:hover {
-            color: #3ca9a0;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .social-links a {
-            color: #f0f8f8;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: #d4af37;
-        }
-        
-        .copyright {
-            border-top: 1px solid rgba(240, 248, 248, 0.2);
-            padding-top: 1rem;
-            opacity: 0.7;
-        }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-            
-            .hero-text {
-                text-align: center;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .hero-description {
-                font-size: 1.1rem;
-            }
-            
-            .hero-cta {
-                justify-content: center;
-            }
-            
-            .book-cover {
-                max-width: 300px;
-            }
-            
-            .before-after {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .arrow {
-                transform: rotate(90deg);
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .current-price {
-                font-size: 3rem;
-            }
-            
-            .chatbot-window {
-                width: calc(100vw - 40px);
-                height: 70vh;
-                bottom: 90px;
-                right: 20px;
-                left: 20px;
-            }
-            
-            .chatbot-toggle {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-        }
-        
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: #0f4c3a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .wave {
-            width: 60px;
-            height: 60px;
-            background: #3ca9a0;
-            margin: 0 5px;
-            border-radius: 50%;
-            animation: wave 1.5s infinite ease-in-out;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Georgia, serif; line-height: 1.6; color: #2c3e3f; }
+        .water-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0); background-size: 400% 400%; animation: waterFlow 8s ease-in-out infinite; z-index: -1; }
+        @keyframes waterFlow { 0%, 100% { background-position: 0% 50%; } 25% { background-position: 100% 50%; } 50% { background-position: 100% 100%; } 75% { background-position: 0% 100%; } }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(15, 76, 58, 0.95); z-index: 1000; padding: 1rem 2rem; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #f0f8f8; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #f0f8f8; text-decoration: none; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #3ca9a0; }
+        .cta-button { background: linear-gradient(45deg, #d4af37, #f1c40f); color: #2c3e3f; padding: 0.8rem 2rem; border-radius: 30px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2rem 2rem; }
+        .hero-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .hero-text { color: #f0f8f8; }
+        .hero-title { font-size: 4rem; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.8rem; color: #d4af37; margin-bottom: 2rem; font-style: italic; }
+        .hero-description { font-size: 1.3rem; margin-bottom: 2rem; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary { background: linear-gradient(45deg, #d4af37, #f1c40f); color: #2c3e3f; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+        .btn-secondary { background: transparent; color: #f0f8f8; padding: 1rem 2.5rem; border: 2px solid #f0f8f8; border-radius: 50px; font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+        .hero-image { position: relative; text-align: center; }
+        .book-cover { max-width: 400px; width: 100%; border-radius: 15px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .floating-element { position: absolute; color: rgba(240, 248, 248, 0.6); font-size: 3rem; animation: drift 6s ease-in-out infinite; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        .floating-element:nth-child(2) { top: 10%; left: 10%; }
+        .floating-element:nth-child(3) { top: 70%; right: 10%; animation-delay: 2s; }
+        .floating-element:nth-child(4) { bottom: 20%; left: 5%; animation-delay: 4s; }
+        .floating-element:nth-child(5) { top: 30%; right: 5%; animation-delay: 1s; }
+        .floating-element:nth-child(6) { bottom: 40%; right: 20%; animation-delay: 3s; }
+        @keyframes drift { 0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; } }
+        .hero-stats { margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #d4af37; }
+        .section-title { font-size: 3rem; margin-bottom: 3rem; text-align: center; }
+        .social-proof { background: rgba(240, 248, 248, 0.95); padding: 4rem 2rem; }
+        .testimonial-grid { max-width: 1200px; margin: 3rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .testimonial { background: white; padding: 2rem; border-radius: 15px; }
+        .testimonial-text { font-style: italic; font-size: 1.1rem; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: bold; color: #3ca9a0; }
+        .features { background: linear-gradient(135deg, #0f4c3a, #1e6b5c); padding: 6rem 2rem; color: #f0f8f8; }
+        .features-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+        .feature { text-align: center; padding: 2rem; }
+        .feature-icon { font-size: 4rem; }
+        .feature-title { font-size: 1.5rem; color: #d4af37; margin: 1rem 0; }
+        .transformation { background: rgba(240, 248, 248, 0.98); padding: 6rem 2rem; }
+        .before-after { max-width: 800px; margin: 4rem auto; display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; }
+        .before, .after { padding: 2rem; border-radius: 15px; }
+        .before { background: linear-gradient(135deg, #7f8c8d, #95a5a6); color: white; }
+        .after { background: linear-gradient(135deg, #d4af37, #f1c40f); color: #2c3e3f; }
+        .arrow { font-size: 3rem; color: #3ca9a0; }
+        .purchase { background: linear-gradient(135deg, #2c3e3f, #34495e); padding: 6rem 2rem; color: #f0f8f8; text-align: center; }
+        .purchase-container { max-width: 600px; margin: 0 auto; }
+        .countdown-box { background: rgba(212, 175, 55, 0.15); padding: 1rem; border-radius: 10px; margin: 1rem 0; }
+        .countdown-timer { font-weight: bold; font-size: 1.2rem; color: #d4af37; }
+        .whats-included { background: rgba(240, 248, 248, 0.1); border-radius: 20px; padding: 2rem; margin: 2rem 0; text-align: left; }
+        .whats-included ul { list-style: none; padding: 0; font-size: 1.1rem; line-height: 2; }
+        .price-box { background: rgba(240, 248, 248, 0.1); padding: 3rem 2rem; border-radius: 20px; margin: 3rem 0; }
+        .current-price { font-size: 4rem; font-weight: bold; color: #d4af37; margin: 1rem 0; }
+        .loading { position: fixed; inset: 0; background: #0f4c3a; display: flex; justify-content: center; align-items: center; z-index: 9999; }
+        .wave { width: 60px; height: 60px; background: #3ca9a0; margin: 0 5px; border-radius: 50%; animation: wave 1.5s infinite ease-in-out; }
         .wave:nth-child(2) { animation-delay: 0.1s; }
         .wave:nth-child(3) { animation-delay: 0.2s; }
-        .wave:nth-child(4) { animation-delay: 0.3s; }
-        
-        @keyframes wave {
-            0%, 40%, 100% { transform: scaleY(0.4); }
-            20% { transform: scaleY(1); }
+        @keyframes wave { 0%, 40%, 100% { transform: scaleY(0.4); } 20% { transform: scaleY(1); } }
+        .mw-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: none; align-items: center; justify-content: center; z-index: 10000; padding: 1rem; }
+        .mw-modal.show { display: flex; }
+        .mw-modal__dialog { width: 100%; max-width: 520px; background: linear-gradient(135deg, rgba(15,76,58,0.98), rgba(30,107,92,0.95)); border-radius: 16px; padding: 1.5rem; color: #f0f8f8; position: relative; }
+        .mw-modal__close { position: absolute; top: 0.6rem; right: 0.6rem; border: 0; background: transparent; color: #f0f8f8; width: 34px; height: 34px; cursor: pointer; }
+        .mw-form__row { margin-bottom: 0.75rem; }
+        .mw-form__row input { width: 100%; padding: 0.7rem; border-radius: 10px; border: 1px solid rgba(60,169,160,0.3); background: rgba(240,248,248,0.08); color: #f0f8f8; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-title { font-size: 2.5rem; }
+            .btn-primary, .btn-secondary { width: 100%; }
+            .before-after { grid-template-columns: 1fr; }
         }
-/* === Price Alert Badge === */
-.price-alert {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .5rem .9rem;
-  border-radius: 999px;
-  font-weight: 800;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  color: #2c3e3f;
-  background: linear-gradient(135deg, #d4af37, #f1c40f);
-  box-shadow: 0 8px 24px rgba(212,175,55,.35), inset 0 1px 0 rgba(255,255,255,.4);
-  border: 1px solid rgba(212,175,55,.6);
-  position: relative;
-  isolation: isolate; /* keeps shine inside */
-  animation: pricePulse 2.2s ease-in-out infinite;
-}
-
-/* soft animated glow */
-@keyframes pricePulse {
-  0%,100% { transform: translateY(0); box-shadow: 0 8px 24px rgba(212,175,55,.35); }
-  50%     { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,175,55,.55); }
-}
-
-/* optional diagonal shimmer sweep */
-.price-alert::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.35) 35%, transparent 70%);
-  transform: translateX(-120%);
-  animation: sweep 3.6s ease-in-out infinite;
-  border-radius: inherit;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-@keyframes sweep {
-  0%, 20%   { transform: translateX(-120%); }
-  50%       { transform: translateX(120%); }
-  100%      { transform: translateX(120%); }
-}
-
-/* small on mobile */
-@media (max-width: 768px) {
-  .price-alert { font-size: .8rem; padding: .45rem .75rem; }
-}
-.purchase-note {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-.purchase-note.emphasis {
-  color: rgba(255,255,255,0.9);
-  font-style: italic;
-}
-
-
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
-    
-    <!-- Animated Background -->
+    <div class="loading" id="loading"><div class="wave"></div><div class="wave"></div><div class="wave"></div></div>
     <div class="water-bg"></div>
     
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">🌊 Mami Wata</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">What's Inside</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#purchase">Get The Book</a></li>
-            </ul>
-            <a href="#purchase" class="cta-button">Start Your Initiation ✨</a>
-        </div>
-    </nav>
+    <nav><div class="nav-container"><a href="#" class="logo">🌊 Mami Wata</a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="about-amari-zola.html">About</a></li><li><a href="#features">Features</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#buy-now">Get Book</a></li></ul><a href="#buy-now" class="cta-button">Start Your Initiation ✨</a></div></nav>
     
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Awaken Your <span style="color: #d4af37;">Water Crown</span><br>Within</h1>
-                <p class="hero-subtitle">A Journey to Self-Initiation</p>
-                <p class="hero-description">
-                    Your deep emotions, vivid dreams, and intuitive gifts are not random occurrences—they are signs of an ancient spiritual calling. This book reveals the sacred path to claiming your birthright as a water-crowned soul and living from your deepest power.
-                </p>
+                <h1 class="hero-title">Finally, <span style="color: #d4af37;">The Truth</span> About<br>Mami Wata</h1>
+                <p class="hero-subtitle">From a Real Initiate Who's Been There</p>
+                <p class="hero-description">For too long, Mami Wata has been shrouded in mystery. As someone who has walked through the initiation myself, I have created the <strong>first comprehensive guide</strong> that cuts through the myths. This <strong>200+ page book</strong> contains <strong>authentic rituals, practical exercises,</strong> and real wisdom from my personal journey.</p>
                 <div class="hero-cta">
-                    <a href="#purchase" class="btn-primary">⭐ Join 200+ Readers — Get the Book</a>
-                    <a href="#" class="btn-secondary" onclick="handleSampleClick(event)">
-    📘 Download Free Sample
-  </a>
+                    <a href="#buy-now" class="btn-primary">Begin Reading Your Awakening Story 💎</a>
+                    <a href="#" class="btn-secondary" onclick="handleSampleClick(event)">Free Sample</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number">4.9★</div><div>247 Reviews</div></div>
+                    <div class="stat-item"><div class="stat-number">200+</div><div>Readers</div></div>
+                    <div class="stat-item"><div class="stat-number">First</div><div>By Real Initiate</div></div>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/mamiwata.png" alt="Mami Wata Book Cover - A Journey to Self-Initiation by Amari Zola" class="book-cover">
+                <img src="images/mamiwata.png" alt="Book Cover" class="book-cover">
                 <div class="floating-element">🌊</div>
                 <div class="floating-element">✨</div>
+                <div class="floating-element">🐚</div>
                 <div class="floating-element">🔱</div>
+                <div class="floating-element">💎</div>
             </div>
         </div>
     </section>
     
-    <!-- Social Proof Section -->
     <section class="social-proof" id="testimonials">
-        <h2 class="section-title" style="color: #2c3e3f;">Wisdom from Transformed Souls</h2>
+        <h2 class="section-title" style="color: #2c3e3f;">Finally, Clarity on What This Really Means</h2>
         <div class="testimonial-grid">
             <div class="testimonial">
-                <p class="testimonial-text">"I discovered the truth I'd been seeking my whole life. My sensitivity wasn't a burden—it was my gateway to profound wisdom and healing power."</p>
-                <p class="testimonial-author">— Sophia E., Intuitive Healer</p>
+                <p class="testimonial-text">I have been searching for YEARS. This book finally gave me the real answers I needed from someone who actually knows.</p>
+                <p class="testimonial-author">— Sophia E., USA</p>
             </div>
             <div class="testimonial">
-                <p class="testimonial-text">"This book awakened something ancient within me. I finally understand why I've always felt different, and now I celebrate that difference as my greatest gift."</p>
-                <p class="testimonial-author">— Xavier T., Visionary Artist</p>
+                <p class="testimonial-text">This book bridges the gap between the old ways and modern understanding. Finally someone who has been through it shares the truth.</p>
+                <p class="testimonial-author">— Xavier T., Ghana</p>
             </div>
             <div class="testimonial">
-                <p class="testimonial-text">"Everything I needed was already within me—I just needed the right keys to unlock it. This book provided those keys and changed my entire relationship with my gifts."</p>
-                <p class="testimonial-author">— Alisha P., Spiritual Entrepreneur</p>
+                <p class="testimonial-text">This is the only book written by an actual initiate. Not theory, not second-hand stories REAL experience.</p>
+                <p class="testimonial-author">— Alisha P., UK</p>
             </div>
         </div>
     </section>
     
-    <!-- Features Section -->
     <section class="features" id="features">
-        <div class="features-container">
-            <h2 class="section-title">Ancient Wisdom for Modern Awakening</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <span class="feature-icon">🔮</span>
-                    <h3 class="feature-title">Sacred Initiation Rites</h3>
-                    <p class="feature-description">Time-honored practices adapted for modern life that awaken your connection to water's infinite wisdom and power.</p>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">🛡️</span>
-                    <h3 class="feature-title">Inner Authority & Discernment</h3>
-                    <p class="feature-description">Develop unshakeable trust in your own spiritual knowing and learn to distinguish authentic guidance from illusion.</p>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">💰</span>
-                    <h3 class="feature-title">Sacred Abundance Flow</h3>
-                    <p class="feature-description">Align your divine gifts with material prosperity. Learn the ancient secrets of money as flowing energy.</p>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">❤️</span>
-                    <h3 class="feature-title">Soul-Deep Relationships</h3>
-                    <p class="feature-description">Create connections that honor your sacred sensitivity while maintaining your energetic sovereignty.</p>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">🌙</span>
-                    <h3 class="feature-title">Mystical Dream Mastery</h3>
-                    <p class="feature-description">Unlock the prophetic wisdom of your water dreams and develop your natural gifts of sight and knowing.</p>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">🌟</span>
-                    <h3 class="feature-title">Awakened Service</h3>
-                    <p class="feature-description">Transform your personal journey into sacred service, becoming a vessel for healing and transformation.</p>
-                </div>
-            </div>
+        <h2 class="section-title">Ancient Wisdom for Modern Awakening</h2>
+        <p style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem; opacity: 0.9; line-height: 1.8;">As someone who has lived through the initiation process, I've distilled centuries of water spirit wisdom into practical guidance you can apply today. Here's what you'll discover inside:</p>
+        <div class="features-grid">
+            <div class="feature"><span class="feature-icon">🔮</span><h3 class="feature-title">Sacred Initiation Rites</h3><p>Time-honored practices adapted for modern life that awaken your connection to water's infinite wisdom and power. Learn the exact steps I took during my own initiation.</p></div>
+            <div class="feature"><span class="feature-icon">🛡️</span><h3 class="feature-title">Inner Authority & Discernment</h3><p>Develop unshakeable trust in your own spiritual knowing and learn to distinguish authentic guidance from illusion. No more confusion or fear—just clarity.</p></div>
+            <div class="feature"><span class="feature-icon">💰</span><h3 class="feature-title">Sacred Abundance Flow</h3><p>Align your divine gifts with material prosperity. Learn the ancient secrets of money as flowing energy and how water spirits view wealth and success.</p></div>
+            <div class="feature"><span class="feature-icon">❤️</span><h3 class="feature-title">Soul-Deep Relationships</h3><p>Create connections that honor your sacred sensitivity while maintaining your energetic sovereignty. Navigate relationships without losing yourself or your power.</p></div>
+            <div class="feature"><span class="feature-icon">🌙</span><h3 class="feature-title">Mystical Dream Mastery</h3><p>Unlock the prophetic wisdom of your water dreams and develop your natural gifts of sight and knowing. Understand what the spirits are telling you each night.</p></div>
+            <div class="feature"><span class="feature-icon">🌟</span><h3 class="feature-title">Awakened Service</h3><p>Transform your personal journey into sacred service, becoming a vessel for healing and transformation. Learn how to use your gifts to help others without depleting yourself.</p></div>
         </div>
     </section>
     
-    <!-- Transformation Section -->
     <section class="transformation">
-        <div class="transformation-content">
-            <h2 class="section-title" style="color: #2c3e3f;">The Sacred Transformation</h2>
-            <div class="before-after">
-                <div class="before">
-                    <h3>Before Awakening</h3>
-                    <ul style="text-align: left; list-style: none;">
-                        <li>❓ Feeling different but not knowing why</li>
-                        <li>❓ Overwhelming sensitivity without understanding</li>
-                        <li>❓ Seeking answers from external sources</li>
-                        <li>❓ Hiding your true nature from others</li>
-                        <li>❓ Living below your spiritual potential</li>
-                    </ul>
-                </div>
-                <div class="arrow">→</div>
-                <div class="after">
-                    <h3>After Initiation</h3>
-                    <ul style="text-align: left; list-style: none;">
-                        <li>✨ Understanding your sacred calling</li>
-                        <li>✨ Channeling sensitivity as spiritual power</li>
-                        <li>✨ Trusting your inner wisdom completely</li>
-                        <li>✨ Living authentically and confidently</li>
-                        <li>✨ Fulfilling your highest spiritual destiny</li>
-                    </ul>
-                </div>
+        <h2 class="section-title" style="color: #2c3e3f;">The Sacred Transformation</h2>
+        <div class="before-after">
+            <div class="before">
+                <h3>Before Awakening</h3>
+                <ul style="list-style:none; padding:0; text-align:left;">
+                    <li>❌ Feeling different but not knowing why</li>
+                    <li>❌ Overwhelming sensitivity without understanding</li>
+                    <li>❌ Seeking answers from external sources</li>
+                    <li>❌ Hiding your true nature from others</li>
+                    <li>❌ Living below your spiritual potential</li>
+                </ul>
+            </div>
+            <div class="arrow">→</div>
+            <div class="after">
+                <h3>After Initiation</h3>
+                <ul style="list-style:none; padding:0; text-align:left;">
+                    <li>✨ Understanding your sacred calling</li>
+                    <li>✨ Channeling sensitivity as spiritual power</li>
+                    <li>✨ Trusting your inner wisdom completely</li>
+                    <li>✨ Living authentically and confidently</li>
+                    <li>✨ Fulfilling your highest spiritual destiny</li>
+                </ul>
             </div>
         </div>
     </section>
     
-    <!-- Purchase Section -->
     <section class="purchase" id="purchase">
         <div class="purchase-container">
-            <h2 class="section-title">Step Into Your Spiritual Destiny</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                The ancient waters are calling to you. Your sensitivity was never a mistake—it was preparation for this moment of awakening. The path to your true power begins here.
-            </p>
-            
-            <div class="price-box">
-                <div class="price-alert" aria-live="polite" aria-label="Limited-time pricing note">
-  🔔 Price Going Up Soon
-</div>
-                <div class="original-price">Regular Price: $149</div>
-                <div class="current-price">$99</div>                
-                <a href="https://payhip.com/b/0oeMU?utm_source=site&utm_medium=hero_cta&utm_campaign=book_launch"
-   class="btn-primary"
-   style="display:inline-block; font-size:1.4rem; padding:1.5rem 3rem; margin:2rem 0;"
-   target="_blank"
-   rel="noopener"
- onclick="trackPayhipClick(event)"
-   aria-label="Buy the book on Payhip in a new tab">
-  📖 Buy the Book — $99
-</a>
-<!-- Trust line (subtle) -->
-<p style="margin-top:-0.5rem; margin-bottom:0.5rem; font-size:0.9rem; opacity:0.85;">
-  🔒 <span style="opacity:0.95;">Secure checkout via Payhip</span>
-</p>
-<!-- Payhip Trust Badge -->
-<div class="payhip-badge">
-  <span class="payhip-lock">🔒</span>
-  <span>Payments securely processed by <strong>Payhip</strong></span>
-  <small>Instant download after purchase</small>
-</div>
-
-                <p class="purchase-note emphasis">🕊️ Please note: All sales are final. This work explores deep spiritual themes — ensure the message resonates with your journey before purchase.</p>
-
-
-                
+            <h2 class="section-title">Stop Searching. Get Real Answers.</h2>
+            <div class="countdown-box">⏰ Early Adopter Pricing Ends: <span class="countdown-timer" id="countdown">Loading...</span></div>
+            <div class="whats-included">
+                <h3>What You Get: Real Knowledge from Real Experience</h3>
+                <ul>
+                    <li>✅ 200+ pages of authentic initiate wisdom</li>
+                    <li>✅ Traditional rituals explained clearly</li>
+                    <li>✅ Practical exercises you can actually do</li>
+                    <li>✅ Dream interpretation from water spirit perspective</li>
+                    <li>✅ How to navigate the spiritual journey safely</li>
+                    <li>✅ Signs, symptoms, and what they really mean</li>
+                    <li>✅ The truth about calling, purpose, and destiny</li>
+                    <li>✅ Lifetime access plus all future updates</li>
+                </ul>
+            </div>
+            <div class="price-box" id="buy-now">
+                <div class="current-price">$97</div>
+                <p style="font-size:1.1rem;margin:1rem 0;">One-time investment • Instant PDF download</p>
+                <a href="https://payhip.com/b/0oeMU" class="btn-primary" style="font-size:1.4rem;padding:1.5rem 3rem;margin:1.5rem 0;display:inline-block;" target="_blank" rel="noopener">Get the Ebook Now 📖</a>
+                <p style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;">🔒 Secure checkout • Instant delivery to your email</p>
+                <div style="margin-top:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:0.8rem 1.2rem;text-align:center;font-size:0.9rem;display:inline-block;">
+                    <span>Payments securely processed by <strong style="color:#d4af37;">Payhip</strong></span><br>
+                    <small style="font-size:0.8rem;opacity:0.8;">Instant download after purchase</small>
+                </div>
+                <p style="font-size:0.9rem;opacity:0.75;margin-top:1.5rem;font-style:italic;line-height:1.6;">Please note: All sales are final. This work explores deep spiritual themes and traditional practices. Take a moment to ensure this resonates with your journey before purchase.</p>
+            </div>
+        </div>
     </section>
     
-    <!-- Footer -->
-    <footer style="background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0); color: #fff; padding: 3rem 1rem; font-family: 'Georgia', serif;">
-  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem;">
-    
-    <!-- About Mami Wata -->
-    <div>
-      <h3 style="color:#f1c40f;">About Mami Wata</h3>
-      <ul style="list-style:none; padding:0; line-height:1.8;">
-        <li><a href="the-book.html" style="color:#fff; text-decoration:none;">📖 The Book</a></li>
-        <li><a href="about-amari-zola.html" style="color:#fff; text-decoration:none;">🌺 About Amari Zola</a></li>
-        <li><a href="join-community.html" style="color:#fff; text-decoration:none;">💫 Join Community</a></li>
-      </ul>
-    </div>
-
-    <!-- Resources -->
-    <div>
-      <h3 style="color:#f1c40f;">Resources</h3>
-      <ul style="list-style:none; padding:0; line-height:1.8;">
-        <li><a href="water-wisdom.html" style="color:#fff; text-decoration:none;">🌊 Water Wisdom Blog</a></li>
-        <li><a href="healing-retreats.html" style="color:#fff; text-decoration:none;">🏝️ Healing Retreats</a></li>
-        <li><a href="faq.html" style="color:#fff; text-decoration:none;">❓ FAQ</a></li>
-        <li><a href="contact.html" style="color:#fff; text-decoration:none;">📬 Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Legal -->
-    <div>
-      <h3 style="color:#f1c40f;">Legal</h3>
-      <ul style="list-style:none; padding:0; line-height:1.8;">
-        <li><a href="privacy-policy.html" style="color:#fff; text-decoration:none;">🔒 Privacy Policy</a></li>
-        <li><a href="refund-policy.html" style="color:#fff; text-decoration:none;">💰 Refund Policy</a></li>
-        <li><a href="terms-and-conditions.html" style="color:#fff; text-decoration:none;">⚖️ Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- Follow Us -->
-    <div>
-      <h3 style="color:#f1c40f;">Follow Us</h3>
-      <p style="margin:0; line-height:2;">
-        <a href="https://tiktok.com" target="_blank" style="text-decoration:none; color:#fff;">🎵 TikTok</a><br>
-        <a href="https://instagram.com" target="_blank" style="text-decoration:none; color:#fff;">📸 Instagram</a><br>
-        <a href="https://youtube.com" target="_blank" style="text-decoration:none; color:#fff;">🎥 YouTube</a>
-      </p>
-    </div>
-
-  </div>
-
-  <div style="text-align:center; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem;">
-    <p style="margin:0;">© <span id="year"></span> Mami Wata: A Journey to Self-Initiation. All rights reserved.</p>
-  </div>
-<!-- Sample Download Modal -->
-<div id="sampleModal" class="mw-modal" aria-hidden="true" role="dialog" aria-labelledby="sampleModalTitle" aria-modal="true">
-  <div class="mw-modal__dialog" role="document">
-    <button class="mw-modal__close" aria-label="Close" onclick="closeSampleModal()">✕</button>
-    <h3 id="sampleModalTitle" class="mw-modal__title">Get Your Free Sample</h3>
-    <p class="mw-modal__subtitle">Enter your email to receive your sample instantly. 🌊</p>
-
-    <!-- Netlify Forms (no backend needed) -->
-    <form name="lead-sample" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mw-form" id="leadSampleForm">
-      <!-- Required hidden input for Netlify -->
-      <input type="hidden" name="form-name" value="lead-sample" />
-      <!-- Honeypot -->
-      <p class="hidden" style="display:none;">
-        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-      </p>
-
-      <div class="mw-form__row">
-        <label for="leadName">Name</label>
-        <input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" />
-      </div>
-
-      <div class="mw-form__row">
-        <label for="leadEmail">Email <span aria-hidden="true" style="opacity:.7">*</span></label>
-        <input type="email" id="leadEmail" name="email" required placeholder="you@example.com" autocomplete="email" />
-      </div>
-
-      <label class="mw-consent">
-        <input type="checkbox" id="leadConsent" required />
-        <span>I agree to receive updates & the free sample. See our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
-      </label>
-
-      <button type="submit" class="btn-primary" style="width:100%; margin-top: .5rem;" id="leadSubmitBtn">
-        ✨ Send My Sample
-      </button>
-
-      <p class="mw-help" id="leadHelp" aria-live="polite"></p>
-    </form>
-  </div>
-</div>
-
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</footer>
-
-
-    
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-
-    <!-- Chatbot Interface -->
-    <div class="chatbot-container">
-        <button class="chatbot-toggle" onclick="toggleChatbot()" title="Ask the Water Wisdom Guide">
-            🌊
-        </button>
-        
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <div class="chatbot-title">
-                    <span>🔮</span>
-                    <span>Mami Wata Wisdom Guide</span>
-                </div>
-                <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
-            </div>
+    <footer style="background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0); color: #fff; padding: 3rem 1rem; font-family: Georgia, serif;">
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem;">
             
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="access-status" id="accessStatus">
-                    ✨ Trial Access: 3 questions remaining today
-                </div>
-                
-                <div class="message bot">
-                    <div>🌊 Greetings, beautiful soul. I am your Mami Wata Wisdom Guide, here to help you understand your water-connected nature and spiritual gifts.</div>
-                    <div class="quick-questions">
-                        <button class="quick-question" onclick="askQuestion('What are the signs I\'m chosen by water?')">What are the signs I'm chosen by water?</button>
-                        <button class="quick-question" onclick="askQuestion('How do I start developing my water gifts?')">How do I start developing my water gifts?</button>
-                        <button class="quick-question" onclick="askQuestion('What do my water dreams mean?')">What do my water dreams mean?</button>
-                    </div>
-                </div>
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">About Mami Wata</h3>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li><a href="the-book.html" style="color:#fff; text-decoration:none;">📖 The Book</a></li>
+                    <li><a href="about-amari-zola.html" style="color:#fff; text-decoration:none;">🌺 About Amari Zola</a></li>
+                    <li><a href="join-community.html" style="color:#fff; text-decoration:none;">💫 Join Community</a></li>
+                </ul>
             </div>
-            
-            <div class="chatbot-input-area">
-                <div class="chatbot-input-group">
-                    <textarea class="chatbot-input" id="chatbotInput" placeholder="Ask about your water journey..." rows="1"></textarea>
-                    <button class="chatbot-send" onclick="sendMessage()" id="sendButton">
-                        ➤
-                    </button>
-                </div>
+
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">Resources</h3>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li><a href="water-wisdom.html" style="color:#fff; text-decoration:none;">🌊 Water Wisdom Blog</a></li>
+                    <li><a href="healing-retreats.html" style="color:#fff; text-decoration:none;">🏝️ Healing Retreats</a></li>
+                    <li><a href="faq.html" style="color:#fff; text-decoration:none;">❓ FAQ</a></li>
+                    <li><a href="contact.html" style="color:#fff; text-decoration:none;">📬 Contact Us</a></li>
+                </ul>
             </div>
+
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">Legal</h3>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li><a href="privacy-policy.html" style="color:#fff; text-decoration:none;">🔒 Privacy Policy</a></li>
+                    <li><a href="refund-policy.html" style="color:#fff; text-decoration:none;">💰 Refund Policy</a></li>
+                    <li><a href="terms-and-conditions.html" style="color:#fff; text-decoration:none;">⚖️ Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">Follow Us</h3>
+                <p style="margin:0; line-height:2;">
+                    <a href="https://tiktok.com" target="_blank" rel="noopener" style="text-decoration:none; color:#fff;">🎵 TikTok</a><br>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" style="text-decoration:none; color:#fff;">📸 Instagram</a><br>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" style="text-decoration:none; color:#fff;">🎥 YouTube</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem;">
+            <p style="margin:0;">© <span id="footerYear"></span> Mami Wata: A Journey to Self-Initiation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="sampleModal" class="mw-modal">
+        <div class="mw-modal__dialog">
+            <button class="mw-modal__close" onclick="closeSampleModal()">X</button>
+            <h3>Get Your Free Sample</h3>
+            <form id="leadSampleForm" name="lead-sample" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="lead-sample">
+                <div class="mw-form__row"><input type="email" id="leadEmail" name="email" required placeholder="Your email"></div>
+                <button type="submit" class="btn-primary" style="width:100%;" id="leadSubmitBtn">Send My Sample</button>
+                <p id="leadHelp"></p>
+            </form>
         </div>
     </div>
 
-    <!-- JavaScript for Interactive Features -->
     <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const loading = document.getElementById('loading');
-                loading.style.opacity = '0';
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 500);
-            }, 1500);
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(15, 76, 58, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.background = 'rgba(15, 76, 58, 0.95)';
-                navbar.style.boxShadow = 'none';
-            }
-        });
-
-        // Smooth Scrolling for Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Purchase Button Handler
-        function handlePurchase() {
-            alert('✨ Initiating your sacred journey...\n\nYour transformation awaits. You are being guided to your spiritual awakening.');
-            
-            // Analytics tracking for conversion
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'purchase_intent', {
-                    'event_category': 'spiritual_transformation',
-                    'event_label': 'Mami Wata Initiation',
-                    'value': 99
-                });
-            }
-        }
-
-        // Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.testimonial, .feature, .before, .after');
-            animatedElements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s ease-out';
-                observer.observe(el);
-            });
-        });
-
-        // Countdown Timer
-        function updateCountdown() {
-            const launchDate = new Date();
-            launchDate.setDate(launchDate.getDate() + 7);
-            
-            const now = new Date().getTime();
-            const distance = launchDate.getTime() - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            
-            const countdownElement = document.querySelector('.countdown');
-            if (countdownElement) {
-                countdownElement.innerHTML = `✨ Sacred Launch Offering Ends In: ${days}d ${hours}h ${minutes}m`;
-            }
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-
-        // Social Media Sharing Functions
-        function shareOnSocial(platform) {
-            const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent("Awaken your water crown within! 🌊✨ Ancient wisdom for modern spiritual transformation.");
-            
-            let shareUrl;
-            switch(platform) {
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-                    break;
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                    break;
-                case 'pinterest':
-                    shareUrl = `https://pinterest.com/pin/create/button/?url=${url}&description=${text}`;
-                    break;
-                default:
-                    return;
-            }
-            
-            window.open(shareUrl, '_blank', 'width=600,height=400');
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'share', {
-                    'method': platform,
-                    'content_type': 'book',
-                    'item_id': 'mami-wata-book'
-                });
-            }
-        }
-
-        // Email Collection for Newsletter
-        function collectEmail() {
-            const email = prompt("✨ Join the Sacred Water Circle!\n\nEnter your email for ancient wisdom and awakening practices:");
-            if (email && email.includes('@')) {
-                alert("Welcome, initiated soul! 🌊 Your spiritual journey begins now. Check your email for sacred gifts.");
-                
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'sign_up', {
-                        'method': 'email',
-                        'custom_parameter': 'sacred_circle'
-                    });
-                }
-                
-                console.log('Sacred circle member:', email);
-            }
-        }
-
-        // Add floating elements animation
-        function createFloatingElements() {
-            const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
-            const hero = document.querySelector('.hero');
-            
-            for (let i = 0; i < 5; i++) {
-                const element = document.createElement('div');
-                element.className = 'floating-element';
-                element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-                element.style.position = 'absolute';
-                element.style.left = Math.random() * 100 + '%';
-                element.style.top = Math.random() * 100 + '%';
-                element.style.animationDelay = Math.random() * 6 + 's';
-                hero.appendChild(element);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', createFloatingElements);
-
-        // Chatbot Functionality
-        let chatbotOpen = false;
-        let questionsAsked = 0;
-        let maxFreeQuestions = 3;
-        let userHasBook = false;
-        let autoCloseTimer = null;
-        
-        const wisdomDatabase = {
-            // Core teachings
-            "water crown": {
-                patterns: ["what is", "tell me about", "explain", "crown", "water crown", "meaning"],
-                response: "👑 The Water Crown is your innate spiritual connection to water wisdom. It's the seat of your intuitive gifts, emotional intelligence, and healing abilities. Think of it as a spiritual antenna that connects you to the deeper currents of existence.",
-                chapter: 1,
-                followUp: "Would you like to learn about the signs of being water-crowned or how to develop these gifts?"
-            },
-            "signs": {
-                patterns: ["sign", "how do i know", "tell if", "chosen", "indicator", "symptom"],
-                response: "🌊 Key signs of water sensitivity include:\n\n1. Vivid dreams about water\n2. Strong emotional empathy\n3. Electronics acting strange when you're emotional\n4. Natural healing abilities\n5. Deep peace near water\n6. Prophetic dreams or visions\n7. Intense reactions to moon phases",
-                chapter: 7,
-                followUp: "Which of these signs resonates most with your experience?"
-            },
-            "practices": {
-                patterns: ["practice", "ritual", "exercise", "technique", "daily", "routine", "how to", "method"],
-                response: "🌅 Essential daily practices for water-crowned beings:\n\n1. Morning Water Blessing (2 min)\n2. Energy Clearing Shower Ritual (5 min)\n3. Moon Water Charging (monthly)\n4. Emotional Release Swimming\n5. Water Mirror Meditation",
-                chapter: 14,
-                followUp: "Would you like to learn more about any of these practices?"
-            },
-            "dreams": {
-                patterns: ["dream", "nightmare", "sleep", "vision", "meaning", "interpret"],
-                response: "✨ Water dreams are sacred messages! Here's what different water scenarios might mean:\n\n• Clear water = spiritual clarity\n• Ocean = emotional depths\n• Rain = cleansing/renewal\n• Swimming = life navigation\n• Drowning = spiritual rebirth\n\nRemember, context and your feelings matter most!",
-                chapter: 12,
-                followUp: "Have you experienced any of these dream symbols recently?"
-            },
-            "emotions": {
-                patterns: ["emotion", "feel", "overwhelm", "sensitive", "empathy", "boundary", "protect"],
-                response: "💙 For emotional mastery:\n\n1. Use running water to release excess emotions\n2. Create water shields for protection\n3. Practice emotional recycling\n4. Set fluid boundaries\n5. Use the 'Return to Sender' technique\n\nYou're not too sensitive - you're spiritually attuned!",
-                chapter: 9,
-                followUp: "Which aspect of emotional management challenges you most?"
-            },
-            "healing": {
-                patterns: ["heal", "cure", "treatment", "therapy", "medicine", "health"],
-                response: "💫 Water healing techniques:\n\n1. Hands in running water = energy release\n2. Salt baths = aura cleansing\n3. Ocean waves = emotional healing\n4. Rain walking = spiritual cleansing\n5. Water charging = vibrational medicine",
-                chapter: 8,
-                followUp: "Would you like to learn a specific healing technique?"
-            },
-            "relationships": {
-                patterns: ["relationship", "partner", "love", "dating", "marriage", "friend", "family"],
-                response: "💖 Water-sensitive people in relationships need:\n\n1. Emotional space to process\n2. Regular alone time near water\n3. Partners who respect sensitivity\n4. Clear but flexible boundaries\n5. Deep, authentic connections",
-                chapter: 10,
-                followUp: "How does your water sensitivity affect your relationships?"
-            },
-            "purpose": {
-                patterns: ["purpose", "mission", "calling", "work", "career", "path"],
-                response: "🎯 Water-crowned beings often excel in:\n\n1. Healing arts & energy work\n2. Counseling & therapy\n3. Creative expression\n4. Environmental protection\n5. Teaching & mentoring\n\nYour sensitivity is your superpower!",
-                chapter: 5,
-                followUp: "Which of these paths calls to you?"
-            },
-            "abundance": {
-                patterns: ["money", "abundance", "wealth", "prosperity", "financial", "success"],
-                response: "💰 Water wisdom for abundance:\n\n1. Money flows like water\n2. Regular abundance rituals\n3. Moon phase manifestation\n4. Value your spiritual gifts\n5. Create multiple streams of income",
-                chapter: 11,
-                followUp: "Would you like specific abundance rituals?"
-            },
-            "protection": {
-                patterns: ["protect", "shield", "guard", "defense", "safety", "security"],
-                response: "🛡️ Essential protection practices:\n\n1. Water shield visualization\n2. Salt water cleansing\n3. Energy boundaries setting\n4. Sacred space creation\n5. Psychic protection rituals",
-                chapter: 13,
-                followUp: "Which area of protection interests you most?"
-            }
-        };
-
-        // Conversation context tracking
-        let conversationContext = {
-            lastTopic: null,
-            questionsInTopic: 0,
-            suggestedTopics: []
-        };
-        
-        function toggleChatbot() {
-            const window = document.getElementById('chatbotWindow');
-            chatbotOpen = !chatbotOpen;
-            
-            if (chatbotOpen) {
-                window.classList.add('show');
-                document.getElementById('chatbotInput').focus();
-                startAutoCloseTimer();
-            } else {
-                window.classList.remove('show');
-                if (autoCloseTimer) {
-                    clearTimeout(autoCloseTimer);
-                    autoCloseTimer = null;
-                }
-            }
-        }
-        
-        function updateAccessStatus() {
-            const statusEl = document.getElementById('accessStatus');
-            if (userHasBook) {
-                statusEl.innerHTML = '👑 Book Owner: Unlimited Sacred Wisdom Access';
-                statusEl.style.background = 'rgba(60, 169, 160, 0.2)';
-                statusEl.style.borderColor = 'rgba(60, 169, 160, 0.4)';
-            } else {
-                const remaining = maxFreeQuestions - questionsAsked;
-                if (remaining > 0) {
-                    statusEl.innerHTML = `✨ Trial Access: ${remaining} questions remaining today`;
-                } else {
-                    statusEl.innerHTML = '🔮 Free questions used - Unlock unlimited access';
-                    statusEl.style.background = 'rgba(212, 175, 55, 0.2)';
-                }
-            }
-        }
-        
-        function addMessage(content, isUser = false, isTyping = false) {
-            const messagesEl = document.getElementById('chatbotMessages');
-            const messageEl = document.createElement('div');
-            
-            if (isTyping) {
-                messageEl.className = 'message typing';
-                messageEl.innerHTML = `
-                    <span>The waters are revealing wisdom...</span>
-                    <div class="typing-indicator">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                    </div>
-                `;
-            } else {
-                messageEl.className = `message ${isUser ? 'user' : 'bot'}`;
-                messageEl.innerHTML = content;
-            }
-            
-            messagesEl.appendChild(messageEl);
-            messagesEl.scrollTop = messagesEl.scrollHeight;
-            return messageEl;
-        }
-        
-        function findWisdom(question) {
-            const lowerQ = question.toLowerCase();
-            let bestMatch = null;
-            let bestScore = 0;
-            
-            // Check for greetings
-            if (/^(hi|hello|hey|greetings|hola|namaste)/i.test(question)) {
-                return {
-                    response: genericResponses.greeting[Math.floor(Math.random() * genericResponses.greeting.length)],
-                    isGreeting: true
-                };
-            }
-            
-            // Score each topic for relevance
-            for (const [topic, wisdom] of Object.entries(wisdomDatabase)) {
-                let score = 0;
-                
-                // Check each pattern for the topic
-                wisdom.patterns.forEach(pattern => {
-                    if (lowerQ.includes(pattern.toLowerCase())) {
-                        score += 1;
-                        // Bonus points for exact matches
-                        if (new RegExp(`\\b${pattern}\\b`, 'i').test(lowerQ)) {
-                            score += 0.5;
-                        }
-                    }
-                });
-                
-                // Context bonus: if this topic relates to the last one discussed
-                if (conversationContext.lastTopic === topic) {
-                    score += 0.3;
-                }
-                
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestMatch = { ...wisdom, topic };
-                }
-            }
-            
-            // If we found a good match
-            if (bestScore > 0) {
-                // Update conversation context
-                conversationContext.lastTopic = bestMatch.topic;
-                conversationContext.questionsInTopic++;
-                
-                // Add follow-up or transition if appropriate
-                if (conversationContext.questionsInTopic > 2) {
-                    // Suggest related topics
-                    const relatedTopics = findRelatedTopics(bestMatch.topic);
-                    if (relatedTopics.length > 0) {
-                        const transitionMsg = genericResponses.transition[Math.floor(Math.random() * genericResponses.transition.length)]
-                            .replace('{topic}', relatedTopics[0]);
-                        bestMatch.response += "\n\n" + transitionMsg;
-                    }
-                }
-                
-                return bestMatch;
-            }
-            
-            // If no good match, provide a thoughtful fallback
-            return {
-                response: genericResponses.confusion[Math.floor(Math.random() * genericResponses.confusion.length)],
-                suggestTopics: true
-            };
-        }
-        
-        function findRelatedTopics(currentTopic) {
-            const topicRelations = {
-                'water crown': ['signs', 'practices'],
-                'signs': ['dreams', 'emotions', 'healing'],
-                'practices': ['protection', 'healing', 'abundance'],
-                'dreams': ['emotions', 'purpose', 'signs'],
-                'emotions': ['relationships', 'protection', 'healing'],
-                'healing': ['practices', 'purpose', 'protection'],
-                'relationships': ['emotions', 'protection', 'purpose'],
-                'purpose': ['abundance', 'healing', 'practices'],
-                'abundance': ['purpose', 'practices', 'protection'],
-                'protection': ['emotions', 'practices', 'relationships']
-            };
-            
-            return topicRelations[currentTopic] || [];
-        }
-        
-        function askQuestion(question) {
-            addMessage(question, true);
-            
-            if (!userHasBook && questionsAsked >= maxFreeQuestions) {
-                showUpgradePrompt();
-                return;
-            }
-            
-            const typingEl = addMessage('', false, true);
-            
-            setTimeout(() => {
-                typingEl.remove();
-                
-                const wisdom = findWisdom(question);
-                let response = wisdom.response;
-                
-                // Handle greetings specially
-                if (wisdom.isGreeting) {
-                    addMessage(response);
-                    setTimeout(() => {
-                        addMessage("I can guide you in many areas of water wisdom. Here are some topics we can explore:\n\n" +
-                            "🌊 Water Crown & Signs\n" +
-                            "✨ Daily Practices & Rituals\n" +
-                            "💫 Dreams & Visions\n" +
-                            "💖 Emotions & Relationships\n" +
-                            "🌙 Protection & Healing\n" +
-                            "💎 Purpose & Abundance\n\n" +
-                            "What interests you most?");
-                    }, 1000);
-                    return;
-                }
-                
-                // For regular responses
-                if (wisdom.chapter && !userHasBook) {
-                    response += `\n\n📖 Chapter ${wisdom.chapter} of the book explores this deeper.`;
-                }
-                
-                // Add follow-up if provided
-                if (wisdom.followUp) {
-                    response += "\n\n" + wisdom.followUp;
-                }
-                
-                // If no good match was found, suggest topics
-                if (wisdom.suggestTopics) {
-                    response += "\n\nHere are some topics I can help with:\n" +
-                        "• Signs of water sensitivity\n" +
-                        "• Daily spiritual practices\n" +
-                        "• Understanding water dreams\n" +
-                        "• Emotional mastery\n" +
-                        "• Relationships & boundaries";
-                }
-                
-                addMessage(response);
-                
-                if (!userHasBook) {
-                    questionsAsked++;
-                    updateAccessStatus();
-                    
-                    if (questionsAsked === 2) {
-                        setTimeout(() => {
-                            addMessage(`
-                                <div class="upgrade-prompt">
-                                    <div style="margin-bottom: 0.5rem;">✨ <strong>You're diving deep into water wisdom!</strong></div>
-                                    <div style="font-size: 0.9rem; margin-bottom: 1rem;">Ready to unlock the complete teachings and transform your spiritual journey?</div>
-                                    <button class="upgrade-button" onclick="handlePurchase()">Access Full Wisdom - $99</button>
-                                </div>
-                            `);
-                        }, 2000);
-                    }
-                }
-                
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'chatbot_question', {
-                        'event_category': 'engagement',
-                        'event_label': question.substring(0, 50),
-                        'question_count': questionsAsked
-                    });
-                }
-                
-            }, 1500 + Math.random() * 1000);
-        }
-        
-        function sendMessage() {
-            const input = document.getElementById('chatbotInput');
-            const question = input.value.trim();
-            
-            if (!question) return;
-            
-            input.value = '';
-            askQuestion(question);
-        }
-        
-        function showUpgradePrompt() {
-            addMessage(`
-                <div class="upgrade-prompt">
-                    <div style="margin-bottom: 0.5rem;">🔮 <strong>Your free questions have been used</strong></div>
-                    <div style="font-size: 0.9rem; margin-bottom: 1rem;">The complete Mami Wata wisdom awaits you. Unlock unlimited guidance and transform your spiritual path forever.</div>
-                    <button class="upgrade-button" onclick="handlePurchase()">Access All Wisdom - $99</button>
-                </div>
-            `);
-        }
-        
-        // Auto-resize textarea
-        document.addEventListener('DOMContentLoaded', function() {
-            const input = document.getElementById('chatbotInput');
-            
-            // Show chat button with animation after a short delay
-            setTimeout(() => {
-                const chatToggle = document.querySelector('.chatbot-toggle');
-                chatToggle.style.animation = 'fadeInUp 0.5s ease-out forwards';
-                
-                // Show initial welcome tooltip after button appears
-                setTimeout(() => {
-                    addMessage("✨ Welcome, water seeker! I'm your spiritual guide, here to help you discover your water crown and navigate your awakening journey. Ask me anything about:\n\n🌊 Water sensitivity signs\n💫 Developing your gifts\n🌙 Daily practices\n💖 Relationships & emotions\n\nHow may I assist your journey today?");
-                    toggleChatbot();
-                }, 1500);
-            }, 3000);
-            
-            input.addEventListener('input', function() {
-                this.style.height = 'auto';
-                this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-            });
-            
-            input.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    sendMessage();
-                }
-            });
-        });
-        
-        // Auto-close timer functions
-        function startAutoCloseTimer() {
-            if (autoCloseTimer) {
-                clearTimeout(autoCloseTimer);
-            }
-            autoCloseTimer = setTimeout(() => {
-                if (chatbotOpen) {
-                    addMessage("👋 I'll be here when you're ready to explore more water wisdom!", false);
-                    setTimeout(() => {
-                        toggleChatbot();
-                    }, 1000);
-                }
-            }, 8000); // 8 seconds
-        }
-
-        function resetAutoCloseTimer() {
-            if (chatbotOpen) {
-                startAutoCloseTimer();
-            }
-        }
-
-        // Add event listeners for user activity
-        document.addEventListener('DOMContentLoaded', function() {
-            const chatWindow = document.getElementById('chatbotWindow');
-            
-            // Reset timer on any interaction with the chat window
-            chatWindow.addEventListener('mousemove', resetAutoCloseTimer);
-            chatWindow.addEventListener('click', resetAutoCloseTimer);
-            chatWindow.addEventListener('keypress', resetAutoCloseTimer);
-            chatWindow.addEventListener('scroll', resetAutoCloseTimer);
-            
-            // Reset timer when user is typing or sending messages
-            const input = document.getElementById('chatbotInput');
-            input.addEventListener('input', resetAutoCloseTimer);
-        });
-
-        // Check if user has book (this would integrate with your purchase system)
-        function verifyBookAccess(purchaseCode) {
-            if (purchaseCode === 'DEMO_ACCESS') {
-                userHasBook = true;
-                questionsAsked = 0;
-                updateAccessStatus();
-                addMessage("👑 Welcome, initiated soul! You now have unlimited access to all Mami Wata wisdom. How may I guide your sacred journey?");
-            }
-        }
-        
-        // Simulate book purchase (for demo)
-        function simulateBookPurchase() {
-            userHasBook = true;
-            questionsAsked = 0;
-            updateAccessStatus();
-            
-            setTimeout(() => {
-                addMessage("🌊✨ Welcome to your complete spiritual awakening! You now have unlimited access to all Mami Wata wisdom. Your transformation journey deepens from here. What sacred wisdom do you seek first?");
-            }, 1000);
-        }
+        setTimeout(function(){var l=document.getElementById('loading');if(l){l.style.opacity='0';setTimeout(function(){l.style.display='none';},300);}},500);
+        document.getElementById('footerYear').textContent=new Date().getFullYear();
+        function updateCountdown(){var d=new Date();d.setDate(d.getDate()+7);var t=d.getTime()-new Date().getTime();var days=Math.floor(t/(1000*60*60*24));var hours=Math.floor((t%(1000*60*60*24))/(1000*60*60));document.getElementById('countdown').textContent=days+'d '+hours+'h';}
+        updateCountdown();setInterval(updateCountdown,60000);
+        function handleSampleClick(e){e.preventDefault();document.getElementById('sampleModal').classList.add('show');}
+        function closeSampleModal(){document.getElementById('sampleModal').classList.remove('show');}
+        document.getElementById('leadSampleForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('leadHelp').textContent='Thanks! Your sample is opening now...';setTimeout(function(){window.open('files/mami-wata-sample.pdf','_blank');closeSampleModal();},1000);});
     </script>
-
-    <!-- Schema Markup for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Book",
-        "name": "Mami Wata: A Journey to Self-Initiation",
-        "author": {
-            "@type": "Person",
-            "name": "Amari Zola"
-        },
-        "description": "Awaken your water crown within. Ancient wisdom for modern spiritual transformation and awakening.",
-        "isbn": "978-0-123456-78-9",
-        "genre": "Spirituality",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Water Crown Publishing"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "27.00",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-                "@type": "Organization",
-                "name": "Mami Wata Publishing"
-            }
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "247"
-        }
-    }
-    </script>
-
-    <!-- Google Analytics (replace with your tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_TRACKING_ID');
-        
-        gtag('event', 'page_view', {
-            'page_title': 'Mami Wata: A Journey to Self-Initiation',
-            'page_location': window.location.href
-        });
-    </script>
-
-    <!-- Facebook Pixel (replace with your pixel ID) -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-        fbq('track', 'ViewContent', {
-            content_name: 'Mami Wata Book',
-            content_category: 'Spirituality',
-            value: 27.00,
-            currency: 'USD'
-        });
-    </script>
-<script>
-  // Optional: analytics event before leaving site
-  function trackPayhipClick(e){
-    // Fire events but don't block navigation
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'click_payhip_buy', {event_category: 'purchase', value: 99});
-    }
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'InitiateCheckout', {value: 99, currency: 'USD'});
-    }
-  }
-</script>
-<script>
-  function trackPayhipClick(){
-    if (typeof gtag !== 'undefined') gtag('event','click_payhip_buy',{event_category:'purchase',value:99});
-    if (typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{value:99,currency:'USD'});
-  }
-</script>
-<script>
-  const SAMPLE_PDF_PATH = 'files/mami-wata-sample.pdf';
-  const SAMPLE_SEEN_KEY = 'mw_sample_unlocked_v1';
-
-  function handleSampleClick(e){
-    e.preventDefault();
-    // If already unlocked before, go straight to the PDF
-    if (localStorage.getItem(SAMPLE_SEEN_KEY) === 'yes') {
-      window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
-      return;
-    }
-    openSampleModal();
-  }
-
-  function openSampleModal(){
-    const m = document.getElementById('sampleModal');
-    if (!m) return;
-    m.classList.add('show');
-    m.setAttribute('aria-hidden','false');
-    // Focus the first field for accessibility
-    const email = document.getElementById('leadEmail');
-    if (email) setTimeout(()=>email.focus(), 50);
-  }
-
-  function closeSampleModal(){
-    const m = document.getElementById('sampleModal');
-    if (!m) return;
-    m.classList.remove('show');
-    m.setAttribute('aria-hidden','true');
-  }
-
-  // Close on backdrop click (optional nicety)
-  document.addEventListener('click', function(ev){
-    const modal = document.getElementById('sampleModal');
-    if (!modal || !modal.classList.contains('show')) return;
-    const dialog = modal.querySelector('.mw-modal__dialog');
-    if (!dialog) return;
-    if (ev.target === modal) closeSampleModal();
-  });
-
-  // Handle Netlify form submit
-  const leadForm = document.getElementById('leadSampleForm');
-  const helpEl = document.getElementById('leadHelp');
-  const submitBtn = document.getElementById('leadSubmitBtn');
-
-  <script>
-  const SAMPLE_PDF_PATH = 'files/mami-wata-sample.pdf';
-  const SAMPLE_SEEN_KEY = 'mw_sample_unlocked_v1';
-
-  function handleSampleClick(e){
-    e.preventDefault();
-    if (localStorage.getItem(SAMPLE_SEEN_KEY) === 'yes') {
-      window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
-      return;
-    }
-    openSampleModal();
-  }
-
-  function openSampleModal(){
-    const m = document.getElementById('sampleModal');
-    if (!m) return;
-    m.classList.add('show');
-    m.setAttribute('aria-hidden','false');
-    const email = document.getElementById('leadEmail');
-    if (email) setTimeout(()=>email.focus(), 50);
-  }
-
-  function closeSampleModal(){
-    const m = document.getElementById('sampleModal');
-    if (!m) return;
-    m.classList.remove('show');
-    m.setAttribute('aria-hidden','true');
-  }
-
-  // Backdrop click to close
-  document.addEventListener('click', function(ev){
-    const modal = document.getElementById('sampleModal');
-    if (!modal || !modal.classList.contains('show')) return;
-    const dialog = modal.querySelector('.mw-modal__dialog');
-    if (!dialog) return;
-    if (ev.target === modal) closeSampleModal();
-  });
-
-  // --- Netlify submit handler (AJAX) ---
-  const leadForm   = document.getElementById('leadSampleForm');
-  const helpEl     = document.getElementById('leadHelp');
-  const submitBtn  = document.getElementById('leadSubmitBtn');
-
-  if (leadForm) {
-    leadForm.addEventListener('submit', async function(e){
-      e.preventDefault();
-      helpEl.textContent = '';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      const emailEl   = document.getElementById('leadEmail');
-      const consentEl = document.getElementById('leadConsent');
-
-      if (!emailEl.value.trim() || !consentEl.checked) {
-        helpEl.textContent = 'Please enter a valid email and agree to receive the sample.';
-        submitBtn.disabled = false;
-        submitBtn.textContent = '✨ Send My Sample';
-        return;
-      }
-
-      // Build multipart form payload. IMPORTANT: do NOT set Content-Type manually.
-      const formData = new FormData(leadForm);
-
-      try {
-        const response = await fetch('/', {
-          method: 'POST',
-          body: formData
-        });
-
-        // Netlify often responds with 200 and an HTML response.
-        if (response.ok) {
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'lead_sample_submitted', {event_category: 'lead', method: 'netlify'});
-          }
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'Lead', {content_name: 'Sample Download'});
-          }
-
-          helpEl.textContent = '✅ Thanks! Your sample will open in a new tab.';
-          localStorage.setItem(SAMPLE_SEEN_KEY, 'yes');
-
-          setTimeout(() => {
-            window.open(SAMPLE_PDF_PATH, '_blank', 'noopener');
-            closeSampleModal();
-            submitBtn.disabled = false;
-            submitBtn.textContent = '✨ Send My Sample';
-          }, 500);
-        } else {
-          // Even if not ok, try reading text for debugging
-          const txt = await response.text().catch(()=> '');
-          console.warn('Netlify response not ok:', response.status, txt);
-          helpEl.textContent = 'Hmm, submission didn’t complete. Please try again, or refresh.';
-          submitBtn.disabled = false;
-          submitBtn.textContent = '✨ Send My Sample';
-        }
-      } catch (err) {
-        console.error(err);
-        helpEl.textContent = 'Network issue—please check your connection and try again.';
-        submitBtn.disabled = false;
-        submitBtn.textContent = '✨ Send My Sample';
-      }
-    });
-  }
-</script>
-
-</script>
-
-
-
 </body>
 </html>

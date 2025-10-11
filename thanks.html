@@ -1,20 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Thanks | Mami Wata</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Thank You | Mami Wata: A Journey to Self-Initiation</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
-    body{font-family:Georgia,serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#f6faf9;color:#2c3e3f}
-    .card{max-width:720px;background:#fff;border-radius:16px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center}
-    a{color:#2d8a7e}
+    :root {
+      --ink: #2c3e3f;
+      --deep: #0f4c3a;
+      --teal-1: #1e6b5c;
+      --teal-2: #2d8a7e;
+      --teal-3: #3ca9a0;
+      --gold-1: #d4af37;
+      --gold-2: #f1c40f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      background: #f6faf9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .water-bg {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(45deg, var(--deep), var(--teal-1), var(--teal-2), var(--teal-3));
+      background-size: 400% 400%;
+      animation: waterFlow 8s ease-in-out infinite;
+      z-index: -1;
+    }
+    @keyframes waterFlow {
+      0%, 100% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+    }
+    .floating-element {
+      position: absolute;
+      font-size: 2rem;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+      opacity: .6;
+      z-index: 0;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+    .container {
+      max-width: 720px;
+      margin: 2rem;
+      padding: 3rem 2.5rem;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    h1 {
+      color: var(--deep);
+      font-size: 2.8rem;
+      margin: 0 0 1rem;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--teal-2);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin: 1.5rem 0;
+      color: var(--ink);
+    }
+    .message-box {
+      background: rgba(60, 169, 160, 0.08);
+      border-left: 4px solid var(--teal-3);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 10px;
+      text-align: left;
+    }
+    .message-box strong {
+      color: var(--teal-2);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .cta-section {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 2px solid rgba(60, 169, 160, 0.2);
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--gold-1), var(--gold-2));
+      color: var(--ink);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      margin: 0.5rem;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+      text-decoration: none;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--teal-3);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .next-steps {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    .next-steps h3 {
+      color: var(--deep);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .next-steps ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .next-steps li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+    }
+    .next-steps li:before {
+      content: "🌊";
+      position: absolute;
+      left: 0;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .icon {
+        font-size: 3rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Thank You</h1>
-    <p>Your message has been received. We’ll reply within 24–48 hours.</p>
-    <p><a href="index.html">← Back to Home</a></p>
+  <div class="water-bg" aria-hidden="true"></div>
+
+  <main class="container">
+    <div class="icon">🌊✨</div>
+    
+    <h1>Thank You!</h1>
+    <p class="subtitle">Your Message Has Been Received</p>
+    
+    <p>We appreciate you reaching out and connecting with us on this journey. Your message has been delivered safely to our shores.</p>
+
+    <div class="message-box">
+      <strong>What Happens Next:</strong>
+      <p style="margin: 0;">We'll respond to your message within 24–48 hours. Our team reads every message personally and will provide you with the guidance or information you need.</p>
+    </div>
+
+    <p>While you wait, why not continue exploring the wisdom of the waters?</p>
+
+    <div class="next-steps">
+      <h3>Continue Your Journey</h3>
+      <ul>
+        <li>Discover more about the book and what awaits inside</li>
+        <li>Read about Amari Zola's personal initiation journey</li>
+        <li>Explore the Water Wisdom teachings and insights</li>
+        <li>Download your free sample chapter to begin</li>
+      </ul>
+    </div>
+
+    <div class="cta-section">
+      <a href="the-book.html" class="cta-button">Explore The Book 📖</a>
+      <a href="index.html#buy-now" class="cta-button" style="background: linear-gradient(45deg, var(--teal-2), var(--teal-3)); color: #fff;">Get Started Now 💎</a>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
   </main>
+
+  <script>
+    // Decorative floating elements
+    function createFloatingElements() {
+      const symbols = ['🌊', '✨', '🐚', '🌙', '💎', '🌺', '💧'];
+      for (let i = 0; i < 5; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-element';
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = Math.random() * 100 + '%';
+        el.style.top = Math.random() * 100 + '%';
+        el.style.animationDelay = (Math.random() * 6) + 's';
+        document.body.appendChild(el);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', createFloatingElements);
+  </script>
 </body>
 </html>
