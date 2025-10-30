@@ -69,12 +69,10 @@
 
     <!-- Netlify Forms: real submissions without JS -->
     <div class="contact-form">
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" aria-describedby="formHelp">
-        <input type="hidden" name="form-name" value="contact" />
+      <form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/thanks.html">
         <p class="vh">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
         </p>
-        <div id="formHelp" class="vh">All fields are required. We only use your email to reply.</div>
 
         <div class="grid grid-2">
           <div class="form-group">
