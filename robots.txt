@@ -1,0 +1,32 @@
+# Robots.txt for Mami Wata Website
+# Last updated: October 29, 2025
+
+# Allow all bots to crawl all pages
+User-agent: *
+Allow: /
+
+# Specifically tell Google and Bing about the sitemap
+Sitemap: https://mamiwata.com/sitemap.xml
+
+# Crawl delay (optional - remove # to activate)
+# Crawl-delay: 1
+
+# Additional search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow specific bots if needed (optional)
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
