@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Page not found - Mami Wata: A Journey to Self-Initiation">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7318FS7XBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7318FS7XBH');
+</script>
+<meta name="robots" content="noindex, nofollow">
+<title>Page Not Found | Mami Wata: A Journey to Self-Initiation</title>
+
+<!-- Shared Stylesheet -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Page-specific styles -->
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .error-icon {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: var(--deep);
+    line-height: 1;
+    margin: 0;
+    opacity: 0.15;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .container h1 {
+    color: var(--deep);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .container p {
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin: 1rem 0;
+  }
+  
+  .message-box {
+    background: rgba(60, 169, 160, 0.1);
+    border-left: 4px solid var(--teal-3);
+    padding: 1.25rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    text-align: left;
+  }
+  
+  .message-box p {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+  }
+  
+  .nav-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .nav-options a {
+    text-decoration: none;
+  }
+  
+  .quick-links {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(60, 169, 160, 0.2);
+  }
+  
+  .quick-links h3 {
+    color: var(--teal-2);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+  }
+  
+  .quick-links a {
+    color: var(--teal-3);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .quick-links a:hover {
+    color: var(--gold-1);
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .error-code {
+      font-size: 5rem;
+    }
+    
+    .error-icon {
+      font-size: 4rem;
+    }
+    
+    .container h1 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="water-bg"></div>
+  
+  <div class="container">
+    <div class="error-code">404</div>
+    <div class="error-icon">🌊</div>
+    
+    <h1>The Waters Have Shifted</h1>
+    
+    <p>The page you're looking for seems to have drifted away. Perhaps the current has carried it elsewhere, or it never existed in this realm.</p>
+    
+    <div class="message-box">
+      <p>"In the journey of water, there are no wrong paths—only redirections toward where you're meant to flow."</p>
+    </div>
+    
+    <div class="nav-options">
+      <a href="index.html" class="btn-primary">Return to Shore (Home) 🏠</a>
+      <a href="the-book.html" class="btn-secondary" style="color: var(--teal-3); border-color: var(--teal-3);">Explore the Book 📖</a>
+    </div>
+    
+    <div class="quick-links">
+      <h3>Or navigate to:</h3>
+      <ul>
+        <li><a href="about-amari-zola.html">About the Author</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="water-wisdom.html">Water Wisdom</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Track 404 errors in GA4
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_not_found', {
+        event_category: 'error',
+        event_label: window.location.pathname,
+        page_path: window.location.pathname
+      });
+    }
+    
+    // Floating elements
+    function createFloatingElements() {
+      const symbols = ['🌊', '✨', '🔱', '🌙', '💎', '🐚', '🌺'];
+      for (let i = 0; i < 5; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-element';
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = Math.random() * 100 + '%';
+        el.style.top = Math.random() * 100 + '%';
+        el.style.animationDelay = Math.random() * 6 + 's';
+        document.body.appendChild(el);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', createFloatingElements);
+  </script>
+</body>
+</html>

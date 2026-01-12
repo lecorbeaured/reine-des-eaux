@@ -1,0 +1,394 @@
+/* ============================================
+   MAMI WATA - SHARED STYLES
+   knowmamiwata.com
+   ============================================ */
+
+/* === CSS VARIABLES === */
+:root {
+    --ink: #2c3e3f;
+    --deep: #0f4c3a;
+    --teal-1: #1e6b5c;
+    --teal-2: #2d8a7e;
+    --teal-3: #3ca9a0;
+    --gold-1: #d4af37;
+    --gold-2: #f1c40f;
+    --light: #f0f8f8;
+    --white: #ffffff;
+}
+
+/* === RESET & BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* === ANIMATED WATER BACKGROUND === */
+.water-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, var(--deep), var(--teal-1), var(--teal-2), var(--teal-3));
+    background-size: 400% 400%;
+    animation: waterFlow 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes waterFlow {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+}
+
+/* === FLOATING DECORATIVE ELEMENTS === */
+.floating-element {
+    position: absolute;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* === BUTTONS === */
+.btn-primary {
+    background: linear-gradient(45deg, var(--gold-1), var(--gold-2));
+    color: var(--ink);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--light);
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--light);
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cta-button {
+    background: linear-gradient(45deg, var(--gold-1), var(--gold-2));
+    color: var(--ink);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+/* === CONTENT CONTAINER (for inner pages) === */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 3rem 2.5rem;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    line-height: 1.8;
+}
+
+.container h1 {
+    color: var(--deep);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.container .subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--teal-3);
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(60, 169, 160, 0.2);
+}
+
+.container p {
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+/* === BACK LINK === */
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--teal-3);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* === CTA SECTION (for inner pages) === */
+.cta-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(60, 169, 160, 0.2);
+}
+
+/* === MODAL === */
+.mw-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1rem;
+}
+
+.mw-modal.show {
+    display: flex;
+}
+
+.mw-modal__dialog {
+    width: 100%;
+    max-width: 520px;
+    background: linear-gradient(135deg, rgba(15, 76, 58, 0.98), rgba(30, 107, 92, 0.95));
+    border-radius: 16px;
+    padding: 1.5rem;
+    color: var(--light);
+    position: relative;
+}
+
+.mw-modal__close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    border: 0;
+    background: transparent;
+    color: var(--light);
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* === FORM STYLES === */
+.mw-form__row {
+    margin-bottom: 0.75rem;
+}
+
+.mw-form__row input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 1px solid rgba(60, 169, 160, 0.3);
+    background: rgba(240, 248, 248, 0.08);
+    color: var(--light);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.mw-form__row input::placeholder {
+    color: rgba(240, 248, 248, 0.6);
+}
+
+.mw-form__row input:focus {
+    outline: 2px solid var(--teal-3);
+    border-color: var(--teal-3);
+}
+
+/* === LOADING SCREEN === */
+.loading {
+    position: fixed;
+    inset: 0;
+    background: var(--deep);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.wave {
+    width: 60px;
+    height: 60px;
+    background: var(--teal-3);
+    margin: 0 5px;
+    border-radius: 50%;
+    animation: wave 1.5s infinite ease-in-out;
+}
+
+.wave:nth-child(2) { animation-delay: 0.1s; }
+.wave:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes wave {
+    0%, 40%, 100% { transform: scaleY(0.4); }
+    20% { transform: scaleY(1); }
+}
+
+/* === HAMBURGER MENU === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--light);
+    margin: 3px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* === MOBILE NAVIGATION === */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 76, 58, 0.98);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--gold-1);
+}
+
+.mobile-nav .cta-button {
+    margin-top: 2rem;
+}
+
+/* === UTILITY CLASSES === */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .container {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .container h1 {
+        font-size: 2rem;
+    }
+    
+    .container .subtitle {
+        font-size: 1rem;
+    }
+    
+    .container p {
+        font-size: 1rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+    .water-bg,
+    .floating-element,
+    .hamburger,
+    .mobile-nav {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        box-shadow: none;
+        margin: 0;
+        padding: 1rem;
+    }
+}
