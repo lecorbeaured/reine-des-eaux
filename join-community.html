@@ -57,8 +57,14 @@
     <p>We're building a space where seekers can connect, share experiences, and support each other on the journey. A place where your dreams, your questions, and your discoveries are met with understanding rather than confusion.</p>
 
     <div class="coming-soon">
-      <h3>🌊 Coming Soon</h3>
-      <p style="margin: 0;">Our community space is being prepared with care. Sign up below to be notified when it opens, and receive exclusive content in the meantime.</p>
+      <h3>🌊 Community opening soon</h3>
+      <p style="margin:0 0 1.2rem;">Join the waitlist. You'll be among the first welcomed in, and receive exclusive content while you wait.</p>
+      <form name="community-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-wrap:wrap;gap:0.6rem;max-width:420px;">
+        <input type="hidden" name="form-name" value="community-notify">
+        <input type="text" name="bot-field" style="display:none;">
+        <input type="email" name="email" required placeholder="Your email address" style="flex:1;min-width:200px;padding:0.75rem 1rem;border:1.5px solid var(--teal-2);border-radius:30px;font-size:0.95rem;outline:none;background:rgba(255,255,255,0.95);color:#2c3e3f;">
+        <button type="submit" style="background:linear-gradient(45deg,#d4af37,#f1c40f);color:#2c3e3f;border:none;border-radius:30px;padding:0.75rem 1.4rem;font-weight:700;font-size:0.95rem;cursor:pointer;white-space:nowrap;">Join Waitlist 🌊</button>
+      </form>
     </div>
 
     <div class="cta-section">
