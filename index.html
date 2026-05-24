@@ -55,7 +55,7 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "97.00",
+    "price": "98.00",
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
     "availability": "https://schema.org/InStock",
@@ -85,7 +85,7 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "97.00",
+    "price": "98.00",
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
     "availability": "https://schema.org/InStock",
@@ -518,7 +518,22 @@
                 </ul>
             </div>
             <div class="price-box" id="buy-now">
-                <div class="current-price">$97</div>
+                <!-- Price increase warning -->
+                <div style="background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.5);border-radius:10px;padding:0.7rem 1.2rem;margin-bottom:1.2rem;font-size:0.9rem;color:#f1c40f;text-align:center;">
+                  ⚠️ Price increases to <strong>$199</strong> after the next new moon
+                </div>
+                <!-- Strikethrough + current price -->
+                <div style="text-align:center;margin-bottom:0.25rem;">
+                  <span style="font-size:1.3rem;color:rgba(240,248,248,0.45);text-decoration:line-through;">$199</span>
+                  <span style="font-size:0.9rem;color:#3ca9a0;margin-left:0.6rem;font-weight:600;">Save $101</span>
+                </div>
+                <div class="current-price">$98</div>
+                <!-- Moon countdown -->
+                <div style="background:rgba(15,76,58,0.6);border:1px solid rgba(60,169,160,0.3);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0;text-align:center;">
+                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;">🌑 Next new moon initiation window</div>
+                  <div id="moon-countdown" style="font-size:1.05rem;color:#f0f8f8;font-weight:600;letter-spacing:0.03em;">Calculating...</div>
+                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.5);margin-top:0.3rem;">Align your journey — order before it closes</div>
+                </div>
                 <p style="font-size:1.1rem;margin:1rem 0;">One-time investment • Instant PDF download</p>
                 <a href="https://payhip.com/b/0oeMU" class="btn-primary" style="font-size:1.4rem;padding:1.5rem 3rem;margin:1.5rem 0;display:inline-block;" target="_blank" rel="noopener">Get the Ebook Now 📖</a>
                 <p style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;">🔒 Secure checkout • Instant delivery to your email</p>
@@ -618,7 +633,7 @@
     <!-- Sticky Mobile CTA Bar -->
     <div class="sticky-cta" id="stickyCta">
         <div class="sticky-cta__inner">
-            <div class="sticky-cta__text"><strong>$97</strong> — Get the complete guide</div>
+            <div class="sticky-cta__text"><span style="text-decoration:line-through;opacity:0.5;font-size:0.8rem;">$199</span> <strong>$98</strong> — Price rises next new moon</div>
             <a href="https://payhip.com/b/0oeMU" class="sticky-cta__btn" target="_blank" rel="noopener">Buy Now 📖</a>
         </div>
     </div>
@@ -768,12 +783,12 @@
                     trackEvent('begin_checkout', {
                         event_category: 'conversion',
                         event_label: 'payhip_click',
-                        value: 97,
+                        value: 98,
                         currency: 'USD',
                         items: [{
                             item_name: 'Mami Wata Ebook',
                             item_category: 'Digital Product',
-                            price: 97,
+                            price: 98,
                             quantity: 1
                         }]
                     });
@@ -886,5 +901,40 @@
             });
         });
     </script>
+<script>
+(function(){
+  function nextNewMoon(){
+    // Known new moon reference: Jan 29 2025 12:36 UTC
+    var ref=new Date(Date.UTC(2025,0,29,12,36));
+    var cycle=29.53058867*24*3600*1000;
+    var now=Date.now();
+    var elapsed=now-ref.getTime();
+    var cycles=Math.floor(elapsed/cycle);
+    var next=new Date(ref.getTime()+(cycles+1)*cycle);
+    return next;
+  }
+  function fmt(ms){
+    if(ms<=0)return'Opening now 🌑';
+    var s=Math.floor(ms/1000);
+    var d=Math.floor(s/86400);
+    var h=Math.floor((s%86400)/3600);
+    var m=Math.floor((s%3600)/60);
+    var sc=s%60;
+    if(d>0)return d+'d '+h+'h '+m+'m';
+    if(h>0)return h+'h '+m+'m '+sc+'s';
+    return m+'m '+sc+'s';
+  }
+  var el=document.getElementById('moon-countdown');
+  if(!el)return;
+  var target=nextNewMoon();
+  var label=target.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+  function tick(){
+    var left=target.getTime()-Date.now();
+    el.textContent=label+' — '+fmt(left);
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
 </body>
 </html>
