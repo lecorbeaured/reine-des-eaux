@@ -681,24 +681,6 @@
         </div>
     </div>
 
-    <!-- Exit Intent Popup -->
-    <div id="exitModal" class="mw-modal">
-        <div class="mw-modal__dialog" style="text-align: center;">
-            <button class="mw-modal__close" onclick="closeExitModal()">✕</button>
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🌊</div>
-            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Wait! Before You Go...</h3>
-            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem;">Don't leave without your <strong>free sample chapters</strong> from the book. Discover what Mami Wata initiation really means.</p>
-            <form id="exitLeadForm" name="exit-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="exit-lead">
-                <input type="hidden" name="bot-field">
-                <input type="hidden" name="source" value="exit-intent">
-                <div class="mw-form__row"><input type="email" id="exitEmail" name="email" required placeholder="Enter your email"></div>
-                <button type="submit" class="btn-primary" style="width:100%; font-size: 1.1rem;" id="exitSubmitBtn">Send Me the Free Sample 📖</button>
-                <p id="exitHelp" style="font-size: 0.85rem; margin-top: 0.75rem;"></p>
-            </form>
-            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 1rem; cursor: pointer;" onclick="closeExitModal()">No thanks, I'll pass on the free chapters</p>
-        </div>
-    </div>
 
     <script>
         // === GA4 EVENT TRACKING HELPER ===
@@ -865,68 +847,6 @@
             });
         });
 
-        // === EXIT INTENT POPUP ===
-        var exitShown = false;
-        var exitModal = document.getElementById('exitModal');
-        
-        function closeExitModal() {
-            exitModal.classList.remove('show');
-            sessionStorage.setItem('exitShown', 'true');
-        }
-        
-        // Detect exit intent (mouse leaving viewport at top)
-        document.addEventListener('mouseout', function(e) {
-            if (e.clientY < 10 && !exitShown && !sessionStorage.getItem('exitShown') && !sessionStorage.getItem('leadCaptured')) {
-                exitShown = true;
-                exitModal.classList.add('show');
-                trackEvent('exit_intent_shown', {
-                    event_category: 'engagement',
-                    event_label: 'exit_popup'
-                });
-            }
-        });
-        
-        // Handle exit form submission
-        document.getElementById('exitLeadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var form = this;
-            var btn = document.getElementById('exitSubmitBtn');
-            var help = document.getElementById('exitHelp');
-            
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-            help.textContent = '';
-            
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(form)).toString()
-            })
-            .then(function(response) {
-                if (response.ok) {
-                    trackEvent('generate_lead', {
-                        event_category: 'conversion',
-                        event_label: 'exit_intent_capture',
-                        value: 1
-                    });
-                    sessionStorage.setItem('leadCaptured', 'true');
-                    help.style.color = '#4ade80';
-                    help.textContent = '✅ Success! Your sample is downloading...';
-                    setTimeout(function() {
-                        window.open('files/mami-wata-sample.pdf', '_blank');
-                        setTimeout(closeExitModal, 1500);
-                    }, 800);
-                } else {
-                    throw new Error('Failed');
-                }
-            })
-            .catch(function() {
-                help.style.color = '#f87171';
-                help.textContent = '❌ Something went wrong. Please try again.';
-                btn.disabled = false;
-                btn.textContent = 'Send Me the Free Sample 📖';
-            });
-        });
     </script>
 
 <!-- 7 Signs Lead Magnet Popup -->
