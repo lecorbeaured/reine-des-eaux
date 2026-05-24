@@ -1,1027 +1,1072 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>GitPortal</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23238636'/%3E%3Cpath fill='%23fff' d='M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12c0-5.523-4.477-10-10-10z'/%3E%3C/svg%3E" />
-<style>
-  :root {
-    --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
-    --accent: #238636; --accent-hover: #2ea043; --danger: #da3633;
-    --text: #e6edf3; --muted: #8b949e;
-    --new: #3fb950; --modified: #d29922; --deleted: #f85149; --renamed: #58a6ff; --purple: #a371f7;
-    --netlify: #00ad9f; --railway: #B847F5; --telegram: #229ED9;
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mami Wata: A Journey to Self-Initiation. Discover authentic spiritual teachings about water spirits, initiation, and transformation from an initiated practitioner.">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7318FS7XBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7318FS7XBH');
+</script>
+<!-- PHASE 2: Open Graph Tags -->
+<meta property="og:title" content="Mami Wata: A Journey to Self-Initiation">
+<meta property="og:description" content="Discover authentic spiritual teachings about water spirits, initiation, and transformation from an initiated practitioner.">
+<meta property="og:image" content="https://knowmamiwata.com/images/social/mamiwata-social.png">
+<meta property="og:url" content="https://knowmamiwata.com/index.html">
+<meta property="og:type" content="website">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:type" content="image/png">
+
+<!-- PHASE 2: Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mami Wata: A Journey to Self-Initiation">
+<meta name="twitter:description" content="Discover authentic spiritual teachings about water spirits, initiation, and transformation from an initiated practitioner.">
+<meta name="twitter:image" content="https://knowmamiwata.com/images/social/mamiwata-social.png">
+
+<!-- PHASE 2: Canonical Tag -->
+<link rel="canonical" href="https://knowmamiwata.com/">
+
+<!-- Structured Data: Book Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Mami Wata: A Journey to Self-Initiation",
+  "author": {
+    "@type": "Person",
+    "name": "Amari Zola",
+    "url": "https://knowmamiwata.com/about-amari-zola.html"
+  },
+  "description": "Discover authentic spiritual teachings about water spirits, initiation, and transformation from an initiated practitioner. A comprehensive 200+ page guide with rituals, exercises, and wisdom from real experience.",
+  "genre": ["Spirituality", "Religion", "Self-Help"],
+  "inLanguage": "en",
+  "numberOfPages": "200",
+  "bookFormat": "EBook",
+  "image": "https://knowmamiwata.com/images/mamiwata.png",
+  "url": "https://knowmamiwata.com/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mami Wata Publications"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "98.00",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://payhip.com/b/0oeMU"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+}
+</script>
 
-  .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 16px; height: 52px; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-  .logo { font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-  .repo-selector { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 13px; min-width: 200px; cursor: pointer; }
-  .repo-selector:focus { outline: none; border-color: var(--accent); }
-  .branch-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 5px; cursor: pointer; }
-  .branch-badge:hover { border-color: var(--purple); color: var(--purple); }
-  .spacer { flex: 1; }
-  .user-pill { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
-  .user-pill img { width: 24px; height: 24px; border-radius: 50%; }
-  .btn { border: none; border-radius: 6px; padding: 6px 14px; font-size: 13px; cursor: pointer; font-weight: 500; transition: all .15s; display: inline-flex; align-items: center; gap: 5px; }
-  .btn-green { background: var(--accent); color: #fff; } .btn-green:hover { background: var(--accent-hover); }
-  .btn-blue { background: #1f6feb; color: #fff; } .btn-blue:hover { background: #388bfd; }
-  .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); } .btn-ghost:hover { background: var(--border); }
-  .btn-netlify { background: #00ad9f22; color: var(--netlify); border: 1px solid #00ad9f44; } .btn-netlify:hover { background: #00ad9f33; }
-  .btn-vercel { background: #ffffff15; color: #fff; border: 1px solid #ffffff30; } .btn-vercel:hover { background: #ffffff25; }
-  .btn-railway { background: #B847F522; color: var(--railway); border: 1px solid #B847F544; } .btn-railway:hover { background: #B847F533; }
-  .btn-telegram { background: #229ED922; color: var(--telegram); border: 1px solid #229ED944; } .btn-telegram:hover { background: #229ED933; }
-  .connected-telegram { background: #229ED922; color: var(--telegram); border: 1px solid #229ED944; }
-  .btn-sm { padding: 4px 10px; font-size: 12px; }
-  .btn:disabled { opacity: .45; cursor: not-allowed; }
+<!-- Structured Data: Product Schema (for Google Shopping) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Mami Wata: A Journey to Self-Initiation (Ebook)",
+  "description": "200+ page comprehensive guide to Mami Wata initiation with authentic rituals, practical exercises, and spiritual wisdom from an initiated practitioner.",
+  "image": "https://knowmamiwata.com/images/mamiwata.png",
+  "brand": {
+    "@type": "Brand",
+    "name": "Amari Zola"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "98.00",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://payhip.com/b/0oeMU",
+    "seller": {
+      "@type": "Organization",
+      "name": "Mami Wata Publications"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "0",
+          "maxValue": "0",
+          "unitCode": "d"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "0",
+          "maxValue": "0",
+          "unitCode": "d"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnDays": "0",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sophia E."
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "I have been searching for YEARS. This book finally gave me the real answers I needed from someone who actually knows."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Xavier T."
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "This book bridges the gap between the old ways and modern understanding. Finally someone who has been through it shares the truth."
+    }
+  ]
+}
+</script>
 
-  .main { display: flex; flex: 1; overflow: hidden; }
-  .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
-  .sidebar-section { padding: 10px 12px; border-bottom: 1px solid var(--border); }
-  .sidebar-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 6px; font-weight: 600; }
-  .file-list { overflow-y: auto; flex: 1; }
-  .file-item { display: flex; align-items: center; gap: 8px; padding: 7px 12px; cursor: pointer; transition: background .1s; }
-  .file-item:hover { background: var(--surface2); }
-  .file-item.selected { background: #1f6feb22; }
-  .file-item input[type=checkbox] { accent-color: var(--accent); width: 14px; height: 14px; flex-shrink: 0; cursor: pointer; }
-  .file-name { flex: 1; font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .badge { font-size: 10px; padding: 1px 6px; border-radius: 10px; font-weight: 600; flex-shrink: 0; }
-  .badge-new { background: #3fb95022; color: var(--new); border: 1px solid #3fb95044; }
-  .badge-modified { background: #d2992222; color: var(--modified); border: 1px solid #d2992244; }
-  .badge-deleted { background: #f8514922; color: var(--deleted); border: 1px solid #f8514944; }
-  .badge-renamed { background: #58a6ff22; color: var(--renamed); border: 1px solid #58a6ff44; }
+<!-- Structured Data: WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Mami Wata: A Journey to Self-Initiation",
+  "url": "https://knowmamiwata.com/",
+  "description": "Authentic spiritual teachings about Mami Wata water spirits from an initiated practitioner.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mami Wata Publications",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://knowmamiwata.com/images/favicon.png"
+    }
+  }
+}
+</script>
 
-  .panel { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
-  .panel-tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
-  .tab { padding: 10px 18px; font-size: 13px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; transition: all .15s; }
-  .tab:hover { color: var(--text); } .tab.active { color: var(--text); border-bottom-color: #f78166; }
-  .panel-body { flex: 1; overflow-y: auto; padding: 20px; }
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to already believe in Mami Wata to benefit from this book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not at all. The book is written for anyone drawn to the water, curious about African and diaspora spiritual traditions, or simply seeking answers to experiences they haven't been able to explain. Belief deepens through experience — this book helps you understand what you may already be feeling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this for complete beginners or people already on the path?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. Beginners will find a clear, grounded introduction to Mami Wata's energy, signs, and sacred practices. Experienced seekers consistently report finding layers of depth they didn't expect — particularly in the dream interpretation and ritual alignment chapters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between this and other Mami Wata books I've seen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most books about Mami Wata are written from the outside — academic anthropology, cultural surveys, or spiritual tourism. This guide is written from the inside, by an actual initiate. It covers the self-initiation path specifically, for those called but not yet connected to a physical lineage or community."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I do the rituals in the book without a physical community or temple?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — this book is written precisely for that situation. The self-initiation practices are designed for solitary work in your own space. You don't need special tools, rare ingredients, or a teacher present. What you need is intention, sincerity, and the guidance in these pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What format is the book and how do I receive it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The book is a digital PDF delivered instantly to your email after purchase via Payhip's secure checkout. You can read it on any device, print it, or save it to your library. There are no shipping delays — your access is immediate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I've had strange experiences near water my whole life. Is that a sign?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many initiates describe exactly that — a lifelong pull to water, unexplained dreams of rivers, oceans, or serpents, and a feeling of being watched or accompanied near water. Chapter 2 covers Mami Wata's calling signs in depth. If you're asking the question, there's likely a reason."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a money-back guarantee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Please review our refund policy before purchasing. All sales are final."
+          }
+        }
+      ]
+    }
+    </script>
 
-  .diff-header { font-size: 12px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: var(--surface2); border-radius: 6px; border: 1px solid var(--border); }
-  .diff-code { font-family: 'SF Mono', monospace; font-size: 12px; line-height: 1.6; }
-  .diff-line { padding: 1px 12px; white-space: pre-wrap; word-break: break-all; }
-  .diff-add { background: #3fb95015; color: var(--new); }
-  .diff-remove { background: #f8514915; color: var(--deleted); }
-  .diff-hunk { background: #58a6ff10; color: #58a6ff; font-style: italic; }
-
-  /* DEPLOY BAR */
-  .deploy-bar { padding: 10px 16px; background: var(--surface); border-top: 1px solid var(--border); display: none; gap: 10px; align-items: center; flex-wrap: wrap; flex-shrink: 0; }
-  .deploy-bar.visible { display: flex; }
-  .deploy-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; gap: 10px; flex: 1; min-width: 200px; }
-  .platform-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
-  .netlify-card .platform-label { color: var(--netlify); }
-  .vercel-card .platform-label { color: #fff; }
-  .railway-card .platform-label { color: var(--railway); }
-  .deploy-status { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
-  .status-ready { background: #3fb95022; color: var(--new); border: 1px solid #3fb95044; }
-  .status-building { background: #d2992222; color: var(--modified); border: 1px solid #d2992244; animation: pulse 1.5s infinite; }
-  .status-error { background: #f8514922; color: var(--deleted); border: 1px solid #f8514944; }
-  .status-unknown { background: var(--border); color: var(--muted); }
-  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.5} }
-  .deploy-url { font-size: 11px; color: #58a6ff; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 140px; }
-  .deploy-url:hover { text-decoration: underline; }
-  .deploy-spacer { flex: 1; }
-
-  /* RAILWAY LOG VIEWER */
-  .log-viewer { background: #000; border: 1px solid var(--border); border-radius: 6px; padding: 12px; font-family: 'SF Mono', monospace; font-size: 11px; line-height: 1.7; height: 300px; overflow-y: auto; margin-top: 12px; }
-  .log-line { display: flex; gap: 8px; }
-  .log-time { color: #555; flex-shrink: 0; }
-  .log-msg { color: #e6edf3; word-break: break-all; }
-  .log-error { color: var(--deleted); }
-  .log-warn { color: var(--modified); }
-
-  /* RAILWAY SERVICES LIST */
-  .railway-project { margin-bottom: 16px; }
-  .railway-project-name { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; font-weight: 600; padding: 0 4px; }
-  .railway-service-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; margin-bottom: 6px; cursor: pointer; transition: border-color .15s; }
-  .railway-service-item:hover { border-color: var(--railway); }
-  .railway-service-name { flex: 1; font-size: 13px; font-weight: 500; }
-  .railway-service-time { font-size: 11px; color: var(--muted); }
-
-  /* COMMIT PANEL */
-  .commit-panel { padding: 14px 16px; background: var(--surface); border-top: 1px solid var(--border); flex-shrink: 0; }
-  .commit-panel textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 10px; font-size: 13px; resize: none; height: 68px; font-family: inherit; line-height: 1.5; }
-  .commit-panel textarea:focus { outline: none; border-color: var(--accent); }
-  .commit-panel textarea::placeholder { color: var(--muted); }
-  .commit-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-  .push-toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); cursor: pointer; }
-  .push-toggle input { accent-color: var(--accent); }
-  .select-all-row { display: flex; align-items: center; gap: 6px; padding: 8px 12px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--border); cursor: pointer; }
-  .select-all-row:hover { background: var(--surface2); }
-
-  .commit-log-item { padding: 12px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
-  .commit-log-item:hover { background: var(--surface2); }
-  .commit-hash { font-family: monospace; font-size: 11px; color: var(--purple); background: var(--surface2); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
-  .commit-subject { font-size: 13px; }
-  .commit-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
-
-  .settings-section { margin-bottom: 24px; }
-  .settings-section h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-  .settings-row { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
-  .settings-row input { flex: 1; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 8px 10px; border-radius: 6px; font-size: 13px; font-family: monospace; }
-  .settings-row input:focus { outline: none; border-color: var(--accent); }
-  .connected-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; padding: 4px 10px; border-radius: 20px; font-weight: 600; }
-  .connected-netlify { background: #00ad9f22; color: var(--netlify); border: 1px solid #00ad9f44; }
-  .connected-vercel { background: #ffffff15; color: #fff; border: 1px solid #ffffff30; }
-  .connected-github { background: #a371f722; color: var(--purple); border: 1px solid #a371f744; }
-  .connected-railway { background: #B847F522; color: var(--railway); border: 1px solid #B847F544; }
-
-  .link-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; cursor: pointer; }
-  .link-item:hover { background: var(--surface2); }
-  .link-item-name { font-weight: 500; }
-  .link-item-url { font-size: 11px; color: var(--muted); margin-top: 2px; }
-
-  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; z-index: 100; }
-  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; width: 480px; max-width: 95vw; max-height: 85vh; overflow-y: auto; }
-  .modal h2 { font-size: 16px; margin-bottom: 16px; }
-  .modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; }
-  .form-group { margin-bottom: 14px; }
-  .form-group label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
-  .form-group input { width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 8px 10px; border-radius: 6px; font-size: 13px; }
-  .form-group input:focus { outline: none; border-color: var(--accent); }
-  .form-group .hint { font-size: 11px; color: var(--muted); margin-top: 4px; }
-  .toggle-row { display: flex; align-items: center; justify-content: space-between; }
-  .toggle { position: relative; width: 36px; height: 20px; }
-  .toggle input { opacity: 0; width: 0; height: 0; }
-  .toggle-slider { position: absolute; inset: 0; background: var(--border); border-radius: 20px; cursor: pointer; transition: .2s; }
-  .toggle-slider:before { content: ''; position: absolute; height: 14px; width: 14px; left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: .2s; }
-  .toggle input:checked + .toggle-slider { background: var(--accent); }
-  .toggle input:checked + .toggle-slider:before { transform: translateX(16px); }
-
-  .toast-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 999; }
-  .toast { padding: 10px 16px; border-radius: 8px; font-size: 13px; color: #fff; min-width: 220px; animation: slideIn .2s ease; box-shadow: 0 4px 12px rgba(0,0,0,.4); }
-  .toast-success { background: #238636; } .toast-error { background: #da3633; } .toast-info { background: #1f6feb; }
-  @keyframes slideIn { from{transform:translateX(40px);opacity:0}to{transform:translateX(0);opacity:1} }
-
-  #setup-screen { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 200; }
-  .setup-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 36px; width: 440px; text-align: center; }
-  .setup-card h1 { font-size: 22px; margin-bottom: 6px; }
-  .setup-card p { color: var(--muted); font-size: 13px; margin-bottom: 20px; line-height: 1.6; }
-  .setup-card input { width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 10px 12px; border-radius: 6px; font-size: 13px; margin-bottom: 12px; font-family: monospace; }
-  .setup-card a { color: #58a6ff; font-size: 12px; }
-
-  .loading { display: inline-block; width: 12px; height: 12px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
-  @keyframes spin { to{transform:rotate(360deg)} }
-  .ahead-badge { background: var(--modified); color: #000; border-radius: 10px; font-size: 10px; padding: 1px 7px; font-weight: 700; }
-  .no-repo { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; gap: 16px; color: var(--muted); text-align: center; padding: 40px; }
-  .no-repo h3 { color: var(--text); font-size: 16px; }
-  .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--muted); gap: 12px; text-align: center; }
-  .empty-state p { font-size: 13px; }
-</style>
+    <title>Mami Wata Initiation Guide: Complete Self-Initiation Book | Know Mami Wata</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0f4c3a">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page-specific styles for homepage */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Georgia, serif; line-height: 1.6; color: #2c3e3f; }
+        .water-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0); background-size: 400% 400%; animation: waterFlow 8s ease-in-out infinite; z-index: -1; }
+        @keyframes waterFlow { 0%, 100% { background-position: 0% 50%; } 25% { background-position: 100% 50%; } 50% { background-position: 100% 100%; } 75% { background-position: 0% 100%; } }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(15, 76, 58, 0.95); z-index: 1000; padding: 1rem 2rem; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #f0f8f8; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #f0f8f8; text-decoration: none; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #3ca9a0; }
+        .cta-button { background: linear-gradient(45deg, #d4af37, #f1c40f); color: #2c3e3f; padding: 0.8rem 2rem; border-radius: 30px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2rem 2rem; }
+        .hero-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .hero-text { color: #f0f8f8; }
+        .hero-title { font-size: 4rem; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.8rem; color: #d4af37; margin-bottom: 2rem; font-style: italic; }
+        .hero-description { font-size: 1.3rem; margin-bottom: 2rem; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary { background: linear-gradient(45deg, #d4af37, #f1c40f); color: #2c3e3f; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+        .btn-secondary { background: transparent; color: #f0f8f8; padding: 1rem 2.5rem; border: 2px solid #f0f8f8; border-radius: 50px; font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+        .hero-image { position: relative; text-align: center; }
+        .book-cover { max-width: 400px; width: 100%; border-radius: 15px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .floating-element { position: absolute; color: rgba(240, 248, 248, 0.6); font-size: 3rem; animation: drift 6s ease-in-out infinite; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        .floating-element:nth-child(2) { top: 10%; left: 10%; }
+        .floating-element:nth-child(3) { top: 70%; right: 10%; animation-delay: 2s; }
+        .floating-element:nth-child(4) { bottom: 20%; left: 5%; animation-delay: 4s; }
+        .floating-element:nth-child(5) { top: 30%; right: 5%; animation-delay: 1s; }
+        .floating-element:nth-child(6) { bottom: 40%; right: 20%; animation-delay: 3s; }
+        @keyframes drift { 0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; } }
+        .hero-stats { margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #d4af37; }
+        .section-title { font-size: 3rem; margin-bottom: 3rem; text-align: center; }
+        .social-proof { background: rgba(240, 248, 248, 0.95); padding: 4rem 2rem; }
+        .testimonial-grid { max-width: 1200px; margin: 3rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .testimonial { background: white; padding: 2rem; border-radius: 15px; }
+        .testimonial-text { font-style: italic; font-size: 1.1rem; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: bold; color: #3ca9a0; }
+        .features { background: linear-gradient(135deg, #0f4c3a, #1e6b5c); padding: 6rem 2rem; color: #f0f8f8; }
+        .features-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+        .feature { text-align: center; padding: 2rem; }
+        .feature-icon { font-size: 4rem; }
+        .feature-title { font-size: 1.5rem; color: #d4af37; margin: 1rem 0; }
+        .transformation { background: rgba(240, 248, 248, 0.98); padding: 6rem 2rem; }
+        .before-after { max-width: 800px; margin: 4rem auto; display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; }
+        .before, .after { padding: 2rem; border-radius: 15px; }
+        .before { background: linear-gradient(135deg, #7f8c8d, #95a5a6); color: white; }
+        .after { background: linear-gradient(135deg, #d4af37, #f1c40f); color: #2c3e3f; }
+        .arrow { font-size: 3rem; color: #3ca9a0; }
+        .purchase { background: linear-gradient(135deg, #2c3e3f, #34495e); padding: 6rem 2rem; color: #f0f8f8; text-align: center; }
+        .purchase-container { max-width: 600px; margin: 0 auto; }
+        .whats-included { background: rgba(240, 248, 248, 0.1); border-radius: 20px; padding: 2rem; margin: 2rem 0; text-align: left; }
+        .whats-included ul { list-style: none; padding: 0; font-size: 1.1rem; line-height: 2; }
+        .price-box { background: rgba(240, 248, 248, 0.1); padding: 3rem 2rem; border-radius: 20px; margin: 3rem 0; }
+        .current-price { font-size: 4rem; font-weight: bold; color: #d4af37; margin: 1rem 0; }
+        .loading { position: fixed; inset: 0; background: #0f4c3a; display: flex; justify-content: center; align-items: center; z-index: 9999; }
+        .wave { width: 60px; height: 60px; background: #3ca9a0; margin: 0 5px; border-radius: 50%; animation: wave 1.5s infinite ease-in-out; }
+        .wave:nth-child(2) { animation-delay: 0.1s; }
+        .wave:nth-child(3) { animation-delay: 0.2s; }
+        @keyframes wave { 0%, 40%, 100% { transform: scaleY(0.4); } 20% { transform: scaleY(1); } }
+        .mw-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: none; align-items: center; justify-content: center; z-index: 10000; padding: 1rem; }
+        .mw-modal.show { display: flex; }
+        .mw-modal__dialog { width: 100%; max-width: 520px; background: linear-gradient(135deg, rgba(15,76,58,0.98), rgba(30,107,92,0.95)); border-radius: 16px; padding: 1.5rem; color: #f0f8f8; position: relative; }
+        .mw-modal__close { position: absolute; top: 0.6rem; right: 0.6rem; border: 0; background: transparent; color: #f0f8f8; width: 34px; height: 34px; cursor: pointer; }
+        /* === 7 SIGNS POPUP === */
+        .signs-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:9000;align-items:center;justify-content:center;padding:1rem;}
+        .signs-overlay.show{display:flex;}
+        .signs-dialog{background:linear-gradient(160deg,#0f4c3a,#1e6b5c);border:1px solid rgba(212,175,55,0.4);border-radius:16px;max-width:480px;width:100%;padding:0;overflow:hidden;position:relative;animation:popIn .3s ease;}
+        @keyframes popIn{from{opacity:0;transform:scale(0.92)}to{opacity:1;transform:scale(1)}}
+        .signs-top{background:rgba(0,0,0,0.25);padding:28px 32px 20px;text-align:center;border-bottom:1px solid rgba(212,175,55,0.2);}
+        .signs-body{padding:22px 32px 28px;}
+        .signs-input{width:100%;padding:0.75rem 1rem;border-radius:30px;border:1.5px solid rgba(60,169,160,0.5);background:rgba(240,248,248,0.08);color:#f0f8f8;font-size:1rem;outline:none;box-sizing:border-box;margin-bottom:0.75rem;}
+        .signs-input::placeholder{color:rgba(240,248,248,0.45);}
+        .signs-input:focus{border-color:#3ca9a0;}
+        .signs-btn{width:100%;padding:0.85rem;border-radius:30px;border:none;background:linear-gradient(45deg,#d4af37,#f1c40f);color:#2c3e3f;font-size:1rem;font-weight:700;cursor:pointer;transition:opacity .2s;}
+        .signs-btn:hover{opacity:0.9;}
+        .signs-btn:disabled{opacity:0.6;cursor:not-allowed;}
+        .signs-msg{font-size:0.85rem;text-align:center;margin-top:0.5rem;min-height:1.2em;}
+        .mw-form__row { margin-bottom: 0.75rem; }
+        .mw-form__row input { width: 100%; padding: 0.7rem; border-radius: 10px; border: 1px solid rgba(60,169,160,0.3); background: rgba(240,248,248,0.08); color: #f0f8f8; }
+        /* Hamburger Menu Styles */
+        .hamburger { display: none; flex-direction: column; cursor: pointer; padding: 10px; z-index: 1001; background: none; border: none; }
+        .hamburger span { width: 25px; height: 3px; background: #f0f8f8; margin: 3px 0; border-radius: 3px; transition: all 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(15, 76, 58, 0.98); z-index: 999; flex-direction: column; justify-content: center; align-items: center; }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a { color: #f0f8f8; text-decoration: none; font-size: 1.5rem; padding: 1rem 2rem; transition: color 0.3s ease; }
+        .mobile-nav a:hover { color: #d4af37; }
+        .mobile-nav .cta-button { margin-top: 2rem; }
+        
+        /* Sticky Mobile CTA Bar */
+        .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #0f4c3a, #1e6b5c); padding: 0.75rem 1rem; z-index: 998; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+        .sticky-cta__inner { display: flex; align-items: center; justify-content: space-between; max-width: 500px; margin: 0 auto; gap: 1rem; }
+        .sticky-cta__text { color: #f0f8f8; font-size: 0.85rem; line-height: 1.3; }
+        .sticky-cta__text strong { color: #d4af37; }
+        .sticky-cta__btn { background: linear-gradient(45deg, #d4af37, #f1c40f); color: #2c3e3f; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: bold; font-size: 0.85rem; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-container .cta-button { display: none; }
+            .hamburger { display: flex; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-title { font-size: 2.5rem; }
+            .btn-primary, .btn-secondary { width: 100%; }
+            .before-after { grid-template-columns: 1fr; }
+            .arrow { transform: rotate(90deg); }
+            .sticky-cta { display: block; }
+            footer { padding-bottom: 5rem; }
+        }
+    </style>
 </head>
 <body>
-
-<div id="setup-screen" style="display:none">
-  <div class="setup-card">
-    <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom:16px"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-    <h1>Welcome to GitPortal</h1>
-    <p>Connect your GitHub account to get started.</p>
-    <input type="password" id="setup-token" placeholder="ghp_xxxxxxxxxxxxxxxx" />
-    <p style="margin-bottom:16px"><a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">→ Generate a token on GitHub</a></p>
-    <button class="btn btn-green" style="width:100%;padding:10px;justify-content:center" onclick="saveToken()">Connect GitHub Account</button>
-  </div>
-</div>
-
-<div class="topbar">
-  <div class="logo">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-    GitPortal
-  </div>
-  <select id="repo-select" class="repo-selector" onchange="selectRepo(this.value)">
-    <option value="">— Select a repository —</option>
-  </select>
-  <div class="branch-badge" onclick="showBranchModal()" id="branch-display" style="display:none">
-    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Z"/></svg>
-    <span id="branch-name">main</span>
-    <span id="ahead-badge" style="display:none" class="ahead-badge"></span>
-  </div>
-  <button class="btn btn-ghost btn-sm" onclick="showPullConfirm()" id="pull-btn" style="display:none">↓ Pull</button>
-  <div class="spacer"></div>
-  <button class="btn btn-ghost btn-sm" onclick="showAddRepoModal()">+ Add Repo</button>
-  <button class="btn btn-blue btn-sm" onclick="showNewRepoModal()">✦ New Repo</button>
-  <button class="btn btn-ghost btn-sm" onclick="switchTab('settings')" title="Settings">⚙</button>
-  <div class="user-pill" id="user-pill" style="display:none">
-    <img id="user-avatar" src="" alt=""/><span id="user-login"></span>
-  </div>
-</div>
-
-<div class="main">
-  <div class="sidebar">
-    <div class="sidebar-section"><div class="sidebar-label">Changed Files</div></div>
-    <div class="select-all-row" onclick="toggleSelectAll()" id="select-all-row" style="display:none">
-      <input type="checkbox" id="select-all-cb" style="accent-color:var(--accent);width:14px;height:14px;" />
-      <span>Select all</span>
-      <span id="file-count" style="margin-left:auto;color:var(--muted);font-size:11px"></span>
+    <div class="loading" id="loading"><div class="wave"></div><div class="wave"></div><div class="wave"></div></div>
+    <div class="water-bg"></div>
+    
+    <nav><div class="nav-container"><a href="#" class="logo">🌊 Mami Wata</a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="about-amari-zola.html">About</a></li><li><a href="#features">Features</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#buy-now">Get Book</a></li></ul><a href="#buy-now" class="cta-button">Start Your Initiation ✨</a><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#home" onclick="closeMobileNav()">Home</a>
+        <a href="about-amari-zola.html">About</a>
+        <a href="#features" onclick="closeMobileNav()">Features</a>
+        <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
+        <a href="#buy-now" onclick="closeMobileNav()">Get Book</a>
+        <a href="#buy-now" class="cta-button" onclick="closeMobileNav()">Start Your Initiation ✨</a>
     </div>
-    <div class="file-list" id="file-list">
-      <div class="empty-state" style="padding:40px 20px"><p>Select a repository</p></div>
-    </div>
-  </div>
-
-  <div class="panel">
-    <div class="no-repo" id="no-repo-msg">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-      <h3>No repository selected</h3>
-      <p>Choose a repo from the dropdown, or add / create a new one.</p>
-    </div>
-
-    <div id="repo-view" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
-      <div class="panel-tabs">
-        <div class="tab active" onclick="switchTab('changes')" id="tab-changes">Changes</div>
-        <div class="tab" onclick="switchTab('history')" id="tab-history">History</div>
-        <div class="tab" onclick="switchTab('railway')" id="tab-railway">🚂 Railway</div>
-        <div class="tab" onclick="switchTab('settings')" id="tab-settings">⚙ Settings</div>
-      </div>
-
-      <div class="panel-body" id="diff-view">
-        <div class="empty-state">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <p>Select a file to see its diff</p>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Finally, <span style="color: #d4af37;">The Truth</span> About<br>Mami Wata</h1>
+                <p class="hero-subtitle">From a Real Initiate Who's Been There</p>
+                <p class="hero-description">For too long, Mami Wata has been shrouded in mystery. As someone who has walked through the initiation myself, I have created the <strong>first comprehensive guide</strong> that cuts through the myths. This <strong>200+ page book</strong> contains <strong>authentic rituals, practical exercises,</strong> and real wisdom from my personal journey.</p>
+                <div class="hero-cta">
+                    <a href="#buy-now" class="btn-primary">Begin Reading Your Awakening Story 💎</a>
+                    <a href="#" class="btn-secondary" onclick="handleSampleClick(event)">Free Sample</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number">4.9★</div><div>247 Reviews</div></div>
+                    <div class="stat-item"><div class="stat-number">247+</div><div>Readers</div></div>
+                    <div class="stat-item"><div class="stat-number">First</div><div>By Real Initiate</div></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/mamiwata.png" alt="Book Cover" class="book-cover">
+                <div class="floating-element">🌊</div>
+                <div class="floating-element">✨</div>
+                <div class="floating-element">🐚</div>
+                <div class="floating-element">🔱</div>
+                <div class="floating-element">💎</div>
+            </div>
         </div>
-      </div>
-
-      <div class="panel-body" id="history-view" style="display:none">
-        <div id="commit-log"></div>
-      </div>
-
-      <!-- RAILWAY TAB -->
-      <div class="panel-body" id="railway-view" style="display:none">
-        <div id="railway-content">
-          <div class="empty-state"><p>Connect Railway in Settings to see your services</p></div>
+    </section>
+    
+    <section class="social-proof" id="testimonials">
+        <h2 class="section-title" style="color: #2c3e3f;">What Readers Are Saying</h2>
+        <p style="text-align: center; max-width: 600px; margin: -1.5rem auto 2.5rem; color: #666; font-size: 1.1rem;">Real feedback from people who've read the book</p>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"I have been searching for YEARS. This book finally gave me the real answers I needed from someone who actually knows. The chapter on dream interpretation alone was worth the price."</p>
+                <p class="testimonial-author">— Sophia E.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Atlanta, USA</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"This book bridges the gap between the old ways and modern understanding. Finally someone who has been through it shares the truth. I've recommended it to three friends already."</p>
+                <p class="testimonial-author">— Xavier T.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Accra, Ghana</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"This is the only book written by an actual initiate—not theory, not second-hand stories. REAL experience. I've read it twice and keep finding new insights."</p>
+                <p class="testimonial-author">— Alisha P.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • London, UK</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"I had signs my whole life — the water dreams, the pulling to rivers and oceans — but no one in my family could explain it. This book was the first place I found real answers written by someone who actually went through it."</p>
+                <p class="testimonial-author">— Ngozi B.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Lagos, Nigeria</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"The dream interpretation chapter alone was worth 10x the price. I've been journaling my water dreams for years and finally understand what they mean. Life-changing, no exaggeration."</p>
+                <p class="testimonial-author">— Claudette M.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Port-au-Prince, Haiti</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"As a practitioner in the African diaspora tradition, I was skeptical. But Amari writes with genuine authority and humility. This is not a tourist's guide — it's the real thing. Highly recommended."</p>
+                <p class="testimonial-author">— Kwame A.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Accra, Ghana</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"I downloaded it at midnight and was still reading at 4am. Couldn't put it down. The sections on sacred abundance and relationships hit me hard — exactly what I've been struggling with."</p>
+                <p class="testimonial-author">— Tanya R.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Toronto, Canada</p>
+            </div>
+            <div class="testimonial">
+                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
+                <p class="testimonial-text">"There's nothing else like this on the internet. I searched for months. Every other source was either academic theory or tourist-level curiosity. Amari's book is the real initiate's perspective and it shows."</p>
+                <p class="testimonial-author">— Isabelle F.</p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Paris, France</p>
+            </div>
         </div>
-      </div>
-
-      <div class="panel-body" id="settings-view" style="display:none">
-        <div class="settings-section">
-          <h3>GitHub</h3>
-          <div id="github-status"></div>
+        <p style="text-align: center; margin-top: 2rem; color: #666; font-size: 0.95rem;">⭐ 4.9 average rating from 247+ readers</p>
+    </section>
+    
+    <section class="features" id="features">
+        <h2 class="section-title">Ancient Wisdom for Modern Awakening</h2>
+        <p style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem; opacity: 0.9; line-height: 1.8;">As someone who has lived through the initiation process, I've distilled centuries of water spirit wisdom into practical guidance you can apply today. Here's what you'll discover inside:</p>
+        <div class="features-grid">
+            <div class="feature"><span class="feature-icon">🔮</span><h3 class="feature-title">Sacred Initiation Rites</h3><p>Time-honored practices adapted for modern life that awaken your connection to water's infinite wisdom and power. Learn the exact steps I took during my own initiation.</p></div>
+            <div class="feature"><span class="feature-icon">🛡️</span><h3 class="feature-title">Inner Authority & Discernment</h3><p>Develop unshakeable trust in your own spiritual knowing and learn to distinguish authentic guidance from illusion. No more confusion or fear—just clarity.</p></div>
+            <div class="feature"><span class="feature-icon">💰</span><h3 class="feature-title">Sacred Abundance Flow</h3><p>Align your divine gifts with material prosperity. Learn the ancient secrets of money as flowing energy and how water spirits view wealth and success.</p></div>
+            <div class="feature"><span class="feature-icon">❤️</span><h3 class="feature-title">Soul-Deep Relationships</h3><p>Create connections that honor your sacred sensitivity while maintaining your energetic sovereignty. Navigate relationships without losing yourself or your power.</p></div>
+            <div class="feature"><span class="feature-icon">🌙</span><h3 class="feature-title">Mystical Dream Mastery</h3><p>Unlock the prophetic wisdom of your water dreams and develop your natural gifts of sight and knowing. Understand what the spirits are telling you each night.</p></div>
+            <div class="feature"><span class="feature-icon">🌟</span><h3 class="feature-title">Awakened Service</h3><p>Transform your personal journey into sacred service, becoming a vessel for healing and transformation. Learn how to use your gifts to help others without depleting yourself.</p></div>
         </div>
-        <div class="settings-section">
-          <h3>Netlify</h3>
-          <div id="netlify-status" style="margin-bottom:10px"></div>
-          <div class="settings-row">
-            <input type="password" id="netlify-token-input" placeholder="Netlify Personal Access Token" />
-            <button class="btn btn-netlify btn-sm" onclick="saveNetlifyToken()">Connect</button>
-          </div>
-          <div id="netlify-link-section" style="display:none;margin-top:14px">
-            <div class="sidebar-label" style="margin-bottom:8px">Link current repo to Netlify</div>
-            <div id="netlify-linked-info"></div>
-            <button class="btn btn-ghost btn-sm" onclick="showNetlifyLinkModal()" style="margin-top:6px">🔗 Link / Change Site</button>
-          </div>
+    </section>
+
+    <!-- Free Chapter CTA -->
+    <section style="background:linear-gradient(135deg,#0a1a14,#0f4c3a);padding:4rem 1.5rem;text-align:center;">
+        <div style="max-width:680px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:2.5rem;justify-content:center;">
+            <img src="images/mamiwata.png" alt="Mami Wata book cover" style="width:130px;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,0.5);">
+            <div style="text-align:left;flex:1;min-width:240px;">
+                <div style="display:inline-block;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);border-radius:30px;padding:0.3rem 1rem;color:#d4af37;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;">Free Sample</div>
+                <h3 style="color:#f0f8f8;font-size:1.5rem;margin:0 0 0.6rem;line-height:1.3;">Not ready to buy yet?<br>Read the first chapters free.</h3>
+                <p style="color:rgba(240,248,248,0.7);font-size:0.95rem;margin:0 0 1.2rem;line-height:1.6;">Get an instant feel for Amari's voice, depth, and approach before committing. No obligation.</p>
+                <div id="sampleGateForm">
+                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;max-width:420px;">
+                    <input type="email" id="sampleGateEmail" placeholder="Your email address" autocomplete="email"
+                      style="flex:1;min-width:180px;padding:0.7rem 1rem;border-radius:30px;border:1.5px solid rgba(60,169,160,0.6);background:rgba(240,248,248,0.08);color:#f0f8f8;font-size:0.9rem;outline:none;">
+                    <button onclick="submitSampleGate()" id="sampleGateBtn"
+                      style="padding:0.7rem 1.4rem;border-radius:30px;border:none;background:linear-gradient(45deg,#d4af37,#f1c40f);color:#2c3e3f;font-size:0.9rem;font-weight:700;cursor:pointer;white-space:nowrap;">
+                      📖 Get Free Sample
+                    </button>
+                  </div>
+                  <p id="sampleGateMsg" style="font-size:0.82rem;margin-top:0.5rem;min-height:1em;"></p>
+                  <p style="font-size:0.75rem;color:rgba(240,248,248,0.4);margin-top:0.3rem;">🔒 No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
         </div>
-        <div class="settings-section">
-          <h3>Vercel</h3>
-          <div id="vercel-status" style="margin-bottom:10px"></div>
-          <div class="settings-row">
-            <input type="password" id="vercel-token-input" placeholder="Vercel Access Token" />
-            <button class="btn btn-vercel btn-sm" onclick="saveVercelToken()">Connect</button>
-          </div>
-          <div id="vercel-link-section" style="display:none;margin-top:14px">
-            <div class="sidebar-label" style="margin-bottom:8px">Link current repo to Vercel</div>
-            <div id="vercel-linked-info"></div>
-            <button class="btn btn-ghost btn-sm" onclick="showVercelLinkModal()" style="margin-top:6px">🔗 Link / Change Project</button>
-          </div>
+    </section>
+
+    <section class="transformation">
+        <h2 class="section-title" style="color: #2c3e3f;">The Sacred Transformation</h2>
+        <div class="before-after">
+            <div class="before">
+                <h3>Before Awakening</h3>
+                <ul style="list-style:none; padding:0; text-align:left;">
+                    <li>❌ Feeling different but not knowing why</li>
+                    <li>❌ Overwhelming sensitivity without understanding</li>
+                    <li>❌ Seeking answers from external sources</li>
+                    <li>❌ Hiding your true nature from others</li>
+                    <li>❌ Living below your spiritual potential</li>
+                </ul>
+            </div>
+            <div class="arrow">→</div>
+            <div class="after">
+                <h3>After Initiation</h3>
+                <ul style="list-style:none; padding:0; text-align:left;">
+                    <li>✨ Understanding your sacred calling</li>
+                    <li>✨ Channeling sensitivity as spiritual power</li>
+                    <li>✨ Trusting your inner wisdom completely</li>
+                    <li>✨ Living authentically and confidently</li>
+                    <li>✨ Fulfilling your highest spiritual destiny</li>
+                </ul>
+            </div>
         </div>
-        <div class="settings-section">
-          <h3>Telegram Alerts</h3>
-          <div id="telegram-status" style="margin-bottom:10px"></div>
-          <div class="settings-row">
-            <input type="password" id="telegram-bot-token" placeholder="Bot Token (from @BotFather)" style="flex:2" />
-            <input type="text" id="telegram-chat-id" placeholder="Chat ID" style="flex:1" />
-            <button class="btn btn-telegram btn-sm" onclick="saveTelegramToken()">Connect</button>
-          </div>
-          <div class="form-group" style="margin-top:6px">
-            <div class="hint">Create a bot via @BotFather on Telegram. Your Chat ID: 7477833460</div>
-          </div>
-          <div id="telegram-actions" style="display:none;margin-top:10px;gap:8px;display:none">
-            <button class="btn btn-ghost btn-sm" onclick="testTelegram()">📤 Send Test Message</button>
-          </div>
+    </section>
+    
+    <section class="purchase" id="purchase">
+        <div class="purchase-container">
+            <h2 class="section-title">Stop Searching. Get Real Answers.</h2>
+            <div class="whats-included">
+                <h3>What You Get: Real Knowledge from Real Experience</h3>
+                <ul>
+                    <li>✅ 200+ pages of authentic initiate wisdom</li>
+                    <li>✅ Traditional rituals explained clearly</li>
+                    <li>✅ Practical exercises you can actually do</li>
+                    <li>✅ Dream interpretation from water spirit perspective</li>
+                    <li>✅ How to navigate the spiritual journey safely</li>
+                    <li>✅ Signs, symptoms, and what they really mean</li>
+                    <li>✅ The truth about calling, purpose, and destiny</li>
+                    <li>✅ Lifetime access plus all future updates</li>
+                </ul>
+            </div>
+            <div class="price-box" id="buy-now">
+                <!-- Price increase warning -->
+                <div style="background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.5);border-radius:10px;padding:0.7rem 1.2rem;margin-bottom:1.2rem;font-size:0.9rem;color:#f1c40f;text-align:center;">
+                  ⚠️ Price increases to <strong>$199</strong> after the next new moon
+                </div>
+                <!-- Strikethrough + current price -->
+                <div style="text-align:center;margin-bottom:0.25rem;">
+                  <span style="font-size:1.3rem;color:rgba(240,248,248,0.45);text-decoration:line-through;">$199</span>
+                  <span style="font-size:0.9rem;color:#3ca9a0;margin-left:0.6rem;font-weight:600;">Save $101</span>
+                </div>
+                <div class="current-price">$98</div>
+                <!-- Moon countdown -->
+                <div style="background:rgba(15,76,58,0.6);border:1px solid rgba(60,169,160,0.3);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0;text-align:center;">
+                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;">🌑 Next new moon initiation window</div>
+                  <div id="moon-countdown" style="font-size:1.05rem;color:#f0f8f8;font-weight:600;letter-spacing:0.03em;">Calculating...</div>
+                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.5);margin-top:0.3rem;">Align your journey — order before it closes</div>
+                </div>
+                <p style="font-size:1.1rem;margin:1rem 0;">One-time investment • Instant PDF download</p>
+                <a href="https://payhip.com/b/0oeMU" class="btn-primary" style="font-size:1.4rem;padding:1.5rem 3rem;margin:1.5rem 0;display:inline-block;" target="_blank" rel="noopener">Get the Ebook Now 📖</a>
+                <p style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;">🔒 Secure checkout • Instant delivery to your email</p>
+                <div style="margin-top:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:0.8rem 1.2rem;text-align:center;font-size:0.9rem;display:inline-block;">
+                    <span>Payments securely processed by <strong style="color:#d4af37;">Payhip</strong></span><br>
+                    <small style="font-size:0.8rem;opacity:0.8;">Instant download after purchase</small>
+                </div>
+                <p style="font-size:0.9rem;opacity:0.75;margin-top:1.5rem;font-style:italic;line-height:1.6;">Please note: All sales are final. This work explores deep spiritual themes and traditional practices. Take a moment to ensure this resonates with your journey before purchase.</p>
+            </div>
         </div>
-        <div class="settings-section">
-          <h3>Railway</h3>
-          <div id="railway-status" style="margin-bottom:10px"></div>
-          <div class="settings-row">
-            <input type="password" id="railway-token-input" placeholder="Railway API Token" />
-            <button class="btn btn-railway btn-sm" onclick="saveRailwayToken()">Connect</button>
-          </div>
-          <div class="form-group" style="margin-top:6px">
-            <div class="hint">Generate at: railway.com → Account Settings → Tokens → Create Token</div>
-          </div>
-          <div id="railway-link-section" style="display:none;margin-top:14px">
-            <div class="sidebar-label" style="margin-bottom:8px">Link current repo to Railway service</div>
-            <div id="railway-linked-info"></div>
-            <button class="btn btn-ghost btn-sm" onclick="showRailwayLinkModal()" style="margin-top:6px">🔗 Link / Change Service</button>
-          </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section style="background: linear-gradient(135deg, #0a1a14, #0d2b20); padding: 5rem 1rem; font-family: Georgia, serif;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div style="display: inline-block; background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); border-radius: 30px; padding: 0.4rem 1.2rem; color: #d4af37; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">Common Questions</div>
+                <h2 style="color: #d4af37; font-size: 2rem; margin-bottom: 0.5rem;">Frequently Asked Questions</h2>
+                <p style="color: rgba(240,248,248,0.7); font-size: 1rem;">Everything you need to know before starting your journey</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Do I need to already believe in Mami Wata to benefit from this book? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Not at all. The book is written for anyone drawn to the water, curious about African and diaspora spiritual traditions, or simply seeking answers to experiences they haven't been able to explain. Belief deepens through experience — this book helps you understand what you may already be feeling.</div>
+                </details>
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Is this for complete beginners or people already on the path? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Both. Beginners will find a clear, grounded introduction to Mami Wata's energy, signs, and sacred practices. Experienced seekers consistently report finding layers of depth they didn't expect — particularly in the dream interpretation and ritual alignment chapters.</div>
+                </details>
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">What's the difference between this and other Mami Wata books I've seen? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Most books about Mami Wata are written from the outside — academic anthropology, cultural surveys, or spiritual tourism. This guide is written from the inside, by an actual initiate. It covers the self-initiation path specifically, for those called but not yet connected to a physical lineage or community.</div>
+                </details>
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Can I do the rituals in the book without a physical community or temple? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Yes — this book is written precisely for that situation. The self-initiation practices are designed for solitary work in your own space. You don't need special tools, rare ingredients, or a teacher present. What you need is intention, sincerity, and the guidance in these pages.</div>
+                </details>
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">What format is the book and how do I receive it? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">The book is a digital PDF delivered instantly to your email after purchase via Payhip's secure checkout. You can read it on any device, print it, or save it to your library. There are no shipping delays or physical copies — your access is immediate.</div>
+                </details>
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">I've had strange experiences near water my whole life. Is that a sign? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Many initiates describe exactly that — a lifelong pull to water, unexplained dreams of rivers, oceans, or serpents, and a feeling of being watched or accompanied near water. Chapter 2 covers Mami Wata's calling signs in depth. If you're asking the question, there's likely a reason.</div>
+                </details>
+                <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
+                    <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Is there a money-back guarantee? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Please review our refund policy before purchasing. All sales are final.</div>
+                </details>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <footer style="background: linear-gradient(45deg, #0f4c3a, #1e6b5c, #2d8a7e, #3ca9a0); color: #fff; padding: 3rem 1rem; font-family: Georgia, serif;">
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem;">
+            
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">About Mami Wata</h3>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li><a href="the-book.html" style="color:#fff; text-decoration:none;">📖 The Book</a></li>
+                    <li><a href="about-amari-zola.html" style="color:#fff; text-decoration:none;">🌺 About Amari Zola</a></li>
+                    <li><a href="join-community.html" style="color:#fff; text-decoration:none;">💫 Join Community</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">Resources</h3>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li><a href="water-wisdom.html" style="color:#fff; text-decoration:none;">🌊 Water Wisdom Blog</a></li>
+                    <li><a href="healing-retreats.html" style="color:#fff; text-decoration:none;">🏝️ Healing Retreats</a></li>
+                    <li><a href="faq.html" style="color:#fff; text-decoration:none;">❓ FAQ</a></li>
+                    <li><a href="contact.html" style="color:#fff; text-decoration:none;">📬 Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color:#f1c40f; margin-bottom: 1rem;">Legal</h3>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li><a href="privacy-policy.html" style="color:#fff; text-decoration:none;">🔒 Privacy Policy</a></li>
+                    <li><a href="refund-policy.html" style="color:#fff; text-decoration:none;">💰 Refund Policy</a></li>
+                    <li><a href="terms-and-conditions.html" style="color:#fff; text-decoration:none;">⚖️ Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem;">
+            <p style="margin:0;">© <span id="footerYear"></span> Mami Wata: A Journey to Self-Initiation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA Bar -->
+
+    <div id="sampleModal" class="mw-modal">
+        <div class="mw-modal__dialog">
+            <button class="mw-modal__close" onclick="closeSampleModal()">X</button>
+            <h3>Get Your Free Sample</h3>
+            <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1rem;">Enter your email to receive the first chapters of the book instantly.</p>
+            <form id="leadSampleForm" name="lead-sample" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-sample">
+                <input type="hidden" name="bot-field">
+                <div class="mw-form__row"><input type="email" id="leadEmail" name="email" required placeholder="Your email address"></div>
+                <button type="submit" class="btn-primary" style="width:100%;" id="leadSubmitBtn">Send My Free Sample 📖</button>
+                <p id="leadHelp" style="font-size: 0.85rem; margin-top: 0.75rem;"></p>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.5rem;">🔒 No spam. Unsubscribe anytime.</p>
+            </form>
+        </div>
     </div>
 
-    <!-- DEPLOY BAR -->
-    <div class="deploy-bar" id="deploy-bar">
-      <div class="deploy-card netlify-card" id="netlify-deploy-card" style="display:none">
-        <div><div class="platform-label">◆ Netlify</div><div id="netlify-site-name" style="font-size:12px;color:var(--muted);margin-top:2px"></div></div>
-        <span class="deploy-status status-unknown" id="netlify-deploy-status">—</span>
-        <a href="#" class="deploy-url" id="netlify-deploy-url" target="_blank" style="display:none"></a>
-        <div class="deploy-spacer"></div>
-        <button class="btn btn-netlify btn-sm" onclick="triggerNetlifyDeploy()" id="netlify-deploy-btn">▶ Deploy</button>
-      </div>
-      <div class="deploy-card vercel-card" id="vercel-deploy-card" style="display:none">
-        <div><div class="platform-label">▲ Vercel</div><div id="vercel-project-name" style="font-size:12px;color:var(--muted);margin-top:2px"></div></div>
-        <span class="deploy-status status-unknown" id="vercel-deploy-status">—</span>
-        <a href="#" class="deploy-url" id="vercel-deploy-url" target="_blank" style="display:none"></a>
-        <div class="deploy-spacer"></div>
-        <button class="btn btn-vercel btn-sm" onclick="triggerVercelDeploy()" id="vercel-deploy-btn">▶ Deploy</button>
-      </div>
-      <div class="deploy-card railway-card" id="railway-deploy-card" style="display:none">
-        <div><div class="platform-label">🚂 Railway</div><div id="railway-service-name" style="font-size:12px;color:var(--muted);margin-top:2px"></div></div>
-        <span class="deploy-status status-unknown" id="railway-deploy-status">—</span>
-        <div class="deploy-spacer"></div>
-        <button class="btn btn-railway btn-sm" onclick="triggerRailwayRedeploy()" id="railway-deploy-btn">↺ Redeploy</button>
-        <button class="btn btn-ghost btn-sm" onclick="showRailwayLogs()" id="railway-logs-btn">📋 Logs</button>
-      </div>
-      <!-- UPTIME BAR -->
-      <div id="uptime-bar" style="width:100%;padding:6px 16px;background:var(--surface2);border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:none;gap:12px;align-items:center;flex-wrap:wrap" class="uptime-bar">
-      </div>
+    <!-- Exit Intent Popup -->
+    <div id="exitModal" class="mw-modal">
+        <div class="mw-modal__dialog" style="text-align: center;">
+            <button class="mw-modal__close" onclick="closeExitModal()">✕</button>
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🌊</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Wait! Before You Go...</h3>
+            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem;">Don't leave without your <strong>free sample chapters</strong> from the book. Discover what Mami Wata initiation really means.</p>
+            <form id="exitLeadForm" name="exit-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="exit-lead">
+                <input type="hidden" name="bot-field">
+                <input type="hidden" name="source" value="exit-intent">
+                <div class="mw-form__row"><input type="email" id="exitEmail" name="email" required placeholder="Enter your email"></div>
+                <button type="submit" class="btn-primary" style="width:100%; font-size: 1.1rem;" id="exitSubmitBtn">Send Me the Free Sample 📖</button>
+                <p id="exitHelp" style="font-size: 0.85rem; margin-top: 0.75rem;"></p>
+            </form>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 1rem; cursor: pointer;" onclick="closeExitModal()">No thanks, I'll pass on the free chapters</p>
+        </div>
     </div>
 
-    <div class="commit-panel" id="commit-panel" style="display:none">
-      <textarea id="commit-msg" placeholder="Commit message (required)…"></textarea>
-      <div class="commit-row">
-        <label class="push-toggle"><input type="checkbox" id="push-toggle" checked />Push to GitHub</label>
-        <label class="push-toggle" id="auto-deploy-toggle-wrap" style="display:none"><input type="checkbox" id="auto-deploy-toggle" checked />Auto-deploy after push</label>
-        <div class="spacer"></div>
-        <button class="btn btn-ghost btn-sm" onclick="refreshStatus()">↺</button>
-        <button class="btn btn-green" id="commit-btn" onclick="doCommit()">Commit</button>
-      </div>
+    <script>
+        // === GA4 EVENT TRACKING HELPER ===
+        function trackEvent(eventName, params) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, params);
+            }
+        }
+
+        // === PAGE INITIALIZATION ===
+        setTimeout(function(){var l=document.getElementById('loading');if(l){l.style.opacity='0';setTimeout(function(){l.style.display='none';},300);}},500);
+        document.getElementById('footerYear').textContent=new Date().getFullYear();
+        
+        // === SAMPLE MODAL ===
+        function handleSampleClick(e){
+            e.preventDefault();
+            document.getElementById('sampleModal').classList.add('show');
+            // Track modal open
+            trackEvent('lead_form_open', {
+                event_category: 'engagement',
+                event_label: 'free_sample_modal'
+            });
+        }
+        function closeSampleModal(){document.getElementById('sampleModal').classList.remove('show');}
+        
+        // === LEAD FORM SUBMISSION ===
+        document.getElementById('leadSampleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var btn = document.getElementById('leadSubmitBtn');
+            var help = document.getElementById('leadHelp');
+            var email = document.getElementById('leadEmail').value;
+            
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            help.textContent = '';
+            help.style.color = '#f0f8f8';
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString()
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    // Track successful lead capture
+                    trackEvent('generate_lead', {
+                        event_category: 'conversion',
+                        event_label: 'free_sample_download',
+                        value: 1
+                    });
+                    
+                    help.textContent = '✅ Success! Your sample is downloading now...';
+                    help.style.color = '#4ade80';
+                    // Trigger download
+                    setTimeout(function() {
+                        window.open('files/mami-wata-sample.pdf', '_blank');
+                        // Track PDF download
+                        trackEvent('file_download', {
+                            event_category: 'engagement',
+                            event_label: 'sample_pdf',
+                            file_name: 'mami-wata-sample.pdf'
+                        });
+                        setTimeout(function() {
+                            closeSampleModal();
+                            form.reset();
+                            btn.disabled = false;
+                            btn.textContent = 'Send My Free Sample 📖';
+                        }, 1500);
+                    }, 800);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(function(error) {
+                // Track form error
+                trackEvent('form_error', {
+                    event_category: 'error',
+                    event_label: 'lead_form_submission'
+                });
+                help.textContent = '❌ Something went wrong. Please try again.';
+                help.style.color = '#f87171';
+                btn.disabled = false;
+                btn.textContent = 'Send My Free Sample 📖';
+            });
+        });
+        
+        // === MOBILE NAVIGATION ===
+        var hamburger = document.getElementById('hamburger');
+        var mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+        function closeMobileNav() {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // === TRACK CTA BUTTON CLICKS ===
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track all "Buy Now" / Payhip links
+            document.querySelectorAll('a[href*="payhip.com"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    trackEvent('begin_checkout', {
+                        event_category: 'conversion',
+                        event_label: 'payhip_click',
+                        value: 98,
+                        currency: 'USD',
+                        items: [{
+                            item_name: 'Mami Wata Ebook',
+                            item_category: 'Digital Product',
+                            price: 98,
+                            quantity: 1
+                        }]
+                    });
+                });
+            });
+
+            // Track CTA button clicks (non-Payhip)
+            document.querySelectorAll('.btn-primary, .cta-button').forEach(function(btn) {
+                if (!btn.href || !btn.href.includes('payhip.com')) {
+                    btn.addEventListener('click', function() {
+                        var label = btn.textContent.trim().substring(0, 50);
+                        trackEvent('cta_click', {
+                            event_category: 'engagement',
+                            event_label: label
+                        });
+                    });
+                }
+            });
+
+            // Track scroll depth
+            var scrollMarks = [25, 50, 75, 90];
+            var scrollTracked = {};
+            window.addEventListener('scroll', function() {
+                var scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                scrollMarks.forEach(function(mark) {
+                    if (scrollPercent >= mark && !scrollTracked[mark]) {
+                        scrollTracked[mark] = true;
+                        trackEvent('scroll_depth', {
+                            event_category: 'engagement',
+                            event_label: mark + '_percent',
+                            value: mark
+                        });
+                    }
+                });
+            });
+
+            // Track time on page (30s, 60s, 120s, 300s)
+            var timeMarks = [30, 60, 120, 300];
+            timeMarks.forEach(function(seconds) {
+                setTimeout(function() {
+                    trackEvent('time_on_page', {
+                        event_category: 'engagement',
+                        event_label: seconds + '_seconds',
+                        value: seconds
+                    });
+                }, seconds * 1000);
+            });
+        });
+
+        // === EXIT INTENT POPUP ===
+        var exitShown = false;
+        var exitModal = document.getElementById('exitModal');
+        
+        function closeExitModal() {
+            exitModal.classList.remove('show');
+            sessionStorage.setItem('exitShown', 'true');
+        }
+        
+        // Detect exit intent (mouse leaving viewport at top)
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY < 10 && !exitShown && !sessionStorage.getItem('exitShown') && !sessionStorage.getItem('leadCaptured')) {
+                exitShown = true;
+                exitModal.classList.add('show');
+                trackEvent('exit_intent_shown', {
+                    event_category: 'engagement',
+                    event_label: 'exit_popup'
+                });
+            }
+        });
+        
+        // Handle exit form submission
+        document.getElementById('exitLeadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var btn = document.getElementById('exitSubmitBtn');
+            var help = document.getElementById('exitHelp');
+            
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            help.textContent = '';
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString()
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    trackEvent('generate_lead', {
+                        event_category: 'conversion',
+                        event_label: 'exit_intent_capture',
+                        value: 1
+                    });
+                    sessionStorage.setItem('leadCaptured', 'true');
+                    help.style.color = '#4ade80';
+                    help.textContent = '✅ Success! Your sample is downloading...';
+                    setTimeout(function() {
+                        window.open('files/mami-wata-sample.pdf', '_blank');
+                        setTimeout(closeExitModal, 1500);
+                    }, 800);
+                } else {
+                    throw new Error('Failed');
+                }
+            })
+            .catch(function() {
+                help.style.color = '#f87171';
+                help.textContent = '❌ Something went wrong. Please try again.';
+                btn.disabled = false;
+                btn.textContent = 'Send Me the Free Sample 📖';
+            });
+        });
+    </script>
+
+<!-- 7 Signs Lead Magnet Popup -->
+<div id="signsOverlay" class="signs-overlay" role="dialog" aria-modal="true" aria-label="Free guide offer">
+  <div class="signs-dialog">
+    <div class="signs-top">
+      <div style="display:inline-block;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);border-radius:20px;padding:0.25rem 0.9rem;color:#d4af37;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Free Guide</div>
+      <div style="font-size:2rem;margin-bottom:6px;">&#x1F30A;</div>
+      <h2 style="margin:0 0 6px;color:#d4af37;font-size:1.5rem;line-height:1.3;font-family:Georgia,serif;">7 Signs of a<br><em>Spiritual Calling</em></h2>
+      <p style="margin:0;color:rgba(240,248,248,0.75);font-size:0.9rem;line-height:1.5;">How to know if Mami Wata is reaching out to you</p>
     </div>
-  </div>
-</div>
-
-<div class="toast-container" id="toast-container"></div>
-
-<!-- MODALS -->
-<div class="overlay" id="new-repo-modal" style="display:none" onclick="closeModal(event,'new-repo-modal')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <h2>✦ Create New Repository</h2>
-    <div class="form-group"><label>Repository Name *</label><input type="text" id="nr-name" placeholder="my-project" /></div>
-    <div class="form-group"><label>Description</label><input type="text" id="nr-desc" placeholder="Optional" /></div>
-    <div class="form-group"><label>Local Folder Path *</label><input type="text" id="nr-path" placeholder="/Users/mollah/Desktop/my-project" /><div class="hint">Folder must exist on your Mac.</div></div>
-    <div class="form-group"><div class="toggle-row"><label>Private Repository</label><label class="toggle"><input type="checkbox" id="nr-private" checked /><span class="toggle-slider"></span></label></div></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="document.getElementById('new-repo-modal').style.display='none'">Cancel</button>
-      <button class="btn btn-green" id="nr-submit" onclick="createRepo()">Create Repository</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" id="add-repo-modal" style="display:none" onclick="closeModal(event,'add-repo-modal')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <h2>+ Add Existing Repository</h2>
-    <div class="form-group"><label>Local Folder Path *</label><input type="text" id="ar-path" placeholder="/Users/mollah/Desktop/my-project" /><div class="hint">Must be an existing git repo.</div></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="document.getElementById('add-repo-modal').style.display='none'">Cancel</button>
-      <button class="btn btn-blue" onclick="addRepo()">Add Repository</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" id="branch-modal" style="display:none" onclick="closeModal(event,'branch-modal')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <h2>Branches</h2>
-    <div class="form-group"><label>New Branch Name</label><input type="text" id="new-branch-name" placeholder="feature/my-feature" /></div>
-    <button class="btn btn-ghost" style="width:100%;margin-bottom:16px;justify-content:center" onclick="createBranch()">Create & Switch to New Branch</button>
-    <div class="sidebar-label" style="margin-bottom:8px">Switch Branch</div>
-    <div id="branch-list" style="max-height:200px;overflow-y:auto;border:1px solid var(--border);border-radius:6px;"></div>
-    <div class="modal-footer"><button class="btn btn-ghost" onclick="document.getElementById('branch-modal').style.display='none'">Close</button></div>
-  </div>
-</div>
-
-<div class="overlay" id="pull-modal" style="display:none" onclick="closeModal(event,'pull-modal')">
-  <div class="modal" onclick="event.stopPropagation()" style="width:360px;text-align:center">
-    <h2>↓ Pull from GitHub</h2>
-    <p style="color:var(--muted);margin:12px 0 20px;font-size:13px">Pull latest changes from origin.</p>
-    <div class="modal-footer" style="justify-content:center">
-      <button class="btn btn-ghost" onclick="document.getElementById('pull-modal').style.display='none'">Cancel</button>
-      <button class="btn btn-blue" onclick="doPull()">Pull Now</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" id="netlify-link-modal" style="display:none" onclick="closeModal(event,'netlify-link-modal')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <h2>◆ Link to Netlify Site</h2>
-    <div id="netlify-sites-list" style="max-height:300px;overflow-y:auto;border:1px solid var(--border);border-radius:6px;"></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost btn-sm" onclick="unlinkNetlify()" style="margin-right:auto">Unlink</button>
-      <button class="btn btn-ghost" onclick="document.getElementById('netlify-link-modal').style.display='none'">Close</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" id="vercel-link-modal" style="display:none" onclick="closeModal(event,'vercel-link-modal')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <h2>▲ Link to Vercel Project</h2>
-    <div id="vercel-projects-list" style="max-height:300px;overflow-y:auto;border:1px solid var(--border);border-radius:6px;"></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost btn-sm" onclick="unlinkVercel()" style="margin-right:auto">Unlink</button>
-      <button class="btn btn-ghost" onclick="document.getElementById('vercel-link-modal').style.display='none'">Close</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" id="railway-link-modal" style="display:none" onclick="closeModal(event,'railway-link-modal')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <h2>🚂 Link to Railway Service</h2>
-    <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Choose which Railway service this repo is connected to.</p>
-    <div id="railway-services-list" style="max-height:340px;overflow-y:auto;"></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost btn-sm" onclick="unlinkRailway()" style="margin-right:auto">Unlink</button>
-      <button class="btn btn-ghost" onclick="document.getElementById('railway-link-modal').style.display='none'">Close</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" id="railway-logs-modal" style="display:none" onclick="closeModal(event,'railway-logs-modal')">
-  <div class="modal" onclick="event.stopPropagation()" style="width:640px">
-    <h2>📋 Railway Logs — <span id="logs-service-name"></span></h2>
-    <div class="log-viewer" id="log-viewer"><div style="color:var(--muted)">Loading logs…</div></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost btn-sm" onclick="refreshLogs()">↺ Refresh</button>
-      <button class="btn btn-ghost" onclick="document.getElementById('railway-logs-modal').style.display='none'">Close</button>
+    <div class="signs-body">
+      <p style="margin:0 0 16px;color:rgba(240,248,248,0.85);font-size:0.95rem;line-height:1.6;text-align:center;">Enter your email and receive the PDF guide instantly — free.</p>
+      <input type="email" id="signsEmail" class="signs-input" placeholder="Your email address" autocomplete="email">
+      <button class="signs-btn" id="signsBtn" onclick="submitSignsForm()">Send Me the Free Guide &#x1F30A;</button>
+      <p class="signs-msg" id="signsMsg" style="color:#4ade80;"></p>
+      <p style="margin:12px 0 0;font-size:0.78rem;color:rgba(240,248,248,0.4);text-align:center;">&#x1F512; No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </div>
 
 <script>
-let currentRepo = null, allFiles = [], selectedFile = null, currentTab = 'changes';
-let repoNetlify = null, repoVercel = null, repoRailway = null;
-let deployStatusInterval = null;
-
-async function init() {
-  const cfg = await api('/api/config');
-  if (!cfg.hasToken) { document.getElementById('setup-screen').style.display = 'flex'; return; }
-  loadUser(); loadRepos(cfg.repos); updateSettingsStatus(cfg);
-}
-
-async function loadUser() {
-  try {
-    const u = await api('/api/whoami');
-    document.getElementById('user-pill').style.display = 'flex';
-    document.getElementById('user-avatar').src = u.avatar;
-    document.getElementById('user-login').textContent = u.login;
-  } catch {}
-}
-
-function loadRepos(repos) {
-  const sel = document.getElementById('repo-select');
-  const cur = sel.value;
-  sel.innerHTML = '<option value="">— Select a repository —</option>';
-  repos.forEach(r => { const o = document.createElement('option'); o.value = r.localPath; o.textContent = r.name; sel.appendChild(o); });
-  if (cur) sel.value = cur;
-}
-
-function updateSettingsStatus(cfg) {
-  document.getElementById('github-status').innerHTML = cfg.hasToken ? '<span class="connected-badge connected-github">✓ Connected</span>' : '<span style="color:var(--muted);font-size:13px">Not connected</span>';
-  document.getElementById('netlify-status').innerHTML = cfg.hasNetlify ? '<span class="connected-badge connected-netlify">✓ Netlify Connected</span>' : '<span style="color:var(--muted);font-size:13px">Not connected</span>';
-  document.getElementById('vercel-status').innerHTML = cfg.hasVercel ? '<span class="connected-badge connected-vercel">✓ Vercel Connected</span>' : '<span style="color:var(--muted);font-size:13px">Not connected</span>';
-  document.getElementById('railway-status').innerHTML = cfg.hasRailway ? '<span class="connected-badge connected-railway">✓ Railway Connected</span>' : '<span style="color:var(--muted);font-size:13px">Not connected</span>';
-  const tgEl = document.getElementById('telegram-status');
-  if (tgEl) tgEl.innerHTML = cfg.hasTelegram ? '<span class="connected-badge connected-telegram">✓ Telegram Connected</span>' : '<span style="color:var(--muted);font-size:13px">Not connected</span>';
-  const tgActions = document.getElementById('telegram-actions');
-  if (tgActions) tgActions.style.display = cfg.hasTelegram ? 'flex' : 'none';
-}
-
-async function saveToken() {
-  const token = document.getElementById('setup-token').value.trim();
-  if (!token) return toast('Enter your GitHub token', 'error');
-  await api('/api/token', 'POST', { token });
-  document.getElementById('setup-screen').style.display = 'none';
-  init(); toast('GitHub connected!', 'success');
-}
-
-async function saveNetlifyToken() {
-  const token = document.getElementById('netlify-token-input').value.trim();
-  if (!token) return toast('Enter your Netlify token', 'error');
-  try {
-    const r = await api('/api/netlify/token', 'POST', { token });
-    toast(`Netlify connected as ${r.name}`, 'success');
-    document.getElementById('netlify-token-input').value = '';
-    const cfg = await api('/api/config'); updateSettingsStatus(cfg);
-    if (currentRepo) updateDeploySection();
-  } catch (e) { toast('Netlify error: ' + e.message, 'error'); }
-}
-
-async function saveVercelToken() {
-  const token = document.getElementById('vercel-token-input').value.trim();
-  if (!token) return toast('Enter your Vercel token', 'error');
-  try {
-    const r = await api('/api/vercel/token', 'POST', { token });
-    toast(`Vercel connected as ${r.name}`, 'success');
-    document.getElementById('vercel-token-input').value = '';
-    const cfg = await api('/api/config'); updateSettingsStatus(cfg);
-    if (currentRepo) updateDeploySection();
-  } catch (e) { toast('Vercel error: ' + e.message, 'error'); }
-}
-
-async function saveRailwayToken() {
-  const token = document.getElementById('railway-token-input').value.trim();
-  if (!token) return toast('Enter your Railway token', 'error');
-  try {
-    const r = await api('/api/railway/token', 'POST', { token });
-    toast(`Railway connected as ${r.name}`, 'success');
-    document.getElementById('railway-token-input').value = '';
-    const cfg = await api('/api/config'); updateSettingsStatus(cfg);
-    if (currentRepo) updateDeploySection();
-  } catch (e) { toast('Railway error: ' + e.message, 'error'); }
-}
-
-async function selectRepo(localPath) {
-  clearInterval(deployStatusInterval);
-  if (!localPath) {
-    currentRepo = null; repoNetlify = null; repoVercel = null; repoRailway = null;
-    document.getElementById('no-repo-msg').style.display = 'flex';
-    document.getElementById('repo-view').style.display = 'none';
-    document.getElementById('commit-panel').style.display = 'none';
-    document.getElementById('branch-display').style.display = 'none';
-    document.getElementById('pull-btn').style.display = 'none';
-    document.getElementById('deploy-bar').classList.remove('visible');
-    document.getElementById('file-list').innerHTML = '<div class="empty-state" style="padding:40px 20px"><p>Select a repository</p></div>';
-    document.getElementById('select-all-row').style.display = 'none';
-    return;
+(function(){
+  var DELAY_MS = 4000;
+  if(!sessionStorage.getItem('signsShown')){
+    setTimeout(function(){
+      document.getElementById('signsOverlay').classList.add('show');
+      sessionStorage.setItem('signsShown','1');
+      if(typeof trackEvent==='function') trackEvent('signs_popup_shown',{event_category:'engagement'});
+    }, DELAY_MS);
   }
-  currentRepo = localPath;
-  document.getElementById('no-repo-msg').style.display = 'none';
-  document.getElementById('repo-view').style.display = 'flex';
-  document.getElementById('commit-panel').style.display = 'block';
-  document.getElementById('branch-display').style.display = 'flex';
-  document.getElementById('pull-btn').style.display = 'inline-flex';
-  switchTab('changes');
-  await refreshStatus();
+})();
+function closeSignsPopup(){
+  document.getElementById('signsOverlay').classList.remove('show');
 }
-
-async function refreshStatus() {
-  if (!currentRepo) return;
-  try {
-    const data = await api('/api/status', 'POST', { localPath: currentRepo });
-    allFiles = data.files; repoNetlify = data.netlify; repoVercel = data.vercel; repoRailway = data.railway;
-    document.getElementById('branch-name').textContent = data.branch;
-    document.getElementById('ahead-badge').style.display = data.ahead > 0 ? 'inline' : 'none';
-    if (data.ahead > 0) document.getElementById('ahead-badge').textContent = `+${data.ahead}`;
-    renderFileList(); updateDeployBar();
-  } catch (e) { toast('Error: ' + e.message, 'error'); }
-}
-
-function renderFileList() {
-  const list = document.getElementById('file-list');
-  const row = document.getElementById('select-all-row');
-  if (!allFiles.length) {
-    list.innerHTML = '<div class="empty-state" style="padding:40px 20px"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg><p>No changes — working tree clean</p></div>';
-    row.style.display = 'none'; document.getElementById('file-count').textContent = ''; return;
+document.getElementById('signsOverlay').addEventListener('click',function(e){
+  if(e.target===this) closeSignsPopup();
+});
+function submitSignsForm(){
+  var email=document.getElementById('signsEmail').value.trim();
+  var btn=document.getElementById('signsBtn');
+  var msg=document.getElementById('signsMsg');
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    msg.style.color='#f87171';msg.textContent='Please enter a valid email address.';return;
   }
-  row.style.display = 'flex';
-  document.getElementById('file-count').textContent = `${allFiles.length} file${allFiles.length !== 1 ? 's' : ''}`;
-  list.innerHTML = allFiles.map((f, i) => `
-    <div class="file-item ${selectedFile === f.file ? 'selected' : ''}" onclick="viewDiff('${f.file.replace(/'/g,"\\'")}',this)">
-      <input type="checkbox" checked data-idx="${i}" onclick="event.stopPropagation()" />
-      <span class="file-name" title="${f.file}">${f.file}</span>
-      <span class="badge badge-${f.type}">${f.type}</span>
-    </div>`).join('');
-  updateSelectAll();
-}
-
-function toggleSelectAll() {
-  const cb = document.getElementById('select-all-cb'); cb.checked = !cb.checked;
-  document.querySelectorAll('#file-list input[type=checkbox]').forEach(c => c.checked = cb.checked);
-}
-function updateSelectAll() {
-  const all = [...document.querySelectorAll('#file-list input[type=checkbox]')];
-  document.getElementById('select-all-cb').checked = all.length > 0 && all.every(c => c.checked);
-}
-
-// ---- DEPLOY BAR ----
-function updateDeployBar() {
-  const bar = document.getElementById('deploy-bar');
-  let hasAny = false;
-  if (repoNetlify) { document.getElementById('netlify-deploy-card').style.display='flex'; document.getElementById('netlify-site-name').textContent=repoNetlify.siteName; hasAny=true; fetchNetlifyStatus(); } else { document.getElementById('netlify-deploy-card').style.display='none'; }
-  if (repoVercel) { document.getElementById('vercel-deploy-card').style.display='flex'; document.getElementById('vercel-project-name').textContent=repoVercel.projectName; hasAny=true; fetchVercelStatus(); } else { document.getElementById('vercel-deploy-card').style.display='none'; }
-  if (repoRailway) { document.getElementById('railway-deploy-card').style.display='flex'; document.getElementById('railway-service-name').textContent=repoRailway.serviceName; hasAny=true; fetchRailwayStatus(); } else { document.getElementById('railway-deploy-card').style.display='none'; }
-  bar.classList.toggle('visible', hasAny);
-  document.getElementById('auto-deploy-toggle-wrap').style.display = hasAny ? 'flex' : 'none';
-  clearInterval(deployStatusInterval);
-  if (hasAny) {
-    deployStatusInterval = setInterval(() => {
-      if (repoNetlify) fetchNetlifyStatus();
-      if (repoVercel) fetchVercelStatus();
-      if (repoRailway) fetchRailwayStatus();
-    }, 10000);
-  }
-}
-
-async function fetchNetlifyStatus() {
-  try { const d = await api(`/api/netlify/status/${repoNetlify.siteId}`); setDeployStatus('netlify', d.state, d.url); } catch {}
-}
-async function fetchVercelStatus() {
-  try { const d = await api(`/api/vercel/status/${repoVercel.projectId}`); setDeployStatus('vercel', d.state, d.url); } catch {}
-}
-async function fetchRailwayStatus() {
-  try { const d = await api(`/api/railway/status/${repoRailway.serviceId}`); setRailwayStatus(d.status); } catch {}
-}
-
-function setDeployStatus(platform, state, url) {
-  const el = document.getElementById(`${platform}-deploy-status`);
-  const urlEl = document.getElementById(`${platform}-deploy-url`);
-  el.className = 'deploy-status';
-  if (['ready','READY'].includes(state)) { el.classList.add('status-ready'); el.textContent = '✓ Ready'; }
-  else if (['building','processing','uploading','enqueued','BUILDING','INITIALIZING'].includes(state)) { el.classList.add('status-building'); el.textContent = '⟳ Building'; }
-  else if (['error','failed','ERROR'].includes(state)) { el.classList.add('status-error'); el.textContent = '✕ Failed'; }
-  else { el.classList.add('status-unknown'); el.textContent = state || '—'; }
-  if (url && urlEl) { urlEl.style.display='inline'; urlEl.href=url; urlEl.textContent=url.replace('https://','').substring(0,28)+(url.length>35?'…':''); }
-}
-
-function setRailwayStatus(status) {
-  const el = document.getElementById('railway-deploy-status');
-  el.className = 'deploy-status';
-  if (['SUCCESS','ACTIVE'].includes(status)) { el.classList.add('status-ready'); el.textContent = '✓ Active'; }
-  else if (['BUILDING','DEPLOYING','INITIALIZING'].includes(status)) { el.classList.add('status-building'); el.textContent = '⟳ Deploying'; }
-  else if (['FAILED','CRASHED','ERROR'].includes(status)) { el.classList.add('status-error'); el.textContent = '✕ ' + status; }
-  else { el.classList.add('status-unknown'); el.textContent = status || '—'; }
-}
-
-async function triggerNetlifyDeploy() {
-  const btn = document.getElementById('netlify-deploy-btn');
-  btn.disabled=true; btn.innerHTML='<span class="loading"></span>';
-  try {
-    const repoName = document.getElementById('repo-select').options[document.getElementById('repo-select').selectedIndex].text;
-    notifyDeploy('Netlify', repoName, 'started', null);
-    await api('/api/netlify/deploy','POST',{siteId:repoNetlify.siteId});
-    toast('Netlify deploy triggered ✓','success');
-    setDeployStatus('netlify','building',null);
-    setTimeout(async () => {
-      const s = await api('/api/netlify/status/' + repoNetlify.siteId);
-      notifyDeploy('Netlify', repoName, s.state === 'ready' ? 'success' : 'failed', s.url);
-      if (s.url) setTimeout(() => checkUptime(s.url, repoName, 'Netlify'), 5000);
-    }, 60000);
-  }
-  catch(e) { toast('Netlify error: '+e.message,'error'); }
-  btn.disabled=false; btn.textContent='▶ Deploy';
-}
-
-async function triggerVercelDeploy() {
-  const btn = document.getElementById('vercel-deploy-btn');
-  btn.disabled=true; btn.innerHTML='<span class="loading"></span>';
-  try {
-    const repoName2 = document.getElementById('repo-select').options[document.getElementById('repo-select').selectedIndex].text;
-    notifyDeploy('Vercel', repoName2, 'started', null);
-    await api('/api/vercel/deploy','POST',{projectId:repoVercel.projectId,projectName:repoVercel.projectName});
-    toast('Vercel deploy triggered ✓','success');
-    setDeployStatus('vercel','building',null);
-    setTimeout(async () => {
-      const s = await api('/api/vercel/status/' + repoVercel.projectId);
-      notifyDeploy('Vercel', repoName2, s.state === 'READY' ? 'success' : 'failed', s.url);
-      if (s.url) setTimeout(() => checkUptime(s.url, repoName2, 'Vercel'), 5000);
-    }, 60000);
-  }
-  catch(e) { toast('Vercel error: '+e.message,'error'); }
-  btn.disabled=false; btn.textContent='▶ Deploy';
-}
-
-async function triggerRailwayRedeploy() {
-  const btn = document.getElementById('railway-deploy-btn');
-  btn.disabled=true; btn.innerHTML='<span class="loading"></span>';
-  try {
-    const repoName3 = document.getElementById('repo-select').options[document.getElementById('repo-select').selectedIndex].text;
-    notifyDeploy('Railway', repoName3, 'started', null);
-    await api('/api/railway/redeploy','POST',{serviceId:repoRailway.serviceId, environmentId:repoRailway.environmentId});
-    toast('Railway redeploy triggered ✓','success'); setRailwayStatus('DEPLOYING');
-    notifyDeploy('Railway', repoName3, 'success', null);
-  } catch(e) { toast('Railway error: '+e.message,'error'); }
-  btn.disabled=false; btn.textContent='↺ Redeploy';
-}
-
-async function showRailwayLogs() {
-  if (!repoRailway) return;
-  document.getElementById('railway-logs-modal').style.display='flex';
-  document.getElementById('logs-service-name').textContent = repoRailway.serviceName;
-  await refreshLogs();
-}
-
-async function refreshLogs() {
-  const viewer = document.getElementById('log-viewer');
-  viewer.innerHTML = '<div style="color:var(--muted)">Loading…</div>';
-  try {
-    // Get latest deployment ID first
-    const status = await api(`/api/railway/status/${repoRailway.serviceId}`);
-    if (!status.deployId) { viewer.innerHTML = '<div style="color:var(--muted)">No deployment found</div>'; return; }
-    const data = await api(`/api/railway/logs/${status.deployId}`);
-    if (!data.logs?.length) { viewer.innerHTML = '<div style="color:var(--muted)">No logs available</div>'; return; }
-    viewer.innerHTML = data.logs.map(l => {
-      const time = new Date(l.timestamp).toLocaleTimeString();
-      const cls = l.severity === 'ERROR' ? 'log-error' : l.severity === 'WARN' ? 'log-warn' : 'log-msg';
-      return `<div class="log-line"><span class="log-time">${time}</span><span class="${cls}">${l.message.replace(/</g,'&lt;')}</span></div>`;
-    }).join('');
-    viewer.scrollTop = viewer.scrollHeight;
-  } catch(e) { viewer.innerHTML = `<div style="color:var(--deleted)">${e.message}</div>`; }
-}
-
-// ---- RAILWAY TAB ----
-async function loadRailwayTab() {
-  const content = document.getElementById('railway-content');
-  const cfg = await api('/api/config');
-  if (!cfg.hasRailway) {
-    content.innerHTML = '<div class="empty-state"><p>Connect Railway in ⚙ Settings to see your services</p></div>';
-    return;
-  }
-  content.innerHTML = '<div style="color:var(--muted);padding:20px">Loading services…</div>';
-  try {
-    const data = await api('/api/railway/projects');
-    if (!data.projects?.length) { content.innerHTML = '<div style="color:var(--muted);padding:20px">No Railway projects found</div>'; return; }
-    content.innerHTML = data.projects.map(p => `
-      <div class="railway-project">
-        <div class="railway-project-name">${p.name}</div>
-        ${p.services.map(s => {
-          let statusCls = 'status-unknown', statusTxt = s.status;
-          if (['SUCCESS','ACTIVE'].includes(s.status)) { statusCls='status-ready'; statusTxt='✓ Active'; }
-          else if (['BUILDING','DEPLOYING'].includes(s.status)) { statusCls='status-building'; statusTxt='⟳ Deploying'; }
-          else if (['FAILED','CRASHED'].includes(s.status)) { statusCls='status-error'; statusTxt='✕ '+s.status; }
-          const time = s.lastDeploy ? new Date(s.lastDeploy).toLocaleString() : 'Never';
-          return `<div class="railway-service-item">
-            <div style="width:8px;height:8px;border-radius:50%;background:${statusCls.includes('ready')?'var(--new)':statusCls.includes('building')?'var(--modified)':statusCls.includes('error')?'var(--deleted)':'var(--muted)'};flex-shrink:0"></div>
-            <div class="railway-service-name">${s.name}</div>
-            <span class="deploy-status ${statusCls}">${statusTxt}</span>
-            <span class="railway-service-time">${time}</span>
-          </div>`;
-        }).join('')}
-      </div>`).join('');
-  } catch(e) { content.innerHTML = `<div style="color:var(--deleted);padding:20px">${e.message}</div>`; }
-}
-
-// ---- RAILWAY LINK MODAL ----
-async function showRailwayLinkModal() {
-  document.getElementById('railway-link-modal').style.display='flex';
-  const listEl = document.getElementById('railway-services-list');
-  listEl.innerHTML = '<div style="padding:20px;text-align:center;color:var(--muted)">Loading…</div>';
-  try {
-    const data = await api('/api/railway/projects');
-    listEl.innerHTML = data.projects.map(p => `
-      <div class="railway-project" style="margin-bottom:12px">
-        <div class="railway-project-name" style="padding:4px 0">${p.name}</div>
-        ${p.services.map(s => `
-          <div class="link-item" onclick="linkRailwayService('${s.id}','${s.name.replace(/'/g,"\\'")}','${p.id}','${p.name.replace(/'/g,"\\'")}')">
-            <div><div class="link-item-name">${s.name}</div><div class="link-item-url">${p.name}</div></div>
-            <span class="deploy-status ${['SUCCESS','ACTIVE'].includes(s.status)?'status-ready':['FAILED','CRASHED'].includes(s.status)?'status-error':'status-unknown'}">${s.status}</span>
-          </div>`).join('')}
-      </div>`).join('');
-  } catch(e) { listEl.innerHTML = `<div style="padding:20px;color:var(--deleted)">${e.message}</div>`; }
-}
-
-async function linkRailwayService(serviceId, serviceName, projectId, projectName) {
-  await api('/api/railway/link','POST',{localPath:currentRepo,serviceId,serviceName,projectId,projectName});
-  repoRailway = {serviceId,serviceName,projectId,projectName};
-  toast(`Linked to ${serviceName}`,'success');
-  document.getElementById('railway-link-modal').style.display='none';
-  updateDeployBar(); updateDeploySection();
-}
-
-async function unlinkRailway() {
-  await api('/api/railway/unlink','POST',{localPath:currentRepo});
-  repoRailway = null; toast('Railway unlinked','info');
-  document.getElementById('railway-link-modal').style.display='none';
-  updateDeployBar(); updateDeploySection();
-}
-
-// ---- TABS ----
-function switchTab(tab) {
-  currentTab = tab;
-  ['changes','history','railway','settings'].forEach(t => {
-    const el = document.getElementById(`tab-${t}`);
-    if (el) el.classList.toggle('active', t === tab);
-  });
-  document.getElementById('diff-view').style.display = tab==='changes'?'block':'none';
-  document.getElementById('history-view').style.display = tab==='history'?'block':'none';
-  document.getElementById('railway-view').style.display = tab==='railway'?'block':'none';
-  document.getElementById('settings-view').style.display = tab==='settings'?'block':'none';
-  document.getElementById('commit-panel').style.display = tab==='changes'?'block':'none';
-  if (tab==='history') loadHistory();
-  if (tab==='railway') loadRailwayTab();
-  if (tab==='settings') loadSettingsTab();
-}
-
-async function loadSettingsTab() {
-  const cfg = await api('/api/config'); updateSettingsStatus(cfg); updateDeploySection();
-}
-
-function updateDeploySection() {
-  api('/api/config').then(cfg => {
-    document.getElementById('netlify-link-section').style.display = cfg.hasNetlify && currentRepo ? 'block' : 'none';
-    document.getElementById('vercel-link-section').style.display = cfg.hasVercel && currentRepo ? 'block' : 'none';
-    document.getElementById('railway-link-section').style.display = cfg.hasRailway && currentRepo ? 'block' : 'none';
-    document.getElementById('netlify-linked-info').innerHTML = repoNetlify ? `<span class="connected-badge connected-netlify">◆ ${repoNetlify.siteName}</span>` : '<span style="color:var(--muted);font-size:13px">Not linked</span>';
-    document.getElementById('vercel-linked-info').innerHTML = repoVercel ? `<span class="connected-badge connected-vercel">▲ ${repoVercel.projectName}</span>` : '<span style="color:var(--muted);font-size:13px">Not linked</span>';
-    document.getElementById('railway-linked-info').innerHTML = repoRailway ? `<span class="connected-badge connected-railway">🚂 ${repoRailway.serviceName}</span>` : '<span style="color:var(--muted);font-size:13px">Not linked</span>';
+  btn.disabled=true;btn.textContent='Sending...';msg.textContent='';
+  fetch('/.netlify/functions/send-7signs',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:email})
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    if(data.success){
+      msg.style.color='#4ade80';
+      msg.textContent='Check your inbox — your guide is on its way!';
+      btn.textContent='Guide Sent!';
+      if(typeof trackEvent==='function') trackEvent('generate_lead',{event_category:'conversion',event_label:'7signs_popup',value:1});
+      sessionStorage.setItem('leadCaptured','1');
+      setTimeout(closeSignsPopup,3000);
+    } else { throw new Error(data.error||'Failed'); }
+  })
+  .catch(function(){
+    msg.style.color='#f87171';msg.textContent='Something went wrong. Please try again.';
+    btn.disabled=false;btn.textContent='Send Me the Free Guide';
   });
 }
+document.getElementById('signsEmail').addEventListener('keydown',function(e){
+  if(e.key==='Enter') submitSignsForm();
+});
+</script>
 
-async function loadHistory() {
-  const el = document.getElementById('commit-log');
-  el.innerHTML = '<div style="padding:20px;color:var(--muted)">Loading…</div>';
-  const data = await api('/api/log','POST',{localPath:currentRepo});
-  if (!data.commits.length) { el.innerHTML = '<div style="padding:20px;color:var(--muted)">No commits yet.</div>'; return; }
-  el.innerHTML = data.commits.map(c => `<div class="commit-log-item"><span class="commit-hash">${c.short}</span><div><div class="commit-subject">${c.subject}</div><div class="commit-meta">${c.author} · ${c.time}</div></div></div>`).join('');
-}
-
-async function doCommit() {
-  const msg = document.getElementById('commit-msg').value.trim();
-  if (!msg) return toast('Please enter a commit message','error');
-  const checked = [...document.querySelectorAll('#file-list input[type=checkbox]:checked')];
-  if (!checked.length) return toast('No files selected','error');
-  const files = checked.map(c => allFiles[parseInt(c.dataset.idx)].file);
-  const push = document.getElementById('push-toggle').checked;
-  const autoDeploy = document.getElementById('auto-deploy-toggle').checked;
-  const btn = document.getElementById('commit-btn');
-  btn.disabled=true; btn.innerHTML='<span class="loading"></span>';
-  try {
-    await api('/api/commit','POST',{localPath:currentRepo,files,message:msg,push});
-    toast(push?'Committed & pushed ✓':'Committed locally ✓','success');
-    document.getElementById('commit-msg').value='';
-    await refreshStatus();
-    if (push && autoDeploy) {
-      if (repoNetlify) setTimeout(triggerNetlifyDeploy,1500);
-      if (repoVercel) setTimeout(triggerVercelDeploy,1500);
-      // Railway auto-deploys via GitHub webhook, just refresh status
-      if (repoRailway) setTimeout(fetchRailwayStatus,5000);
-    }
-  } catch(e) { toast('Error: '+e,'error'); }
-  btn.disabled=false; btn.textContent='Commit';
-}
-
-async function createRepo() {
-  const name=document.getElementById('nr-name').value.trim(), desc=document.getElementById('nr-desc').value.trim(), localPath=document.getElementById('nr-path').value.trim(), isPrivate=document.getElementById('nr-private').checked;
-  if (!name||!localPath) return toast('Name and path required','error');
-  const btn=document.getElementById('nr-submit'); btn.disabled=true; btn.textContent='Creating…';
-  try {
-    await api('/api/repos/create','POST',{name,description:desc,isPrivate,localPath});
-    toast('Repo created ✓','success');
-    document.getElementById('new-repo-modal').style.display='none';
-    const cfg=await api('/api/config'); loadRepos(cfg.repos);
-    document.getElementById('repo-select').value=localPath; selectRepo(localPath);
-  } catch(e) { toast('Error: '+e,'error'); }
-  btn.disabled=false; btn.textContent='Create Repository';
-}
-
-async function addRepo() {
-  const localPath=document.getElementById('ar-path').value.trim();
-  if (!localPath) return toast('Path required','error');
-  try {
-    await api('/api/repos/add','POST',{localPath}); toast('Repository added','success');
-    document.getElementById('add-repo-modal').style.display='none';
-    const cfg=await api('/api/config'); loadRepos(cfg.repos);
-    document.getElementById('repo-select').value=localPath; selectRepo(localPath);
-  } catch(e) { toast('Error: '+e,'error'); }
-}
-
-async function showNetlifyLinkModal() {
-  document.getElementById('netlify-link-modal').style.display='flex';
-  const listEl=document.getElementById('netlify-sites-list');
-  listEl.innerHTML='<div style="padding:20px;text-align:center;color:var(--muted)">Loading…</div>';
-  try {
-    const data=await api('/api/netlify/sites');
-    listEl.innerHTML=data.sites.map(s=>`<div class="link-item" onclick="linkNetlifySite('${s.id}','${s.name.replace(/'/g,"\\'")}','${(s.url||'').replace(/'/g,"\\'")}')"><div><div class="link-item-name">${s.name}</div><div class="link-item-url">${s.customDomain||s.url||''}</div></div><span class="deploy-status ${s.state==='ready'?'status-ready':'status-unknown'}">${s.state}</span></div>`).join('');
-  } catch(e) { listEl.innerHTML=`<div style="padding:20px;color:var(--deleted)">${e.message}</div>`; }
-}
-async function linkNetlifySite(siteId,siteName,siteUrl) {
-  await api('/api/netlify/link','POST',{localPath:currentRepo,siteId,siteName,siteUrl});
-  repoNetlify={siteId,siteName,siteUrl}; toast(`Linked to ${siteName}`,'success');
-  document.getElementById('netlify-link-modal').style.display='none';
-  updateDeployBar(); updateDeploySection();
-}
-async function unlinkNetlify() {
-  await api('/api/netlify/unlink','POST',{localPath:currentRepo}); repoNetlify=null;
-  toast('Netlify unlinked','info'); document.getElementById('netlify-link-modal').style.display='none';
-  updateDeployBar(); updateDeploySection();
-}
-
-async function showVercelLinkModal() {
-  document.getElementById('vercel-link-modal').style.display='flex';
-  const listEl=document.getElementById('vercel-projects-list');
-  listEl.innerHTML='<div style="padding:20px;text-align:center;color:var(--muted)">Loading…</div>';
-  try {
-    const data=await api('/api/vercel/projects');
-    listEl.innerHTML=data.projects.map(p=>`<div class="link-item" onclick="linkVercelProject('${p.id}','${p.name.replace(/'/g,"\\'")}','${(p.url||'').replace(/'/g,"\\'")}')"><div><div class="link-item-name">${p.name}</div><div class="link-item-url">${p.url||''}</div></div></div>`).join('');
-  } catch(e) { listEl.innerHTML=`<div style="padding:20px;color:var(--deleted)">${e.message}</div>`; }
-}
-async function linkVercelProject(projectId,projectName,projectUrl) {
-  await api('/api/vercel/link','POST',{localPath:currentRepo,projectId,projectName,projectUrl});
-  repoVercel={projectId,projectName,projectUrl}; toast(`Linked to ${projectName}`,'success');
-  document.getElementById('vercel-link-modal').style.display='none';
-  updateDeployBar(); updateDeploySection();
-}
-async function unlinkVercel() {
-  await api('/api/vercel/unlink','POST',{localPath:currentRepo}); repoVercel=null;
-  toast('Vercel unlinked','info'); document.getElementById('vercel-link-modal').style.display='none';
-  updateDeployBar(); updateDeploySection();
-}
-
-async function showBranchModal() {
-  document.getElementById('branch-modal').style.display='flex';
-  const data=await api('/api/branches','POST',{localPath:currentRepo});
-  document.getElementById('branch-list').innerHTML=data.branches.map(b=>`<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--border);font-size:13px;${b===data.current?'color:var(--accent);font-weight:600':''}" onclick="switchBranch('${b}')">${b===data.current?'✓ ':''}${b}</div>`).join('');
-}
-async function switchBranch(branch) {
-  try { await api('/api/checkout','POST',{localPath:currentRepo,branch}); document.getElementById('branch-modal').style.display='none'; toast(`Switched to ${branch}`,'success'); refreshStatus(); }
-  catch(e) { toast('Error: '+e,'error'); }
-}
-async function createBranch() {
-  const name=document.getElementById('new-branch-name').value.trim();
-  if (!name) return toast('Branch name required','error');
-  try { await api('/api/checkout','POST',{localPath:currentRepo,branch:name,create:true}); document.getElementById('branch-modal').style.display='none'; document.getElementById('new-branch-name').value=''; toast(`Created & switched to ${name}`,'success'); refreshStatus(); }
-  catch(e) { toast('Error: '+e,'error'); }
-}
-
-function showPullConfirm() { document.getElementById('pull-modal').style.display='flex'; }
-async function doPull() {
-  try { await api('/api/pull','POST',{localPath:currentRepo}); document.getElementById('pull-modal').style.display='none'; toast('Pulled ✓','success'); refreshStatus(); }
-  catch(e) { toast('Error: '+e,'error'); }
-}
-
-async function viewDiff(file,el) {
-  selectedFile=file;
-  document.querySelectorAll('.file-item').forEach(i=>i.classList.remove('selected'));
-  if (el) el.classList.add('selected');
-  const view=document.getElementById('diff-view');
-  view.innerHTML='<div class="diff-header">Loading…</div>';
-  try { const data=await api('/api/diff','POST',{localPath:currentRepo,file}); renderDiff(file,data.diff); }
-  catch(e) { view.innerHTML=`<div class="diff-header">Error: ${e.message}</div>`; }
-}
-function renderDiff(file,raw) {
-  const lines=raw.split('\n');
-  let html=`<div class="diff-header">📄 ${file}</div><div class="diff-code">`;
-  lines.forEach(line=>{
-    const esc=line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    if (line.startsWith('+')&&!line.startsWith('+++')) html+=`<div class="diff-line diff-add">${esc}</div>`;
-    else if (line.startsWith('-')&&!line.startsWith('---')) html+=`<div class="diff-line diff-remove">${esc}</div>`;
-    else if (line.startsWith('@@')) html+=`<div class="diff-line diff-hunk">${esc}</div>`;
-    else html+=`<div class="diff-line">${esc}</div>`;
-  });
-  document.getElementById('diff-view').innerHTML=html+'</div>';
-}
-
-function showNewRepoModal() { document.getElementById('new-repo-modal').style.display='flex'; }
-function showAddRepoModal() { document.getElementById('add-repo-modal').style.display='flex'; }
-function closeModal(e,id) { if (e.target===e.currentTarget) document.getElementById(id).style.display='none'; }
-
-function toast(msg,type='info') {
-  const c=document.getElementById('toast-container'), t=document.createElement('div');
-  t.className=`toast toast-${type}`; t.textContent=msg; c.appendChild(t); setTimeout(()=>t.remove(),3500);
-}
-
-
-async function saveTelegramToken() {
-  const botToken = document.getElementById('telegram-bot-token').value.trim();
-  const chatId = document.getElementById('telegram-chat-id').value.trim();
-  if (!botToken || !chatId) return toast('Bot token and chat ID are both required', 'error');
-  try {
-    await api('/api/telegram/token', 'POST', { botToken, chatId });
-    toast('Telegram connected — check your Telegram for a test message ✓', 'success');
-    document.getElementById('telegram-bot-token').value = '';
-    document.getElementById('telegram-chat-id').value = '';
-    const cfg = await api('/api/config');
-    updateSettingsStatus(cfg);
-  } catch(e) { toast('Telegram error: ' + e.message, 'error'); }
-}
-
-async function testTelegram() {
-  try { await api('/api/telegram/test', 'POST', {}); toast('Test message sent to Telegram ✓', 'success'); }
-  catch(e) { toast('Error: ' + e.message, 'error'); }
-}
-
-function notifyDeploy(platform, repoName, status, url) {
-  const cfg_check = fetch('/api/config').then(r=>r.json()).then(cfg => {
-    if (!cfg.hasTelegram) return;
-    let msg = '';
-    if (status === 'started') msg = '🚀 <b>Deploy Started</b>\n' + repoName + ' → ' + platform;
-    else if (status === 'success') msg = '✅ <b>Deploy Success</b>\n' + repoName + ' → ' + platform + (url ? '\n🔗 ' + url : '');
-    else if (status === 'failed') msg = '❌ <b>Deploy Failed</b>\n' + repoName + ' → ' + platform;
-    if (msg) api('/api/telegram/notify', 'POST', { message: msg }).catch(()=>{});
+<script>
+(function(){
+  function nextNewMoon(){
+    // Known new moon reference: Jan 29 2025 12:36 UTC
+    var ref=new Date(Date.UTC(2025,0,29,12,36));
+    var cycle=29.53058867*24*3600*1000;
+    var now=Date.now();
+    var elapsed=now-ref.getTime();
+    var cycles=Math.floor(elapsed/cycle);
+    var next=new Date(ref.getTime()+(cycles+1)*cycle);
+    return next;
+  }
+  function fmt(ms){
+    if(ms<=0)return'Opening now 🌑';
+    var s=Math.floor(ms/1000);
+    var d=Math.floor(s/86400);
+    var h=Math.floor((s%86400)/3600);
+    var m=Math.floor((s%3600)/60);
+    var sc=s%60;
+    if(d>0)return d+'d '+h+'h '+m+'m';
+    if(h>0)return h+'h '+m+'m '+sc+'s';
+    return m+'m '+sc+'s';
+  }
+  var el=document.getElementById('moon-countdown');
+  if(!el)return;
+  var target=nextNewMoon();
+  var label=target.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+  function tick(){
+    var left=target.getTime()-Date.now();
+    el.textContent=label+' — '+fmt(left);
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+<script>
+function submitSampleGate(){
+  var email=document.getElementById("sampleGateEmail").value.trim();
+  var btn=document.getElementById("sampleGateBtn");
+  var msg=document.getElementById("sampleGateMsg");
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    msg.style.color="#f87171";msg.textContent="Please enter a valid email address.";return;
+  }
+  btn.disabled=true;btn.textContent="Sending...";msg.textContent="";
+  fetch("/.netlify/functions/send-7signs",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({email:email,type:"sample"})
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.success){
+      msg.style.color="#4ade80";
+      msg.textContent="Check your inbox — sample on its way!";
+      btn.textContent="Sent ✓";
+      if(typeof trackEvent==="function") trackEvent("generate_lead",{event_category:"conversion",event_label:"sample_gate",value:1});
+      sessionStorage.setItem("leadCaptured","1");
+    } else { throw new Error(d.error||"Failed"); }
+  })
+  .catch(function(){
+    msg.style.color="#f87171";msg.textContent="Something went wrong. Please try again.";
+    btn.disabled=false;btn.textContent="📖 Get Free Sample";
   });
 }
-
-async function checkUptime(url, repoName, platform) {
-  if (!url) return;
-  try { await api('/api/uptime/check', 'POST', { url, repoName, platform }); }
-  catch {}
-}
-
-async function api(url,method='GET',body=null) {
-  const opts={method,headers:{'Content-Type':'application/json'}};
-  if (body) opts.body=JSON.stringify(body);
-  const res=await fetch(url,opts); const data=await res.json();
-  if (!res.ok) throw new Error(data.error||'Unknown error');
-  return data;
-}
-
-init();
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"&&document.activeElement===document.getElementById("sampleGateEmail"))
+    submitSampleGate();
+});
 </script>
 </body>
 </html>
