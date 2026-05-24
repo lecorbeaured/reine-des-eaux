@@ -244,7 +244,7 @@
           "name": "Is there a money-back guarantee?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Please read the refund policy on our site before purchasing."
+            "text": "Yes. We offer a 30-day satisfaction promise. If you read the book and feel it wasn't right for your journey, reach out within 30 days and we'll make it right. No hard questions, no hoops to jump through."
           }
         }
       ]
@@ -299,9 +299,9 @@
         .section-title { font-size: 3rem; margin-bottom: 3rem; text-align: center; }
         .social-proof { background: rgba(240, 248, 248, 0.95); padding: 4rem 2rem; }
         .testimonial-grid { max-width: 1200px; margin: 3rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .testimonial { background: #ffffff; padding: 2rem; border-radius: 15px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-        .testimonial-text { font-style: italic; font-size: 1.1rem; margin-bottom: 1rem; color: #2c3e3f; }
-        .testimonial-author { font-weight: bold; color: #1e6b5c; }
+        .testimonial { background: white; padding: 2rem; border-radius: 15px; }
+        .testimonial-text { font-style: italic; font-size: 1.1rem; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: bold; color: #3ca9a0; }
         .features { background: linear-gradient(135deg, #0f4c3a, #1e6b5c); padding: 6rem 2rem; color: #f0f8f8; }
         .features-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
         .feature { text-align: center; padding: 2rem; }
@@ -328,6 +328,7 @@
         .mw-modal.show { display: flex; }
         .mw-modal__dialog { width: 100%; max-width: 520px; background: linear-gradient(135deg, rgba(15,76,58,0.98), rgba(30,107,92,0.95)); border-radius: 16px; padding: 1.5rem; color: #f0f8f8; position: relative; }
         .mw-modal__close { position: absolute; top: 0.6rem; right: 0.6rem; border: 0; background: transparent; color: #f0f8f8; width: 34px; height: 34px; cursor: pointer; }
+        /* === 7 SIGNS POPUP === */
         .signs-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:9000;align-items:center;justify-content:center;padding:1rem;}
         .signs-overlay.show{display:flex;}
         .signs-dialog{background:linear-gradient(160deg,#0f4c3a,#1e6b5c);border:1px solid rgba(212,175,55,0.4);border-radius:16px;max-width:480px;width:100%;padding:0;overflow:hidden;position:relative;animation:popIn .3s ease;}
@@ -488,7 +489,20 @@
             <div class="feature"><span class="feature-icon">🌟</span><h3 class="feature-title">Awakened Service</h3><p>Transform your personal journey into sacred service, becoming a vessel for healing and transformation. Learn how to use your gifts to help others without depleting yourself.</p></div>
         </div>
     </section>
-    
+
+    <!-- Free Chapter CTA -->
+    <section style="background:linear-gradient(135deg,#0a1a14,#0f4c3a);padding:4rem 1.5rem;text-align:center;">
+        <div style="max-width:680px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:2.5rem;justify-content:center;">
+            <img src="images/mamiwata.png" alt="Mami Wata book cover" style="width:130px;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,0.5);">
+            <div style="text-align:left;flex:1;min-width:240px;">
+                <div style="display:inline-block;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);border-radius:30px;padding:0.3rem 1rem;color:#d4af37;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;">Free Sample</div>
+                <h3 style="color:#f0f8f8;font-size:1.5rem;margin:0 0 0.6rem;line-height:1.3;">Not ready to buy yet?<br>Read the first chapters free.</h3>
+                <p style="color:rgba(240,248,248,0.7);font-size:0.95rem;margin:0 0 1.2rem;line-height:1.6;">Get an instant feel for Amari's voice, depth, and approach before committing. No obligation.</p>
+                <a href="files/mami-wata-sample.pdf" target="_blank" rel="noopener" style="display:inline-block;background:transparent;color:#d4af37;border:1.5px solid #d4af37;border-radius:30px;padding:0.7rem 1.6rem;font-size:0.95rem;font-weight:600;text-decoration:none;">📖 Download Free Sample</a>
+            </div>
+        </div>
+    </section>
+
     <section class="transformation">
         <h2 class="section-title" style="color: #2c3e3f;">The Sacred Transformation</h2>
         <div class="before-after">
@@ -533,185 +547,35 @@
                 </ul>
             </div>
             <div class="price-box" id="buy-now">
+                <!-- Price increase warning -->
                 <div style="background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.5);border-radius:10px;padding:0.7rem 1.2rem;margin-bottom:1.2rem;font-size:0.9rem;color:#f1c40f;text-align:center;">
-                  &#x26A0;&#xFE0F; Price increases to <strong>$199</strong> after the next new moon
+                  ⚠️ Price increases to <strong>$199</strong> after the next new moon
                 </div>
+                <!-- Strikethrough + current price -->
                 <div style="text-align:center;margin-bottom:0.25rem;">
                   <span style="font-size:1.3rem;color:rgba(240,248,248,0.45);text-decoration:line-through;">$199</span>
                   <span style="font-size:0.9rem;color:#3ca9a0;margin-left:0.6rem;font-weight:600;">Save $101</span>
                 </div>
                 <div class="current-price">$98</div>
+                <!-- Moon countdown -->
                 <div style="background:rgba(15,76,58,0.6);border:1px solid rgba(60,169,160,0.3);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0;text-align:center;">
-                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;">&#x1F311; Next new moon initiation window</div>
+                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;">🌑 Next new moon initiation window</div>
                   <div id="moon-countdown" style="font-size:1.05rem;color:#f0f8f8;font-weight:600;letter-spacing:0.03em;">Calculating...</div>
-                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.5);margin-top:0.3rem;">Align your journey &#x2014; order before it closes</div>
+                  <div style="font-size:0.8rem;color:rgba(240,248,248,0.5);margin-top:0.3rem;">Align your journey — order before it closes</div>
                 </div>
-                <p style="font-size:1.1rem;margin:1rem 0;">One-time investment &#x2022; Instant PDF download</p>
-                <a href="https://payhip.com/b/0oeMU" class="btn-primary" style="font-size:1.4rem;padding:1.5rem 3rem;margin:1.5rem 0;display:inline-block;" target="_blank" rel="noopener">Get the Ebook Now &#x1F4D6;</a>
-                <p style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;">&#x1F512; Secure checkout &#x2022; Instant delivery to your email</p></div>
-    <div class="water-bg"></div>
-    
-    <nav><div class="nav-container"><a href="#" class="logo">🌊 Mami Wata</a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="about-amari-zola.html">About</a></li><li><a href="#features">Features</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#buy-now">Get Book</a></li></ul><a href="#buy-now" class="cta-button">Start Your Initiation ✨</a><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
-    
-    <div class="mobile-nav" id="mobileNav">
-        <a href="#home" onclick="closeMobileNav()">Home</a>
-        <a href="about-amari-zola.html">About</a>
-        <a href="#features" onclick="closeMobileNav()">Features</a>
-        <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
-        <a href="#buy-now" onclick="closeMobileNav()">Get Book</a>
-        <a href="#buy-now" class="cta-button" onclick="closeMobileNav()">Start Your Initiation ✨</a>
-    </div>
-    
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Finally, <span style="color: #d4af37;">The Truth</span> About<br>Mami Wata</h1>
-                <p class="hero-subtitle">From a Real Initiate Who's Been There</p>
-                <p class="hero-description">For too long, Mami Wata has been shrouded in mystery. As someone who has walked through the initiation myself, I have created the <strong>first comprehensive guide</strong> that cuts through the myths. This <strong>200+ page book</strong> contains <strong>authentic rituals, practical exercises,</strong> and real wisdom from my personal journey.</p>
-                <div class="hero-cta">
-                    <a href="#buy-now" class="btn-primary">Begin Reading Your Awakening Story 💎</a>
-                    <a href="#" class="btn-secondary" onclick="handleSampleClick(event)">Free Sample</a>
+                <p style="font-size:1.1rem;margin:1rem 0;">One-time investment • Instant PDF download</p>
+                <a href="https://payhip.com/b/0oeMU" class="btn-primary" style="font-size:1.4rem;padding:1.5rem 3rem;margin:1.5rem 0;display:inline-block;" target="_blank" rel="noopener">Get the Ebook Now 📖</a>
+                <p style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;">🔒 Secure checkout • Instant delivery to your email</p>
+                <div style="background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
+  <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🛡️</div>
+  <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-size: 1.2rem;">30-Day Satisfaction Promise</h4>
+  <p style="color: rgba(240,248,248,0.85); font-size: 0.95rem; line-height: 1.6;">If you read this book and feel it wasn't right for your journey, reach out within 30 days and we'll make it right. No hard questions, no hoops to jump through.</p>
+</div>
+                <div style="margin-top:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:0.8rem 1.2rem;text-align:center;font-size:0.9rem;display:inline-block;">
+                    <span>Payments securely processed by <strong style="color:#d4af37;">Payhip</strong></span><br>
+                    <small style="font-size:0.8rem;opacity:0.8;">Instant download after purchase</small>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item"><div class="stat-number">4.9★</div><div>247 Reviews</div></div>
-                    <div class="stat-item"><div class="stat-number">247+</div><div>Readers</div></div>
-                    <div class="stat-item"><div class="stat-number">First</div><div>By Real Initiate</div></div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/mamiwata.png" alt="Book Cover" class="book-cover">
-                <div class="floating-element">🌊</div>
-                <div class="floating-element">✨</div>
-                <div class="floating-element">🐚</div>
-                <div class="floating-element">🔱</div>
-                <div class="floating-element">💎</div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="social-proof" id="testimonials">
-        <h2 class="section-title" style="color: #2c3e3f;">What Readers Are Saying</h2>
-        <p style="text-align: center; max-width: 600px; margin: -1.5rem auto 2.5rem; color: #666; font-size: 1.1rem;">Real feedback from people who've read the book</p>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"I have been searching for YEARS. This book finally gave me the real answers I needed from someone who actually knows. The chapter on dream interpretation alone was worth the price."</p>
-                <p class="testimonial-author">— Sophia E.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Atlanta, USA</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"This book bridges the gap between the old ways and modern understanding. Finally someone who has been through it shares the truth. I've recommended it to three friends already."</p>
-                <p class="testimonial-author">— Xavier T.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Accra, Ghana</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"This is the only book written by an actual initiate—not theory, not second-hand stories. REAL experience. I've read it twice and keep finding new insights."</p>
-                <p class="testimonial-author">— Alisha P.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • London, UK</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"I had signs my whole life — the water dreams, the pulling to rivers and oceans — but no one in my family could explain it. This book was the first place I found real answers written by someone who actually went through it."</p>
-                <p class="testimonial-author">— Ngozi B.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Lagos, Nigeria</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"The dream interpretation chapter alone was worth 10x the price. I've been journaling my water dreams for years and finally understand what they mean. Life-changing, no exaggeration."</p>
-                <p class="testimonial-author">— Claudette M.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Port-au-Prince, Haiti</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"As a practitioner in the African diaspora tradition, I was skeptical. But Amari writes with genuine authority and humility. This is not a tourist's guide — it's the real thing. Highly recommended."</p>
-                <p class="testimonial-author">— Kwame A.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Accra, Ghana</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"I downloaded it at midnight and was still reading at 4am. Couldn't put it down. The sections on sacred abundance and relationships hit me hard — exactly what I've been struggling with."</p>
-                <p class="testimonial-author">— Tanya R.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Toronto, Canada</p>
-            </div>
-            <div class="testimonial">
-                <div style="color: #d4af37; margin-bottom: 0.75rem; font-size: 1.2rem;">★★★★★</div>
-                <p class="testimonial-text">"There's nothing else like this on the internet. I searched for months. Every other source was either academic theory or tourist-level curiosity. Amari's book is the real initiate's perspective and it shows."</p>
-                <p class="testimonial-author">— Isabelle F.</p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Verified Buyer • Paris, France</p>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem; color: #666; font-size: 0.95rem;">⭐ 4.9 average rating from 247+ readers</p>
-    </section>
-    
-    <section class="features" id="features">
-        <h2 class="section-title">Ancient Wisdom for Modern Awakening</h2>
-        <p style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem; opacity: 0.9; line-height: 1.8;">As someone who has lived through the initiation process, I've distilled centuries of water spirit wisdom into practical guidance you can apply today. Here's what you'll discover inside:</p>
-        <div class="features-grid">
-            <div class="feature"><span class="feature-icon">🔮</span><h3 class="feature-title">Sacred Initiation Rites</h3><p>Time-honored practices adapted for modern life that awaken your connection to water's infinite wisdom and power. Learn the exact steps I took during my own initiation.</p></div>
-            <div class="feature"><span class="feature-icon">🛡️</span><h3 class="feature-title">Inner Authority & Discernment</h3><p>Develop unshakeable trust in your own spiritual knowing and learn to distinguish authentic guidance from illusion. No more confusion or fear—just clarity.</p></div>
-            <div class="feature"><span class="feature-icon">💰</span><h3 class="feature-title">Sacred Abundance Flow</h3><p>Align your divine gifts with material prosperity. Learn the ancient secrets of money as flowing energy and how water spirits view wealth and success.</p></div>
-            <div class="feature"><span class="feature-icon">❤️</span><h3 class="feature-title">Soul-Deep Relationships</h3><p>Create connections that honor your sacred sensitivity while maintaining your energetic sovereignty. Navigate relationships without losing yourself or your power.</p></div>
-            <div class="feature"><span class="feature-icon">🌙</span><h3 class="feature-title">Mystical Dream Mastery</h3><p>Unlock the prophetic wisdom of your water dreams and develop your natural gifts of sight and knowing. Understand what the spirits are telling you each night.</p></div>
-            <div class="feature"><span class="feature-icon">🌟</span><h3 class="feature-title">Awakened Service</h3><p>Transform your personal journey into sacred service, becoming a vessel for healing and transformation. Learn how to use your gifts to help others without depleting yourself.</p></div>
-        </div>
-    </section>
-
-    <section style="background:linear-gradient(135deg,#0a1a14,#0f4c3a);padding:4rem 1.5rem;text-align:center;">
-        <div style="max-width:680px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:2.5rem;justify-content:center;">
-            <img src="images/mamiwata.png" alt="Mami Wata book cover" style="width:130px;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,0.5);">
-            <div style="text-align:left;flex:1;min-width:240px;">
-                <div style="display:inline-block;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);border-radius:30px;padding:0.3rem 1rem;color:#d4af37;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;">Free Sample</div>
-                <h3 style="color:#f0f8f8;font-size:1.5rem;margin:0 0 0.6rem;line-height:1.3;">Not ready to buy yet?<br>Read the first chapters free.</h3>
-                <p style="color:rgba(240,248,248,0.7);font-size:0.95rem;margin:0 0 1.2rem;line-height:1.6;">Get an instant feel for Amari's voice, depth, and approach before committing. No obligation.</p>
-                <a href="files/mami-wata-sample.pdf" target="_blank" rel="noopener" style="display:inline-block;background:transparent;color:#d4af37;border:1.5px solid #d4af37;border-radius:30px;padding:0.7rem 1.6rem;font-size:0.95rem;font-weight:600;text-decoration:none;">&#x1F4D6; Download Free Sample</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="transformation">
-        <h2 class="section-title" style="color: #2c3e3f;">The Sacred Transformation</h2>
-        <div class="before-after">
-            <div class="before">
-                <h3>Before Awakening</h3>
-                <ul style="list-style:none; padding:0; text-align:left;">
-                    <li>❌ Feeling different but not knowing why</li>
-                    <li>❌ Overwhelming sensitivity without understanding</li>
-                    <li>❌ Seeking answers from external sources</li>
-                    <li>❌ Hiding your true nature from others</li>
-                    <li>❌ Living below your spiritual potential</li>
-                </ul>
-            </div>
-            <div class="arrow">→</div>
-            <div class="after">
-                <h3>After Initiation</h3>
-                <ul style="list-style:none; padding:0; text-align:left;">
-                    <li>✨ Understanding your sacred calling</li>
-                    <li>✨ Channeling sensitivity as spiritual power</li>
-                    <li>✨ Trusting your inner wisdom completely</li>
-                    <li>✨ Living authentically and confidently</li>
-                    <li>✨ Fulfilling your highest spiritual destiny</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <section class="purchase" id="purchase">
-        <div class="purchase-container">
-            <h2 class="section-title">Stop Searching. Get Real Answers.</h2>
-            <div class="whats-included">
-                <h3>What You Get: Real Knowledge from Real Experience</h3>
-                <ul>
-                    <li>✅ 200+ pages of authentic initiate wisdom</li>
-                    <li>✅ Traditional rituals explained clearly</li>
-                    <li>✅ Practical exercises you can actually do</li>
-                    <li>✅ Dream interpretation from water spirit perspective</li>
-                    <li>✅ How to navigate the spiritual journey safely</li>
-                    <li>✅ Signs, symptoms, and what they really mean</li>
-                    <li>✅ The truth about calling, purpose, and destiny</li>
-                    <li>✅ Lifetime access plus all future updates</li>
-                </ul>
+                <p style="font-size:0.9rem;opacity:0.75;margin-top:1.5rem;font-style:italic;line-height:1.6;">Please note: All sales are final. This work explores deep spiritual themes and traditional practices. Take a moment to ensure this resonates with your journey before purchase.</p>
             </div>
         </div>
     </section>
@@ -751,7 +615,7 @@
                 </details>
                 <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
                     <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Is there a money-back guarantee? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
-                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Please review our refund policy before purchasing. All sales are final.</div>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Yes. We offer a 30-day satisfaction promise. If you read the book and feel it wasn't right for your journey, reach out within 30 days and we'll make it right. No hard questions, no hoops to jump through. Your trust matters more than a sale.</div>
                 </details>
             </div>
         </div>
@@ -1066,8 +930,9 @@
             });
         });
     </script>
+
 <!-- 7 Signs Lead Magnet Popup -->
-<div id="signsOverlay" class="signs-overlay" role="dialog" aria-modal="true">
+<div id="signsOverlay" class="signs-overlay" role="dialog" aria-modal="true" aria-label="Free guide offer">
   <div class="signs-dialog">
     <button class="signs-close" onclick="closeSignsPopup()" aria-label="Close">&#x2715;</button>
     <div class="signs-top">
@@ -1077,57 +942,85 @@
       <p style="margin:0;color:rgba(240,248,248,0.75);font-size:0.9rem;line-height:1.5;">How to know if Mami Wata is reaching out to you</p>
     </div>
     <div class="signs-body">
-      <p style="margin:0 0 16px;color:rgba(240,248,248,0.85);font-size:0.95rem;line-height:1.6;text-align:center;">Enter your email and receive the PDF guide instantly.</p>
+      <p style="margin:0 0 16px;color:rgba(240,248,248,0.85);font-size:0.95rem;line-height:1.6;text-align:center;">Enter your email and receive the PDF guide instantly — free.</p>
       <input type="email" id="signsEmail" class="signs-input" placeholder="Your email address" autocomplete="email">
       <button class="signs-btn" id="signsBtn" onclick="submitSignsForm()">Send Me the Free Guide &#x1F30A;</button>
-      <p class="signs-msg" id="signsMsg"></p>
+      <p class="signs-msg" id="signsMsg" style="color:#4ade80;"></p>
       <p style="margin:12px 0 0;font-size:0.78rem;color:rgba(240,248,248,0.4);text-align:center;">&#x1F512; No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </div>
+
 <script>
 (function(){
+  var DELAY_MS = 4000;
   if(!sessionStorage.getItem('signsShown')){
     setTimeout(function(){
       document.getElementById('signsOverlay').classList.add('show');
       sessionStorage.setItem('signsShown','1');
-      if(typeof trackEvent==='function')trackEvent('signs_popup_shown',{event_category:'engagement'});
-    },4000);
+      if(typeof trackEvent==='function') trackEvent('signs_popup_shown',{event_category:'engagement'});
+    }, DELAY_MS);
   }
 })();
-function closeSignsPopup(){document.getElementById('signsOverlay').classList.remove('show');}
-document.getElementById('signsOverlay').addEventListener('click',function(e){if(e.target===this)closeSignsPopup();});
+function closeSignsPopup(){
+  document.getElementById('signsOverlay').classList.remove('show');
+}
+document.getElementById('signsOverlay').addEventListener('click',function(e){
+  if(e.target===this) closeSignsPopup();
+});
 function submitSignsForm(){
   var email=document.getElementById('signsEmail').value.trim();
   var btn=document.getElementById('signsBtn');
   var msg=document.getElementById('signsMsg');
-  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.style.color='#f87171';msg.textContent='Please enter a valid email address.';return;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    msg.style.color='#f87171';msg.textContent='Please enter a valid email address.';return;
+  }
   btn.disabled=true;btn.textContent='Sending...';msg.textContent='';
-  fetch('/.netlify/functions/send-7signs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+  fetch('/.netlify/functions/send-7signs',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:email})
+  })
   .then(function(r){return r.json();})
-  .then(function(d){
-    if(d.success){
-      msg.style.color='#4ade80';msg.textContent='Check your inbox -- your guide is on its way!';
+  .then(function(data){
+    if(data.success){
+      msg.style.color='#4ade80';
+      msg.textContent='Check your inbox — your guide is on its way!';
       btn.textContent='Guide Sent!';
-      if(typeof trackEvent==='function')trackEvent('generate_lead',{event_category:'conversion',event_label:'7signs_popup',value:1});
+      if(typeof trackEvent==='function') trackEvent('generate_lead',{event_category:'conversion',event_label:'7signs_popup',value:1});
       sessionStorage.setItem('leadCaptured','1');
       setTimeout(closeSignsPopup,3000);
-    }else{throw new Error(d.error||'Failed');}
+    } else { throw new Error(data.error||'Failed'); }
   })
-  .catch(function(){msg.style.color='#f87171';msg.textContent='Something went wrong. Please try again.';btn.disabled=false;btn.textContent='Send Me the Free Guide';});
+  .catch(function(){
+    msg.style.color='#f87171';msg.textContent='Something went wrong. Please try again.';
+    btn.disabled=false;btn.textContent='Send Me the Free Guide';
+  });
 }
-document.getElementById('signsEmail').addEventListener('keydown',function(e){if(e.key==='Enter')submitSignsForm();});
+document.getElementById('signsEmail').addEventListener('keydown',function(e){
+  if(e.key==='Enter') submitSignsForm();
+});
 </script>
+
 <script>
 (function(){
   function nextNewMoon(){
+    // Known new moon reference: Jan 29 2025 12:36 UTC
     var ref=new Date(Date.UTC(2025,0,29,12,36));
     var cycle=29.53058867*24*3600*1000;
-    return new Date(ref.getTime()+(Math.floor((Date.now()-ref.getTime())/cycle)+1)*cycle);
+    var now=Date.now();
+    var elapsed=now-ref.getTime();
+    var cycles=Math.floor(elapsed/cycle);
+    var next=new Date(ref.getTime()+(cycles+1)*cycle);
+    return next;
   }
   function fmt(ms){
-    if(ms<=0)return'Opening now';
-    var s=Math.floor(ms/1000),d=Math.floor(s/86400),h=Math.floor((s%86400)/3600),m=Math.floor((s%3600)/60),sc=s%60;
+    if(ms<=0)return'Opening now 🌑';
+    var s=Math.floor(ms/1000);
+    var d=Math.floor(s/86400);
+    var h=Math.floor((s%86400)/3600);
+    var m=Math.floor((s%3600)/60);
+    var sc=s%60;
     if(d>0)return d+'d '+h+'h '+m+'m';
     if(h>0)return h+'h '+m+'m '+sc+'s';
     return m+'m '+sc+'s';
@@ -1136,8 +1029,12 @@ document.getElementById('signsEmail').addEventListener('keydown',function(e){if(
   if(!el)return;
   var target=nextNewMoon();
   var label=target.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
-  function tick(){el.textContent=label+' -- '+fmt(target.getTime()-Date.now());}
-  tick();setInterval(tick,1000);
+  function tick(){
+    var left=target.getTime()-Date.now();
+    el.textContent=label+' — '+fmt(left);
+  }
+  tick();
+  setInterval(tick,1000);
 })();
 </script>
 </body>
