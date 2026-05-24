@@ -244,7 +244,7 @@
           "name": "Is there a money-back guarantee?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We offer a 30-day satisfaction promise. If you read the book and feel it wasn't right for your journey, reach out within 30 days and we'll make it right. No hard questions, no hoops to jump through."
+            "text": "Please review our refund policy before purchasing. All sales are final."
           }
         }
       ]
@@ -498,7 +498,18 @@
                 <div style="display:inline-block;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);border-radius:30px;padding:0.3rem 1rem;color:#d4af37;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;">Free Sample</div>
                 <h3 style="color:#f0f8f8;font-size:1.5rem;margin:0 0 0.6rem;line-height:1.3;">Not ready to buy yet?<br>Read the first chapters free.</h3>
                 <p style="color:rgba(240,248,248,0.7);font-size:0.95rem;margin:0 0 1.2rem;line-height:1.6;">Get an instant feel for Amari's voice, depth, and approach before committing. No obligation.</p>
-                <a href="files/mami-wata-sample.pdf" target="_blank" rel="noopener" style="display:inline-block;background:transparent;color:#d4af37;border:1.5px solid #d4af37;border-radius:30px;padding:0.7rem 1.6rem;font-size:0.95rem;font-weight:600;text-decoration:none;">📖 Download Free Sample</a>
+                <div id="sampleGateForm">
+                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;max-width:420px;">
+                    <input type="email" id="sampleGateEmail" placeholder="Your email address" autocomplete="email"
+                      style="flex:1;min-width:180px;padding:0.7rem 1rem;border-radius:30px;border:1.5px solid rgba(60,169,160,0.6);background:rgba(240,248,248,0.08);color:#f0f8f8;font-size:0.9rem;outline:none;">
+                    <button onclick="submitSampleGate()" id="sampleGateBtn"
+                      style="padding:0.7rem 1.4rem;border-radius:30px;border:none;background:linear-gradient(45deg,#d4af37,#f1c40f);color:#2c3e3f;font-size:0.9rem;font-weight:700;cursor:pointer;white-space:nowrap;">
+                      📖 Get Free Sample
+                    </button>
+                  </div>
+                  <p id="sampleGateMsg" style="font-size:0.82rem;margin-top:0.5rem;min-height:1em;"></p>
+                  <p style="font-size:0.75rem;color:rgba(240,248,248,0.4);margin-top:0.3rem;">🔒 No spam. Unsubscribe anytime.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -566,11 +577,6 @@
                 <p style="font-size:1.1rem;margin:1rem 0;">One-time investment • Instant PDF download</p>
                 <a href="https://payhip.com/b/0oeMU" class="btn-primary" style="font-size:1.4rem;padding:1.5rem 3rem;margin:1.5rem 0;display:inline-block;" target="_blank" rel="noopener">Get the Ebook Now 📖</a>
                 <p style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;">🔒 Secure checkout • Instant delivery to your email</p>
-                <div style="background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
-  <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🛡️</div>
-  <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-size: 1.2rem;">30-Day Satisfaction Promise</h4>
-  <p style="color: rgba(240,248,248,0.85); font-size: 0.95rem; line-height: 1.6;">If you read this book and feel it wasn't right for your journey, reach out within 30 days and we'll make it right. No hard questions, no hoops to jump through.</p>
-</div>
                 <div style="margin-top:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:0.8rem 1.2rem;text-align:center;font-size:0.9rem;display:inline-block;">
                     <span>Payments securely processed by <strong style="color:#d4af37;">Payhip</strong></span><br>
                     <small style="font-size:0.8rem;opacity:0.8;">Instant download after purchase</small>
@@ -615,7 +621,7 @@
                 </details>
                 <details style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;">
                     <summary style="padding: 1.25rem 1.5rem; cursor: pointer; color: #f0f8f8; font-size: 1.05rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Is there a money-back guarantee? <span style="color: #d4af37; font-size: 1.3rem; flex-shrink: 0;">+</span></summary>
-                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Yes. We offer a 30-day satisfaction promise. If you read the book and feel it wasn't right for your journey, reach out within 30 days and we'll make it right. No hard questions, no hoops to jump through. Your trust matters more than a sale.</div>
+                    <div style="padding: 0 1.5rem 1.25rem; color: rgba(240,248,248,0.8); line-height: 1.7; font-size: 0.95rem;">Please review our refund policy before purchasing. All sales are final.</div>
                 </details>
             </div>
         </div>
@@ -660,12 +666,6 @@
     </footer>
 
     <!-- Sticky Mobile CTA Bar -->
-    <div class="sticky-cta" id="stickyCta">
-        <div class="sticky-cta__inner">
-            <div class="sticky-cta__text"><span style="text-decoration:line-through;opacity:0.5;font-size:0.8rem;">$199</span> <strong>$98</strong> — Price rises next new moon</div>
-            <a href="https://payhip.com/b/0oeMU" class="sticky-cta__btn" target="_blank" rel="noopener">Buy Now 📖</a>
-        </div>
-    </div>
 
     <div id="sampleModal" class="mw-modal">
         <div class="mw-modal__dialog">
@@ -1036,6 +1036,40 @@ document.getElementById('signsEmail').addEventListener('keydown',function(e){
   tick();
   setInterval(tick,1000);
 })();
+</script>
+<script>
+function submitSampleGate(){
+  var email=document.getElementById("sampleGateEmail").value.trim();
+  var btn=document.getElementById("sampleGateBtn");
+  var msg=document.getElementById("sampleGateMsg");
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    msg.style.color="#f87171";msg.textContent="Please enter a valid email address.";return;
+  }
+  btn.disabled=true;btn.textContent="Sending...";msg.textContent="";
+  fetch("/.netlify/functions/send-7signs",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({email:email,type:"sample"})
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.success){
+      msg.style.color="#4ade80";
+      msg.textContent="Check your inbox — sample on its way!";
+      btn.textContent="Sent ✓";
+      if(typeof trackEvent==="function") trackEvent("generate_lead",{event_category:"conversion",event_label:"sample_gate",value:1});
+      sessionStorage.setItem("leadCaptured","1");
+    } else { throw new Error(d.error||"Failed"); }
+  })
+  .catch(function(){
+    msg.style.color="#f87171";msg.textContent="Something went wrong. Please try again.";
+    btn.disabled=false;btn.textContent="📖 Get Free Sample";
+  });
+}
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"&&document.activeElement===document.getElementById("sampleGateEmail"))
+    submitSampleGate();
+});
 </script>
 </body>
 </html>
