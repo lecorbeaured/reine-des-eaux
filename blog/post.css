@@ -1,0 +1,227 @@
+/* === BLOG POST STYLES — knowmamiwata.com === */
+:root {
+  --deep:   #0f4c3a;
+  --teal-1: #1e6b5c;
+  --teal-2: #2d8a7e;
+  --teal-3: #3ca9a0;
+  --gold-1: #d4af37;
+  --gold-2: #f1c40f;
+  --ink:    #2c3e3f;
+  --light:  #f0f8f8;
+  --muted:  rgba(240,248,248,0.7);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(160deg, var(--deep) 0%, var(--teal-1) 50%, var(--teal-2) 100%);
+  background-attachment: fixed;
+  color: var(--light);
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+/* === HEADER === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,76,58,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-link {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold-1);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.logo-link:hover { color: var(--gold-2); }
+
+.header-nav { display: flex; align-items: center; gap: 1.5rem; }
+
+.header-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--light); }
+
+.header-cta {
+  background: linear-gradient(45deg, var(--gold-1), var(--gold-2)) !important;
+  color: var(--ink) !important;
+  padding: 0.45rem 1.1rem !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+}
+.header-cta:hover { opacity: 0.9; }
+
+/* === ARTICLE CONTAINER === */
+.post-container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+.post-back {
+  display: inline-block;
+  color: var(--teal-3);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+.post-back:hover { color: var(--gold-1); }
+
+.post-date {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  color: rgba(240,248,248,0.5);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* === ARTICLE TYPOGRAPHY === */
+.post-content h1 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--gold-1);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.post-content h2 {
+  font-size: 1.45rem;
+  color: var(--gold-1);
+  margin: 2.5rem 0 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+}
+
+.post-content h3 {
+  font-size: 1.15rem;
+  color: var(--teal-3);
+  margin: 1.8rem 0 0.6rem;
+}
+
+.post-content p {
+  color: rgba(240,248,248,0.9);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.post-content ul, .post-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.post-content li {
+  color: rgba(240,248,248,0.85);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+.post-content strong { color: var(--gold-1); }
+
+.post-content a {
+  color: var(--teal-3);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-content a:hover { color: var(--gold-1); }
+
+/* === FAQ ITEMS === */
+.faq-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(60,169,160,0.3);
+  border-left: 3px solid var(--gold-1);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1rem;
+}
+.faq-item strong {
+  display: block;
+  color: var(--gold-1);
+  font-size: 0.97rem;
+  margin-bottom: 0.4rem;
+}
+.faq-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(240,248,248,0.8);
+}
+
+/* === UPSELL CTA BLOCK === */
+.post-upsell {
+  background: linear-gradient(135deg, rgba(15,76,58,0.8), rgba(30,107,92,0.8));
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 14px;
+  padding: 2rem;
+  margin: 3rem 0 1rem;
+  text-align: center;
+}
+.post-upsell p { text-align: center; }
+
+/* === FOOTER === */
+.site-footer {
+  background: rgba(10,26,20,0.95);
+  border-top: 1px solid rgba(212,175,55,0.2);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.footer-links a {
+  color: var(--teal-3);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-1); }
+
+.site-footer p {
+  color: rgba(240,248,248,0.4);
+  font-size: 0.82rem;
+  font-family: Arial, sans-serif;
+  margin-top: 0.5rem;
+}
+.site-footer a { color: rgba(240,248,248,0.5); text-decoration: none; }
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .site-header { padding: 0.85rem 1rem; }
+  .header-nav { gap: 0.8rem; }
+  .header-nav a:not(.header-cta) { display: none; }
+  .post-container { padding: 1.5rem 1rem 4rem; }
+  .post-content h1 { font-size: 1.55rem; }
+  .post-content h2 { font-size: 1.2rem; }
+}

@@ -88,15 +88,10 @@
 
     <p><strong>Read, reflect, and return often. The current is always moving, and every visit can bring a new understanding.</strong></p>
 
-    <div class="coming-soon">
-      <h3>🌊 First teachings dropping soon</h3>
-      <p style="margin:0 0 1.2rem;">Enter your email to be notified the moment new articles go live — plus receive a free water blessing ritual as a welcome gift.</p>
-      <form name="water-wisdom-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-wrap:wrap;gap:0.6rem;max-width:420px;">
-        <input type="hidden" name="form-name" value="water-wisdom-notify">
-        <input type="text" name="bot-field" style="display:none;">
-        <input type="email" name="email" required placeholder="Your email address" style="flex:1;min-width:200px;padding:0.75rem 1rem;border:1.5px solid var(--teal-2);border-radius:30px;font-size:0.95rem;outline:none;background:rgba(255,255,255,0.95);color:#2c3e3f;">
-        <button type="submit" style="background:linear-gradient(45deg,#d4af37,#f1c40f);color:#2c3e3f;border:none;border-radius:30px;padding:0.75rem 1.4rem;font-weight:700;font-size:0.95rem;cursor:pointer;white-space:nowrap;">Notify Me 🌊</button>
-      </form>
+    <!-- Blog Article Grid -->
+    <div id="blog-grid" style="margin:2.5rem 0;">
+      <h2 style="color:var(--gold-1);font-size:1.4rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(212,175,55,0.25);padding-bottom:0.5rem;">Latest Teachings</h2>
+      <div id="article-list" style="display:grid;gap:1.2rem;"></div>
     </div>
 
     <div class="cta-section">
@@ -121,5 +116,42 @@
     }
     document.addEventListener('DOMContentLoaded', createFloatingElements);
   </script>
+<script>
+(function(){
+  var articles = [
+    {
+      slug: "understanding-the-spiritual-calling-of-mami-wata-signs-and-symbols",
+      title: "Understanding the Spiritual Calling of Mami Wata: Signs and Symbols",
+      desc: "Discover the spiritual calling of Mami Wata, the African water goddess. Learn the signs, symbols, and how to recognize her influence in your life.",
+      date: "May 27, 2026"
+    }
+  ];
+
+  var list = document.getElementById('article-list');
+  if (!list) return;
+
+  articles.forEach(function(a) {
+    var card = document.createElement('a');
+    card.href = '/blog/' + a.slug + '.html';
+    card.style.cssText = [
+      'display:block',
+      'background:rgba(255,255,255,0.05)',
+      'border:1px solid rgba(60,169,160,0.3)',
+      'border-left:3px solid var(--gold-1)',
+      'border-radius:0 12px 12px 0',
+      'padding:1.2rem 1.4rem',
+      'text-decoration:none',
+      'transition:background 0.2s,border-color 0.2s'
+    ].join(';');
+    card.onmouseover = function(){ this.style.background='rgba(255,255,255,0.09)'; this.style.borderColor='rgba(212,175,55,0.6)'; };
+    card.onmouseout  = function(){ this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(60,169,160,0.3)'; };
+    card.innerHTML =
+      '<div style="font-size:0.78rem;color:rgba(240,248,248,0.45);font-family:Arial,sans-serif;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.4rem;">' + a.date + '</div>' +
+      '<div style="color:#d4af37;font-size:1.05rem;font-weight:600;margin-bottom:0.4rem;line-height:1.35;">' + a.title + '</div>' +
+      '<div style="color:rgba(240,248,248,0.7);font-size:0.9rem;line-height:1.55;">' + a.desc + '</div>';
+    list.appendChild(card);
+  });
+})();
+</script>
 </body>
 </html>
