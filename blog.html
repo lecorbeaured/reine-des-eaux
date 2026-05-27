@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Know Mami Wata</title>
+  <meta name="description" content="Articles and guides from Know Mami Wata.">
+  <link rel="canonical" href="https://knowmamiwata.com/blog.html">
+  <meta property="og:title" content="Blog | Know Mami Wata">
+  <meta property="og:url" content="https://knowmamiwata.com/blog.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--ink:#ffffff;--surface:#f8f9fa;--panel:#ffffff;--border:#e0e0e0;--accent:#0066cc;--accent-dim:#0052a3;--text:#1a1a1a;--muted:#555555;--dim:#999999;}
+body{background:#f8f9fa;color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 20px}
+.logo{font-family:sans-serif;font-weight:800;font-size:18px;color:var(--text);transition:color .2s}
+.logo:hover{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:14px;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff!important;padding:8px 18px;border-radius:100px;font-weight:700;font-size:13px!important}
+.nav-cta:hover{background:var(--accent-dim)!important}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.blog-hero{padding:120px 0 60px;border-bottom:1px solid var(--border)}
+.label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:600}
+h1{font-family:sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-.01em;margin-bottom:16px}
+.blog-hero-sub{color:var(--muted);font-size:18px;max-width:480px}
+.blog-grid{padding:60px 0 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:#ffffff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
+.blog-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.blog-card-link{display:block;height:100%}
+.blog-card-body{padding:28px}
+.blog-card-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.blog-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);background:rgba(13,158,78,.08);border:1px solid rgba(13,158,78,.2);padding:3px 10px;border-radius:100px}
+.blog-date{font-size:11px;color:var(--muted)}
+.blog-card-title{font-family:sans-serif;font-weight:700;font-size:17px;line-height:1.3;margin-bottom:10px;color:var(--text);transition:color .2s}
+.blog-card:hover .blog-card-title{color:var(--accent)}
+.blog-card-desc{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:16px}
+.blog-read-more{font-size:12px;color:var(--accent);letter-spacing:.05em;font-weight:600}
+.empty-state{grid-column:1/-1;text-align:center;padding:80px 0;color:var(--muted)}
+.empty-state h2{font-size:22px;margin-bottom:10px;color:var(--text)}
+footer{border-top:1px solid var(--border);padding:40px 20px;background:#f8f9fa}
+.foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;max-width:1100px;margin:0 auto 20px}
+.foot-brand{font-family:sans-serif;font-weight:800;font-size:17px;margin-bottom:6px}
+.foot-tag{color:var(--dim);font-size:13px}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;align-items:center}
+.foot-links a{color:var(--dim);font-size:13px;transition:color .2s}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);padding-top:16px;max-width:1100px;margin:0 auto}
+.foot-copy{color:var(--dim);font-size:12px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Know Mami Wata</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/" class="nav-cta">Home</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="blog-hero">
+  <div class="wrap">
+    <div class="label">Know Mami Wata Blog</div>
+    <h1>Articles & Guides</h1>
+    <p class="blog-hero-sub">Helpful articles from Know Mami Wata</p>
+  </div>
+</section>
+<section class="wrap">
+  <div class="blog-grid">
+    
+    <article class="blog-card reveal">
+      <a href="/posts/understanding-the-spiritual-calling-of-mami-wata-signs-and-symbols.html" class="blog-card-link">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-label">Article</span>
+            <time class="blog-date">May 27, 2026</time>
+          </div>
+          <h2 class="blog-card-title">Understanding the Spiritual Calling of Mami Wata: Signs and Symbols</h2>
+          <p class="blog-card-desc">Discover the spiritual calling of Mami Wata, the African water goddess. Learn the signs, symbols, and how to recognize h...</p>
+          <span class="blog-read-more">Read Article →</span>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="foot-inner">
+    <div><div class="foot-brand">Know Mami Wata</div><p class="foot-tag">Helpful articles from Know Mami Wata...</p></div>
+    <ul class="foot-links"><li><a href="/">Home</a></li><li><a href="/blog.html">Blog</a></li></ul>
+  </div>
+  <div class="foot-bottom"><p class="foot-copy">&copy; 2026 Know Mami Wata. All rights reserved.</p></div>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
