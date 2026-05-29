@@ -106,7 +106,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
       if (!articles.length){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; return; }
       articles.forEach(function(a){
         var card = document.createElement('article');
-        card.className = 'blog-card reveal';
+        card.className = 'blog-card reveal in';
         card.innerHTML = '<a href="/blog/'+a.slug+'.html" class="blog-card-link">'+
           '<div class="blog-card-body">'+
           '<div class="blog-card-meta"><span class="blog-label">Article</span>'+
