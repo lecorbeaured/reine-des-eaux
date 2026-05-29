@@ -82,61 +82,6 @@ footer{border-top:1px solid var(--border);padding:40px 20px;background:#f8f9fa}
 <section class="wrap">
   <div class="blog-grid">
     
-    <article class="blog-card reveal">
-      <a href="/posts/understanding-the-spiritual-calling-of-mami-wata-signs-and-symbols.html" class="blog-card-link">
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-label">Article</span>
-            <time class="blog-date">May 29, 2026</time>
-          </div>
-          <h2 class="blog-card-title">Understanding the Spiritual Calling of Mami Wata: Signs and Symbols</h2>
-          <p class="blog-card-desc">Discover the spiritual calling of Mami Wata, the African water goddess. Learn the signs, symbols, and how to recognize h...</p>
-          <span class="blog-read-more">Read Article →</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="blog-card reveal">
-      <a href="/posts/water-dreams-and-their-deep-spiritual-meaning-in-mami-wata-tradition.html" class="blog-card-link">
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-label">Article</span>
-            <time class="blog-date">May 29, 2026</time>
-          </div>
-          <h2 class="blog-card-title">Water Dreams and Their Deep Spiritual Meaning in Mami Wata Tradition</h2>
-          <p class="blog-card-desc">Discover the spiritual meaning of water dreams in Mami Wata traditions. Learn how to interpret aquatic visions and conne...</p>
-          <span class="blog-read-more">Read Article →</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="blog-card reveal">
-      <a href="/posts/the-sacred-initiation-process-into-mami-watas-spiritual-realm.html" class="blog-card-link">
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-label">Article</span>
-            <time class="blog-date">May 29, 2026</time>
-          </div>
-          <h2 class="blog-card-title">The Sacred Initiation Process into Mami Wata's Spiritual Realm</h2>
-          <p class="blog-card-desc">Discover the sacred initiation process into Mami Wata's spiritual realm. Learn about African water goddess rituals, spir...</p>
-          <span class="blog-read-more">Read Article →</span>
-        </div>
-      </a>
-    </article>
-
-    <article class="blog-card reveal">
-      <a href="/posts/mami-wata-the-african-water-goddess-and-her-influence-on-modern-spirituality.html" class="blog-card-link">
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-label">Article</span>
-            <time class="blog-date">May 29, 2026</time>
-          </div>
-          <h2 class="blog-card-title">Mami Wata: The African Water Goddess and Her Influence on Modern Spirituality</h2>
-          <p class="blog-card-desc">Discover the profound influence of Mami Wata, the African water goddess, on modern spirituality. Explore her symbolism, ...</p>
-          <span class="blog-read-more">Read Article →</span>
-        </div>
-      </a>
-    </article>
   </div>
 </section>
 <footer>
@@ -149,6 +94,33 @@ footer{border-top:1px solid var(--border);padding:40px 20px;background:#f8f9fa}
 <script>
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){
+  var list = document.querySelector('.blog-grid');
+  if (!list) return;
+  fetch('/blog/posts.json')
+    .then(function(r){ return r.json(); })
+    .then(function(articles){
+      list.innerHTML = '';
+      if (!articles.length){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; return; }
+      articles.forEach(function(a){
+        var card = document.createElement('article');
+        card.className = 'blog-card reveal';
+        card.innerHTML = '<a href="/blog/'+a.slug+'.html" class="blog-card-link">'+
+          '<div class="blog-card-body">'+
+          '<div class="blog-card-meta"><span class="blog-label">Article</span>'+
+          (a.date ? '<time class="blog-date">'+a.date+'</time>' : '')+
+          '</div>'+
+          '<h2 class="blog-card-title">'+a.title+'</h2>'+
+          (a.desc ? '<p class="blog-card-desc">'+a.desc+'...</p>' : '')+
+          '<span class="blog-read-more">Read Article →</span>'+
+          '</div></a>';
+        list.appendChild(card);
+      });
+    })
+    .catch(function(){ list.innerHTML='<p style="opacity:0.5;text-align:center;padding:2rem;">Articles coming soon.</p>'; });
+})();
 </script>
 </body>
 </html>
