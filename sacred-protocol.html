@@ -49,10 +49,14 @@ body {
 .water-bg {
   position: fixed;
   inset: 0;
+  background: #0f4c3a;
+  z-index: -1;
+  transition: background 0.3s;
+}
+.water-bg.loaded {
   background: linear-gradient(45deg, #0a1a14, #0f4c3a, #1e6b5c, #0f4c3a, #0a1a14);
   background-size: 400% 400%;
   animation: waterFlow 12s ease-in-out infinite;
-  z-index: -1;
 }
 @keyframes waterFlow {
   0%,100% { background-position: 0% 50%; }
@@ -529,15 +533,15 @@ section { padding: 6rem 1.5rem; }
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: none; }
 }
-.hero > * { animation: fadeInUp 0.8s ease both; }
-.hero > *:nth-child(1){ animation-delay: 0.1s; }
-.hero > *:nth-child(2){ animation-delay: 0.25s; }
-.hero > *:nth-child(3){ animation-delay: 0.4s; }
-.hero > *:nth-child(4){ animation-delay: 0.5s; }
-.hero > *:nth-child(5){ animation-delay: 0.6s; }
-.hero > *:nth-child(6){ animation-delay: 0.7s; }
-.hero > *:nth-child(7){ animation-delay: 0.8s; }
-.hero > *:nth-child(8){ animation-delay: 0.9s; }
+.hero > * { animation: fadeInUp 0.6s ease both; }
+.hero > *:nth-child(1){ animation-delay: 0.05s; }
+.hero > *:nth-child(2){ animation-delay: 0.1s; }
+.hero > *:nth-child(3){ animation-delay: 0.15s; }
+.hero > *:nth-child(4){ animation-delay: 0.2s; }
+.hero > *:nth-child(5){ animation-delay: 0.25s; }
+.hero > *:nth-child(6){ animation-delay: 0.3s; }
+.hero > *:nth-child(7){ animation-delay: 0.35s; }
+.hero > *:nth-child(8){ animation-delay: 0.4s; }
 
 /* === RESPONSIVE === */
 @media (max-width: 640px) {
@@ -547,6 +551,7 @@ section { padding: 6rem 1.5rem; }
 }
         nav { position: fixed; top: 0; width: 100%; background: rgba(15, 76, 58, 0.95); z-index: 1000; padding: 1rem 2rem; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #f0f8f8; text-decoration: none; }
         .logo { font-size: 1.8rem; font-weight: bold; color: #f0f8f8; text-decoration: none; }
         .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a { color: #f0f8f8; text-decoration: none; transition: color 0.3s ease; }
@@ -867,7 +872,7 @@ function closeMobileNav() {
     document.body.style.overflow = '';
 }
 
-        setTimeout(function(){var l=document.getElementById('loading');if(l){l.style.opacity='0';setTimeout(function(){l.style.display='none';},300);}},500);
+        setTimeout(function(){var l=document.getElementById('loading');if(l){l.style.opacity='0';setTimeout(function(){l.style.display='none';},300);}var wb=document.querySelector('.water-bg');if(wb)wb.classList.add('loaded');},500);
 </script>
 
 </body>
