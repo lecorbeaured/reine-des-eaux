@@ -77,30 +77,7 @@ nav {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(212,175,55,0.2);
 }
-.nav-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  color: var(--gold-1);
-  text-decoration: none;
-  letter-spacing: 0.05em;
-}
-.nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--light); }
-.nav-cta {
-  background: linear-gradient(45deg, var(--gold-1), var(--gold-2));
-  color: var(--ink) !important;
-  padding: 0.45rem 1.1rem;
-  border-radius: 20px;
-  font-weight: 600 !important;
-  font-size: 0.82rem !important;
-}
+
 
 /* === HERO === */
 .hero {
@@ -593,11 +570,29 @@ footer p {
 
 /* === RESPONSIVE === */
 @media (max-width: 640px) {
-  .nav-links a:not(.nav-cta) { display: none; }
   .lang-grid { grid-template-columns: 1fr; }
   .btn-ghost { margin-left: 0; }
   .buy-card { padding: 2rem 1.25rem; }
 }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(15, 76, 58, 0.95); z-index: 1000; padding: 1rem 2rem; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #f0f8f8; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #f0f8f8; text-decoration: none; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #3ca9a0; }
+        .cta-button { background: linear-gradient(45deg, #d4af37, #f1c40f); color: #2c3e3f; padding: 0.8rem 2rem; border-radius: 30px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; padding: 10px; z-index: 1001; background: none; border: none; }
+        .hamburger span { width: 25px; height: 3px; background: #f0f8f8; margin: 3px 0; border-radius: 3px; transition: all 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(15, 76, 58, 0.98); z-index: 999; flex-direction: column; justify-content: center; align-items: center; }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a { color: #f0f8f8; text-decoration: none; font-size: 1.5rem; padding: 1rem 2rem; transition: color 0.3s ease; }
+        .mobile-nav a:hover { color: #d4af37; }
+        .mobile-nav .cta-button { margin-top: 2rem; }
+        @media (max-width: 768px) { .nav-links { display: none; } .nav-container .cta-button { display: none; } .hamburger { display: flex; } }
 </style>
 </head>
 <body>
@@ -605,16 +600,16 @@ footer p {
 <div class="water-bg"></div>
 
 <!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">&#x1F30A; Mami Wata</a>
-  <div class="nav-links">
-    <a href="/">Home</a>
+<nav><div class="nav-container"><a href="index.html" class="logo">&#x1F30A; Mami Wata</a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about-amari-zola.html">About</a></li><li><a href="water-wisdom.html">Blog</a></li><li><a href="sacred-protocol.html" style="color:#d4af37;">Guides</a></li><li><a href="the-book.html">The Book</a></li></ul><a href="#buy" class="cta-button">Get the Guide &#x1F30A;</a><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
     <a href="about-amari-zola.html">About</a>
     <a href="water-wisdom.html">Blog</a>
+    <a href="sacred-protocol.html" style="color:#d4af37;">Guides &#x2728;</a>
     <a href="the-book.html">The Book</a>
-    <a href="#buy" class="nav-cta">Get the Guide</a>
-  </div>
-</nav>
+    <a href="#buy" class="cta-button" onclick="closeMobileNav()">Get the Guide &#x1F30A;</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -854,6 +849,22 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// === MOBILE NAVIGATION ===
+var hamburger = document.getElementById('hamburger');
+var mobileNav = document.getElementById('mobileNav');
+if (hamburger) {
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+}
+function closeMobileNav() {
+    if (hamburger) hamburger.classList.remove('active');
+    if (mobileNav) mobileNav.classList.remove('active');
+    document.body.style.overflow = '';
+}
 </script>
 
 </body>
