@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before You Open That Door | The Sacred Protocol — Amari Zola</title>
+<meta name="description" content="A harm-reduction guide for those who seek Mami Wata without a guide. Written by an initiated practitioner. Available in English, French, and Spanish.">
+<meta property="og:title" content="Before You Open That Door — The Sacred Protocol">
+<meta property="og:description" content="What happens when you seek Mami Wata without preparation or guidance. A warning and a lifeline from an initiated practitioner.">
+<meta property="og:url" content="https://knowmamiwata.com/sacred-protocol.html">
+<meta property="og:type" content="product">
+<link rel="canonical" href="https://knowmamiwata.com/sacred-protocol.html">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7318FS7XBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7318FS7XBH');
+</script>
+<style>
+:root {
+  --deep:   #0f4c3a;
+  --teal-1: #1e6b5c;
+  --teal-2: #2d8a7e;
+  --teal-3: #3ca9a0;
+  --gold-1: #d4af37;
+  --gold-2: #f1c40f;
+  --light:  #f0f8f8;
+  --ink:    #2c3e3f;
+  --muted:  rgba(240,248,248,0.65);
+  --warn:   #c0392b;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--deep);
+  color: var(--light);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* === WATER BACKGROUND === */
+.water-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(45deg, #0a1a14, #0f4c3a, #1e6b5c, #0f4c3a, #0a1a14);
+  background-size: 400% 400%;
+  animation: waterFlow 12s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes waterFlow {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10,26,20,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--gold-1);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--light); }
+.nav-cta {
+  background: linear-gradient(45deg, var(--gold-1), var(--gold-2));
+  color: var(--ink) !important;
+  padding: 0.45rem 1.1rem;
+  border-radius: 20px;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+}
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 1.5rem 5rem;
+  position: relative;
+}
+
+.hero-warning {
+  display: inline-block;
+  background: rgba(192,57,43,0.15);
+  border: 1px solid rgba(192,57,43,0.5);
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #e07070;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--teal-3);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--gold-1);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 auto 0.75rem;
+  font-style: italic;
+}
+
+.hero-byline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--teal-3);
+  margin-bottom: 3rem;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold-1);
+  margin: 0 auto 2.5rem;
+  opacity: 0.5;
+}
+
+/* Price block */
+.price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 2rem;
+}
+.price-old {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(240,248,248,0.3);
+  text-decoration: line-through;
+}
+.price-current {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--gold-1);
+  line-height: 1;
+}
+.price-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: var(--teal-3);
+  letter-spacing: 0.05em;
+}
+
+/* CTA buttons */
+.btn-gold {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--gold-1), var(--gold-2));
+  color: var(--ink);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212,175,55,0.45);
+}
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(240,248,248,0.2);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-left: 1rem;
+}
+.btn-ghost:hover { border-color: var(--teal-3); color: var(--light); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; align-items: center; }
+.secure-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(240,248,248,0.4);
+  margin-top: 1rem;
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(240,248,248,0.3);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: fadeInUp 2s ease 1s both;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(212,175,55,0.6), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+/* === SECTION BASE === */
+section { padding: 6rem 1.5rem; }
+.section-inner { max-width: 780px; margin: 0 auto; }
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--teal-3);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--gold-1);
+  font-style: italic;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.section-body {
+  font-size: 1.1rem;
+  color: rgba(240,248,248,0.85);
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+.section-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold-1);
+  opacity: 0.4;
+  margin: 2rem 0;
+}
+
+/* === WHO THIS IS FOR === */
+.who-section { background: rgba(0,0,0,0.2); }
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.who-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(60,169,160,0.2);
+  border-left: 3px solid var(--gold-1);
+  border-radius: 0 12px 12px 0;
+  padding: 1.4rem 1.6rem;
+}
+.who-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-1);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.who-card p {
+  font-size: 1rem;
+  color: rgba(240,248,248,0.75);
+  line-height: 1.7;
+}
+
+/* === WARNING SECTION === */
+.warning-section {
+  background: rgba(192,57,43,0.08);
+  border-top: 1px solid rgba(192,57,43,0.2);
+  border-bottom: 1px solid rgba(192,57,43,0.2);
+}
+.warning-box {
+  background: rgba(192,57,43,0.12);
+  border: 1px solid rgba(192,57,43,0.35);
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-top: 2rem;
+}
+.warning-box p {
+  font-size: 1rem;
+  color: rgba(240,180,180,0.9);
+  line-height: 1.8;
+}
+.warning-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #e07070;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* === WHAT'S INSIDE === */
+.contents-list {
+  list-style: none;
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1rem;
+}
+.contents-list li {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.4rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(60,169,160,0.15);
+  border-radius: 10px;
+}
+.contents-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-1);
+  opacity: 0.6;
+  min-width: 1.8rem;
+  padding-top: 0.15rem;
+}
+.contents-text strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--light);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.contents-text span {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* === AMARI QUOTE === */
+.amari-section { text-align: center; }
+.amari-quote {
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-style: italic;
+  color: rgba(240,248,248,0.8);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  padding: 0 1rem;
+}
+.amari-quote::before {
+  content: '"';
+  font-size: 5rem;
+  color: var(--gold-1);
+  opacity: 0.2;
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  line-height: 1;
+  font-family: 'Cormorant Garamond', serif;
+}
+.amari-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: var(--teal-3);
+  letter-spacing: 0.1em;
+}
+
+/* === LANGUAGES === */
+.lang-section { background: rgba(0,0,0,0.15); }
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.lang-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 12px;
+  padding: 1.6rem;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lang-card:hover {
+  border-color: rgba(212,175,55,0.5);
+  background: rgba(255,255,255,0.08);
+}
+.lang-flag {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.lang-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: var(--gold-1);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+.lang-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+/* === PRICING / BUY === */
+.buy-section { text-align: center; }
+.buy-card {
+  max-width: 520px;
+  margin: 2.5rem auto 0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.buy-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-1), var(--gold-2), var(--gold-1));
+}
+.buy-formats {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.buy-format-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  background: rgba(60,169,160,0.15);
+  border: 1px solid rgba(60,169,160,0.3);
+  color: var(--teal-3);
+  letter-spacing: 0.05em;
+}
+.buy-includes {
+  list-style: none;
+  text-align: left;
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.buy-includes li {
+  font-size: 0.95rem;
+  color: rgba(240,248,248,0.8);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+.buy-includes li::before {
+  content: '+';
+  color: var(--gold-1);
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 1rem;
+}
+.buy-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(212,175,55,0.2);
+  margin: 1.5rem 0;
+}
+
+/* === BOOK UPSELL STRIP === */
+.upsell-strip {
+  background: rgba(30,107,92,0.25);
+  border-top: 1px solid rgba(60,169,160,0.2);
+  border-bottom: 1px solid rgba(60,169,160,0.2);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+.upsell-strip .section-title { font-size: 1.6rem; }
+.bundle-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: var(--teal-3);
+  margin-top: 0.5rem;
+}
+
+/* === FOOTER === */
+footer {
+  background: rgba(0,0,0,0.4);
+  border-top: 1px solid rgba(212,175,55,0.15);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.footer-links a {
+  color: var(--teal-3);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-1); }
+footer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(240,248,248,0.3);
+}
+
+/* === ANIMATIONS === */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero > * { animation: fadeInUp 0.8s ease both; }
+.hero > *:nth-child(1){ animation-delay: 0.1s; }
+.hero > *:nth-child(2){ animation-delay: 0.25s; }
+.hero > *:nth-child(3){ animation-delay: 0.4s; }
+.hero > *:nth-child(4){ animation-delay: 0.5s; }
+.hero > *:nth-child(5){ animation-delay: 0.6s; }
+.hero > *:nth-child(6){ animation-delay: 0.7s; }
+.hero > *:nth-child(7){ animation-delay: 0.8s; }
+.hero > *:nth-child(8){ animation-delay: 0.9s; }
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .lang-grid { grid-template-columns: 1fr; }
+  .btn-ghost { margin-left: 0; }
+  .buy-card { padding: 2rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="water-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">&#x1F30A; Mami Wata</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="about-amari-zola.html">About</a>
+    <a href="water-wisdom.html">Blog</a>
+    <a href="the-book.html">The Book</a>
+    <a href="#buy" class="nav-cta">Get the Guide</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-warning">
+    This guide does not replace initiation under a verified priest or priestess
+  </div>
+  <p class="hero-eyebrow">A Warning &amp; A Lifeline</p>
+  <h1 class="hero-title">Before You Open<br>That Door</h1>
+  <p class="hero-subtitle">What happens when you seek Mami Wata without preparation or guidance</p>
+  <p class="hero-byline">by Amari Zola &mdash; Initiated Practitioner &middot; knowmamiwata.com</p>
+  <div class="hero-divider"></div>
+  <div class="price-block">
+    <span class="price-old">$44</span>
+    <span class="price-current">$35</span>
+    <span class="price-note">PDF &amp; Word &middot; English, French &amp; Spanish</span>
+  </div>
+  <div class="cta-row">
+    <a href="https://payhip.com/b/SACRED-PROTOCOL" class="btn-gold" target="_blank" rel="noopener">Get the Guide &#x1F30A;</a>
+    <a href="#what-is-this" class="btn-ghost">Read more</a>
+  </div>
+  <p class="secure-note">&#x1F512; Instant delivery &middot; Secure checkout &middot; PDF &amp; DOCX included</p>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="who-section" id="what-is-this">
+  <div class="section-inner">
+    <p class="section-label reveal">Who This Is For</p>
+    <h2 class="section-title reveal">You have been searching<br>for a long time.</h2>
+    <p class="section-body reveal">This guide was written for a specific person. Not the curious, not the scholar, not the passing admirer of African spirituality. It was written for the one who cannot stop.</p>
+    <p class="section-body reveal">The one who has visited temples and charlatans. Spent money they could not afford. Found a grimoire online and is considering using it. Felt the void for years and decided the only way out is through.</p>
+    <div class="section-divider reveal"></div>
+    <div class="who-grid reveal">
+      <div class="who-card">
+        <p class="who-card-title">The Obsessive Seeker</p>
+        <p>You have been searching for contact with Mami Wata by any means necessary. The void has been there for years. Nothing has filled it.</p>
+      </div>
+      <div class="who-card">
+        <p class="who-card-title">The Grimoire Reader</p>
+        <p>You found instructions online or in a book. You are considering following them without a verified guide. This document is specifically for you.</p>
+      </div>
+      <div class="who-card">
+        <p class="who-card-title">The Recovering Initiate</p>
+        <p>Something went wrong. Contact was attempted and it did not go well. You are experiencing the aftermath and don't know where to turn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARNING SECTION -->
+<section class="warning-section">
+  <div class="section-inner">
+    <p class="section-label reveal">The Truth No One Tells You</p>
+    <h2 class="section-title reveal">The people most consumed<br>by the illness are the least<br>likely to make contact.</h2>
+    <p class="section-body reveal">Contact does not work the way the grimoires say it does. She appears as a mirror of your inner state. Desperation, obsession, unresolved grief -- these are what she reflects back. The prepared initiate encounters her. The unprepared encounters their own darkness, amplified beyond what most minds can hold.</p>
+    <div class="warning-box reveal">
+      <p class="warning-label">&#x26A0;&#xFE0F; The Most Common Fatal Mistake</p>
+      <p>Running. When contact occurs, the experience is beyond what words prepare you for. The sounds are real. The visuals are real. The instinct to flee will be overwhelming. If you run -- if you flee an entity that came out of respect -- the consequences can be severe, lasting, and in the worst cases irreversible. I have witnessed both outcomes. This guide exists so you understand what is at stake before you open that door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section>
+  <div class="section-inner">
+    <p class="section-label reveal">What's Inside</p>
+    <h2 class="section-title reveal">Eight parts. Everything<br>that can be shared.</h2>
+    <p class="section-body reveal">I have left out everything that is sacred to leave out. What is here is the minimum -- the things that can be shared without violating the vows I have taken. If you find it insufficient, that is by design.</p>
+    <ul class="contents-list">
+      <li class="reveal">
+        <span class="contents-num">01</span>
+        <div class="contents-text">
+          <strong>The Mami Wata Illness</strong>
+          <span>What it looks like. Why the obsessive seeker rarely makes contact. The secrecy requirement.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">02</span>
+        <div class="contents-text">
+          <strong>The Real Cost</strong>
+          <span>What initiation actually costs. Why you need to get it right the first time. The unpredictable expense at the end of contact.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">03</span>
+        <div class="contents-text">
+          <strong>Why the Grimoire Won't Protect You</strong>
+          <span>The wrong entity problem. What can answer an unprotected call. What a verified priest actually provides.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">04</span>
+        <div class="contents-text">
+          <strong>The Location, the Accompaniment, and the Language</strong>
+          <span>The priest accompanies you, then retreats 100 feet. The language request that must be made. She is not there to harm you.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">05</span>
+        <div class="contents-text">
+          <strong>The Mirror and Your Inner State</strong>
+          <span>The mechanism of contact. Fear, and what the prepared initiate does when it arrives. Why morality is your protection.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">06</span>
+        <div class="contents-text">
+          <strong>During Contact: What to Do and What to Ask</strong>
+          <span>The bonding technique. The test you will be given. What to ask for. What to never ask for. How to close with gratitude. How to remember everything.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">07</span>
+        <div class="contents-text">
+          <strong>Do Not Run</strong>
+          <span>The most common and most catastrophic mistake. What running communicates. What happens after.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="contents-num">08</span>
+        <div class="contents-text">
+          <strong>If Something Has Gone Wrong</strong>
+          <span>The only path of recovery. How to identify a legitimate priest. How to spot a charlatan.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- AMARI QUOTE -->
+<section class="amari-section" style="background:rgba(0,0,0,0.2);">
+  <div class="section-inner">
+    <p class="amari-quote reveal">
+      I wrote this because I care about the people who would attempt this without it. If this document has done its work, some of you will put down the grimoire and find a legitimate priest instead. That would be the best outcome I could hope for.
+    </p>
+    <p class="amari-name reveal">&#x2014; Amari Zola, Initiated Practitioner</p>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="lang-section">
+  <div class="section-inner">
+    <p class="section-label reveal">Available In</p>
+    <h2 class="section-title reveal">Three Languages.<br>One Price.</h2>
+    <p class="section-body reveal">Every purchase includes all three language versions in both PDF and Word format. The tradition has no borders.</p>
+    <div class="lang-grid">
+      <div class="lang-card reveal">
+        <span class="lang-flag">&#x1F1EC;&#x1F1E7;</span>
+        <p class="lang-name">English</p>
+        <p class="lang-desc">Global diaspora communities and English-speaking seekers worldwide</p>
+      </div>
+      <div class="lang-card reveal">
+        <span class="lang-flag">&#x1F1EB;&#x1F1F7;</span>
+        <p class="lang-name">Fran&ccedil;ais</p>
+        <p class="lang-desc">West Africa, Haiti, Martinique, Guadeloupe, and the francophone diaspora</p>
+      </div>
+      <div class="lang-card reveal">
+        <span class="lang-flag">&#x1F1EA;&#x1F1F8;</span>
+        <p class="lang-name">Espa&ntilde;ol</p>
+        <p class="lang-desc">Latin America, the Caribbean, and Spanish-speaking communities worldwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section class="buy-section" id="buy">
+  <div class="section-inner">
+    <p class="section-label reveal">Get the Guide</p>
+    <h2 class="section-title reveal">Before You Open That Door</h2>
+    <div class="buy-card reveal">
+      <div class="buy-formats">
+        <span class="buy-format-tag">PDF</span>
+        <span class="buy-format-tag">Word (.docx)</span>
+        <span class="buy-format-tag">3 Languages</span>
+        <span class="buy-format-tag">Instant Delivery</span>
+      </div>
+      <div class="price-block">
+        <span class="price-old">$44</span>
+        <span class="price-current">$35</span>
+        <span class="price-note">One-time purchase &middot; 6 files total</span>
+      </div>
+      <ul class="buy-includes">
+        <li>English PDF + Word document</li>
+        <li>French PDF + Word document (Fran&ccedil;ais)</li>
+        <li>Spanish PDF + Word document (Espa&ntilde;ol)</li>
+        <li>8 parts &middot; Quick reference appendix</li>
+        <li>Lifetime access &middot; All future updates</li>
+      </ul>
+      <div class="buy-divider"></div>
+      <a href="https://payhip.com/b/SACRED-PROTOCOL" class="btn-gold" target="_blank" rel="noopener" style="width:100%;text-align:center;display:block;">
+        Get the Guide Now &#x1F30A;
+      </a>
+      <p class="secure-note" style="margin-top:1rem;">&#x1F512; Secure checkout via Payhip &middot; Instant delivery to your email</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK UPSELL -->
+<section class="upsell-strip">
+  <div class="section-inner">
+    <p class="section-label reveal">Also Available</p>
+    <h2 class="section-title reveal">The Complete Journey</h2>
+    <p class="section-body reveal" style="max-width:520px;margin:0 auto 1.5rem;">This guide is a harm-reduction document. The full initiation framework -- dreams, rituals, sacred abundance, and living as an initiate -- is in the book.</p>
+    <div class="price-block reveal" style="margin-bottom:1.5rem;">
+      <span class="price-old">$199</span>
+      <span class="price-current">$98</span>
+      <span class="price-note">Price rises after the next new moon</span>
+    </div>
+    <div class="cta-row reveal">
+      <a href="https://payhip.com/b/0oeMU" class="btn-gold" target="_blank" rel="noopener">Get the Full Book &#x1F4D6;</a>
+      <a href="the-book.html" class="btn-ghost">Learn more</a>
+    </div>
+    <p class="bundle-price reveal" style="margin-top:1.2rem;">Or get both: Guide + Book &mdash; <strong style="color:var(--gold-1);">$116</strong></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="about-amari-zola.html">About Amari</a>
+    <a href="the-book.html">The Book</a>
+    <a href="water-wisdom.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </div>
+  <p>&copy; 2026 knowmamiwata.com &middot; All rights reserved</p>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
