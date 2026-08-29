@@ -3,29 +3,35 @@
 
   <url>
     <loc>https://knowmamiwata.com/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://knowmamiwata.com/water-wisdom.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://knowmamiwata.com/#tools</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://knowmamiwata.com/#faq</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://knowmamiwata.com/blog/caring-for-your-mami-wata-jewelry-tips-and-techniques.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://knowmamiwata.com/blog/top-designers-crafting-authentic-mami-wata-jewelry-today.html</loc>
     <lastmod>2026-08-26</lastmod>
